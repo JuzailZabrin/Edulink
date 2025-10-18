@@ -1,0 +1,10 @@
+Section,Field,Type,Required,Notes
+Entity,Partnership name,string,Yes,
+Entity,ABN,string,Yes,
+Entity,TFN,string,Conditional,
+Entity,Partnership agreement,file,Yes,Including profit-sharing ratios
+Partners,Partner details,table,Yes,"Name, DOB, address, TFN (consent), % share"
+Financials,Trial balance (FY),file,Yes,
+Financials,Financial statements,file,Yes,
+Capital,Contributions/Drawings,file/string,Yes,
+Returns,Prior-year return & NOA,file,If new client,

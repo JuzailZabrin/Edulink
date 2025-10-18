@@ -1,145 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EDULINK Group - Professional Bookkeeping & Payroll Services in Australia</title>
+    <meta name="description" content="EDULINK Group - Professional bookkeeping and payroll management services in Australia. Tailored solutions for businesses of all sizes.">
+    <title>EDULINK Group | Professional Bookkeeping & Payroll Services in Australia</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            overflow-x: hidden;
-        }
-
-        /* Header & Navigation */
-        header {
-            background: rgba(255, 255, 255, 0.98);
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #2c3e87;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #2c3e87;
-        }
-
-        .contact-btn {
-            background: #2c3e87;
-            color: white !important;
-            padding: 0.7rem 1.5rem;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-
-        .contact-btn:hover {
-            background: #1f2d5f;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, rgba(44, 62, 135, 0.95), rgba(76, 84, 147, 0.9)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%232c3e87" width="1200" height="600"/></svg>');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 150px 2rem 100px;
-            text-align: left;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="60" r="3" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="80" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
-            animation: float 20s infinite linear;
-        }
-
-        @keyframes float {
-            from { transform: translateY(0); }
-            to { transform: translateY(-100px); }
-        }
-
+        /* ===== INDEX PAGE SPECIFIC STYLES ===== */
         .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
             position: relative;
             z-index: 1;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
             animation: fadeInUp 1s ease;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
             animation: fadeInUp 1s ease 0.2s both;
         }
 
         .hero-btn {
-            background: white;
-            color: #2c3e87;
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
             animation: fadeInUp 1s ease 0.4s both;
-        }
-
-        .hero-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
         @keyframes fadeInUp {
@@ -156,7 +41,7 @@
         /* Trust Section */
         .trust-section {
             background: #f8f9fa;
-            padding: 80px 2rem;
+            padding: 100px 2rem;
         }
 
         .trust-content {
@@ -164,27 +49,41 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 4rem;
             align-items: center;
         }
 
         .trust-badge {
-            background: #2c3e87;
+            background: linear-gradient(135deg, #B8860B, #DAA520);
             color: white;
-            padding: 2rem;
-            border-radius: 10px;
+            padding: 3rem;
+            border-radius: 16px;
             display: inline-block;
+            box-shadow: 0 10px 30px rgba(184, 134, 11, 0.2);
         }
 
         .trust-badge h3 {
-            font-size: 2.5rem;
+            font-size: 3.5rem;
             margin-bottom: 0.5rem;
+            font-weight: 800;
+        }
+
+        .trust-badge p {
+            font-size: 1.2rem;
         }
 
         .trust-info h2 {
-            color: #2c3e87;
-            font-size: 2rem;
-            margin-bottom: 1rem;
+            color: #8B6914;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .trust-info > p {
+            color: #666;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
         }
 
         .trust-features {
@@ -201,60 +100,65 @@
         }
 
         .feature-icon {
-            background: #2c3e87;
+            background: linear-gradient(135deg, #B8860B, #DAA520);
             color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
+            font-size: 1.2rem;
+        }
+
+        .feature-item h4 {
+            color: #8B6914;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+
+        .feature-item p {
+            color: #777;
+            font-size: 0.9rem;
         }
 
         /* Services Section */
         .services {
-            padding: 80px 2rem;
+            padding: 100px 2rem;
             background: white;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            color: #2c3e87;
-            margin-bottom: 3rem;
         }
 
         .services-grid {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
         }
 
         .service-card {
             background: white;
-            border-radius: 10px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 40px rgba(184, 134, 11, 0.15);
         }
 
         .service-image {
             width: 100%;
             height: 200px;
-            background: linear-gradient(135deg, #2c3e87, #4c5493);
+            background: linear-gradient(135deg, #B8860B, #DAA520);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: white;
         }
 
@@ -263,15 +167,22 @@
         }
 
         .service-content h3 {
-            color: #2c3e87;
+            color: #8B6914;
             margin-bottom: 1rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .service-content p {
+            color: #777;
+            line-height: 1.7;
         }
 
         /* Stats Section */
         .stats {
-            background: linear-gradient(135deg, #2c3e87, #4c5493);
+            background: linear-gradient(135deg, #B8860B, #DAA520);
             color: white;
-            padding: 80px 2rem;
+            padding: 100px 2rem;
         }
 
         .stats-grid {
@@ -279,13 +190,14 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
+            gap: 3rem;
             text-align: center;
         }
 
         .stat-item h3 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 0.5rem;
+            font-weight: 800;
         }
 
         .stat-item p {
@@ -293,56 +205,9 @@
             opacity: 0.9;
         }
 
-        /* Video Section */
-        .video-section {
-            padding: 80px 2rem;
-            background: #f8f9fa;
-        }
-
-        .video-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            position: relative;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-        }
-
-        .video-placeholder {
-            width: 100%;
-            height: 500px;
-            background: linear-gradient(135deg, rgba(44, 62, 135, 0.9), rgba(76, 84, 147, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500"><rect fill="%232c3e87" width="1000" height="500"/></svg>');
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .play-button {
-            width: 80px;
-            height: 80px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .play-button:hover {
-            transform: scale(1.1);
-        }
-
-        .play-button::after {
-            content: '▶';
-            color: #2c3e87;
-            font-size: 2rem;
-            margin-left: 5px;
-        }
-
         /* Pricing Section */
         .pricing {
-            padding: 80px 2rem;
+            padding: 100px 2rem;
             background: white;
         }
 
@@ -350,29 +215,42 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
         }
 
         .pricing-card {
             background: white;
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            padding: 2rem;
+            border: 2px solid #e8eef5;
+            border-radius: 16px;
+            padding: 2.5rem;
             text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.3s;
         }
 
         .pricing-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            border-color: #2c3e87;
+            box-shadow: 0 20px 60px rgba(184, 134, 11, 0.15);
+            border-color: #B8860B;
+        }
+
+        .pricing-card h3 {
+            color: #8B6914;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
         }
 
         .price {
             font-size: 3rem;
-            color: #2c3e87;
+            color: #B8860B;
+            font-weight: 800;
             margin: 1rem 0;
+            line-height: 1;
+        }
+
+        .price span {
+            font-size: 1.5rem;
         }
 
         .pricing-features {
@@ -382,133 +260,108 @@
         }
 
         .pricing-features li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #f0f0f0;
+            padding: 0.7rem 0;
+            color: #666;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: start;
+            gap: 0.7rem;
         }
 
         .pricing-features li::before {
-            content: '✓ ';
-            color: #2c3e87;
-            font-weight: bold;
-            margin-right: 0.5rem;
+            content: '✓';
+            color: #B8860B;
+            font-weight: 700;
+            font-size: 1.1rem;
+            flex-shrink: 0;
         }
 
         .pricing-btn {
-            background: #2c3e87;
+            background: linear-gradient(135deg, #B8860B, #DAA520);
             color: white;
             padding: 1rem 2rem;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
             font-size: 1rem;
-            transition: background 0.3s;
+            font-weight: 600;
+            transition: all 0.3s;
             width: 100%;
         }
 
         .pricing-btn:hover {
-            background: #1f2d5f;
+            background: linear-gradient(135deg, #8B6914, #B8860B);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(184, 134, 11, 0.3);
         }
 
         /* FAQ Section */
         .faq {
-            padding: 80px 2rem;
+            padding: 100px 2rem;
             background: #f8f9fa;
         }
 
         .faq-container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .faq-item {
             background: white;
-            margin-bottom: 1rem;
-            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: box-shadow 0.3s;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 5px 20px rgba(184, 134, 11, 0.1);
         }
 
         .faq-question {
-            padding: 1.5rem;
+            padding: 1.8rem;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-weight: bold;
-            color: #2c3e87;
+            font-weight: 600;
+            color: #8B6914;
             transition: background 0.3s;
+            font-size: 1.05rem;
         }
 
         .faq-question:hover {
-            background: #f8f9fa;
+            background: #FFF9E6;
         }
 
         .faq-answer {
-            padding: 0 1.5rem;
+            padding: 0 1.8rem;
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s, padding 0.3s;
+            color: #777;
+            line-height: 1.8;
         }
 
         .faq-item.active .faq-answer {
-            padding: 1.5rem;
-            max-height: 200px;
+            padding: 0 1.8rem 1.8rem;
+            max-height: 300px;
         }
 
         .faq-toggle {
             transition: transform 0.3s;
+            font-size: 1.2rem;
+            color: #B8860B;
         }
 
         .faq-item.active .faq-toggle {
             transform: rotate(180deg);
         }
 
-        /* Team Section */
-        .team {
-            padding: 80px 2rem;
-            background: white;
-        }
-
-        .team-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .team-member {
-            text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .team-member:hover {
-            transform: translateY(-10px);
-        }
-
-        .member-photo {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #2c3e87, #4c5493);
-            margin: 0 auto 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: white;
-            overflow: hidden;
-        }
-
-        .member-name {
-            font-weight: bold;
-            color: #2c3e87;
-            margin-bottom: 0.5rem;
-        }
-
         /* Blog Section */
         .blog {
-            padding: 80px 2rem;
+            padding: 100px 2rem;
             background: #f8f9fa;
         }
 
@@ -516,26 +369,27 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
         }
 
         .blog-card {
             background: white;
-            border-radius: 10px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
             transition: transform 0.3s;
         }
 
         .blog-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(184, 134, 11, 0.15);
         }
 
         .blog-image {
             width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #2c3e87, #4c5493);
+            height: 220px;
+            background: linear-gradient(135deg, #B8860B, #DAA520);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -544,17 +398,36 @@
         }
 
         .blog-content {
-            padding: 1.5rem;
+            padding: 2rem;
         }
 
         .blog-content h3 {
-            color: #2c3e87;
+            color: #8B6914;
             margin-bottom: 1rem;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .blog-content p {
+            color: #777;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .blog-content a {
+            color: #B8860B;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .blog-content a:hover {
+            color: #8B6914;
         }
 
         /* Contact Section */
         .contact {
-            padding: 80px 2rem;
+            padding: 100px 2rem;
             background: white;
         }
 
@@ -563,7 +436,7 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 4rem;
         }
 
         .contact-info {
@@ -574,191 +447,96 @@
 
         .contact-item {
             display: flex;
-            align-items: center;
-            gap: 1rem;
+            align-items: start;
+            gap: 1.5rem;
         }
 
         .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: #2c3e87;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #B8860B, #DAA520);
             color: white;
-            border-radius: 50%;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-item h4 {
+            color: #8B6914;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .contact-item p {
+            color: #777;
+            line-height: 1.6;
         }
 
         .contact-form {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 1.5rem;
         }
 
-        .form-group {
-            display: flex;
-            flex-direction: column;
+        .contact-form h3 {
+            color: #8B6914;
+            font-size: 1.8rem;
+            font-weight: 700;
         }
 
-        .form-group input,
-        .form-group textarea {
-            padding: 1rem;
-            border: 2px solid #e0e0e0;
-            border-radius: 5px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #2c3e87;
-        }
-
-        .submit-btn {
-            background: #2c3e87;
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .submit-btn:hover {
-            background: #1f2d5f;
-        }
-
-        /* Footer */
-        footer {
-            background: #1a1a1a;
-            color: white;
-            padding: 60px 2rem 20px;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h3 {
-            color: #2c3e87;
+        .contact-form > p {
+            color: #777;
             margin-bottom: 1rem;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-links a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            background: #2c3e87;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: background 0.3s;
-        }
-
-        .social-icon:hover {
-            background: #4c5493;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid #333;
-            color: #888;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
             .trust-content,
             .contact-container {
                 grid-template-columns: 1fr;
             }
 
+            .trust-features {
+                grid-template-columns: 1fr;
+            }
+
             .services-grid,
             .pricing-grid,
-            .team-grid,
             .blog-grid {
                 grid-template-columns: 1fr;
             }
         }
-
-        /* Scroll animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s, transform 0.6s;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- ===== HEADER ===== -->
     <header>
-        <nav>
+        <div class="container">
             <div class="logo">
                 <i class="fas fa-calculator"></i> EDULINK Group
             </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Our Services</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html" class="contact-btn">Contact Us</a></li>
-            </ul>
-        </nav>
+            <nav class="navbar" id="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Unlock Peace of Mind<br>With Our Services</h1>
-            <p>Streamlined Services Tailored to Your Business Needs. Specialized bookkeeping and payroll management services designed to ensure seamless operations for your business.</p>
+            <h1>Your Numbers, Our Expertise</h1>
+            <p>From bookkeeping to payroll, we handle the details so you can focus on growing your business with confidence</p>
             <button class="hero-btn">Get Started</button>
         </div>
     </section>
@@ -780,28 +558,14 @@
                         <div class="feature-icon"><i class="fas fa-certificate"></i></div>
                         <div>
                             <h4>Certified Team</h4>
-                            <p>Trusted experts dedicated to your success</p>
+                            <p>Trusted experts dedicated to your success. Meet our certified team for unparalleled expertise and support.</p>
                         </div>
                     </div>
                     <div class="feature-item">
                         <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
                         <div>
                             <h4>Trusted Company</h4>
-                            <p>Reliability you can count on</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
-                        <div>
-                            <h4>Business Scalability</h4>
-                            <p>Focus on growing your business</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon"><i class="fas fa-book"></i></div>
-                        <div>
-                            <h4>Precise Bookkeeping</h4>
-                            <p>Clear view of your business health</p>
+                            <p>Reliability you can count on. We're your trusted partner, committed to securing your success and prosperity.</p>
                         </div>
                     </div>
                 </div>
@@ -819,7 +583,7 @@
                 </div>
                 <div class="service-content">
                     <h3>Personalized Payroll Management</h3>
-                    <p>We understand that every business is unique. That's why we offer tailor-made payroll solutions designed to fit your specific needs, ensuring timely and accurate payments.</p>
+                    <p>We understand that every business is unique. That's why we offer tailor-made payroll solutions designed to fit your specific needs.</p>
                 </div>
             </div>
             <div class="service-card fade-in">
@@ -828,7 +592,7 @@
                 </div>
                 <div class="service-content">
                     <h3>The Best Bookkeeping</h3>
-                    <p>In the realm of bookkeeping management, precision is paramount. We raise the bar by delivering unparalleled bookkeeping services designed to elevate your business operations.</p>
+                    <p>In the realm of Bookkeeping management, precision is paramount, we raise the bar by delivering unparalleled bookkeeping services designed to elevate your business operations.</p>
                 </div>
             </div>
             <div class="service-card fade-in">
@@ -837,7 +601,117 @@
                 </div>
                 <div class="service-content">
                     <h3>Swift and Sufficient</h3>
-                    <p>Our team is dedicated to providing you with solutions that are not only fast, but also easy to navigate. Efficiency is at the heart of everything we do.</p>
+                    <p>Our team is dedicated to providing you with solutions that are not only fast, but also easy to navigate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="services" style="background: #f8f9fa; padding: 80px 2rem;">
+        <h2 class="section-title">Why Choose EDULINK Group</h2>
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <div class="service-image" style="height: 150px; font-size: 2.5rem;">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="service-content">
+                    <h3>Business Scalability</h3>
+                    <p>Outsourcing critical functions allows you and your team to concentrate on what you do best—growing your business, developing products, and serving customers.</p>
+                </div>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-image" style="height: 150px; font-size: 2.5rem;">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="service-content">
+                    <h3>Business Liabilities</h3>
+                    <p>Mitigate risks and protect your business. Our expertise in handling liabilities ensures your payroll security and sustained growth.</p>
+                </div>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-image" style="height: 150px; font-size: 2.5rem;">
+                    <i class="fas fa-book"></i>
+                </div>
+                <div class="service-content">
+                    <h3>Bookkeeping for Success</h3>
+                    <p>With precise bookkeeping, you gain a clear view of your business's health. This empowers you to make informed decisions, identify growth opportunities, and manage cash flow effectively.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Excellence Section -->
+    <section class="services" style="padding: 80px 2rem;">
+        <h2 class="section-title">We Offer Only the Best</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; color: #666; font-size: 1.1rem;">Embark on a journey of excellence with us. Our unwavering dedication to providing top-notch services ensures your business thrives. Don't settle for less, hire the best for your success.</p>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="services" style="background: #f8f9fa; padding: 80px 2rem;">
+        <h2 class="section-title">How It Works</h2>
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <div class="service-image" style="background: linear-gradient(135deg, #33280d, #B8860B); height: 150px; font-size: 3rem; display: flex; align-items: center; justify-content: center; color: white;">
+                    <span style="font-weight: bold;">1</span>
+                </div>
+                <div class="service-content">
+                    <h3>Connect with Our Agent</h3>
+                    <p>Begin your journey by reaching out to our experienced agents. They're here to guide you through every step, answering questions and tailoring solutions to your unique needs.</p>
+                </div>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-image" style="background: linear-gradient(135deg, #33280d, #B8860B); height: 150px; font-size: 3rem; display: flex; align-items: center; justify-content: center; color: white;">
+                    <span style="font-weight: bold;">2</span>
+                </div>
+                <div class="service-content">
+                    <h3>Select Your Preferred Service</h3>
+                    <p>With expert advice at your disposal, choose a service that aligns perfectly with your business goals. Our diverse range ensures you have options that cater to your specific requirements.</p>
+                </div>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-image" style="background: linear-gradient(135deg, #33280d, #B8860B); height: 150px; font-size: 3rem; display: flex; align-items: center; justify-content: center; color: white;">
+                    <span style="font-weight: bold;">3</span>
+                </div>
+                <div class="service-content">
+                    <h3>Enjoy Efficiency</h3>
+                    <p>Once you've made your selection, our streamlined process ensures quick and hassle-free coverage. Enjoy peace of mind knowing your accounts are protected with a service designed just for you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote CTA Section -->
+    <section class="quote-cta" style="background: linear-gradient(135deg, #33280d, #B8860B); padding: 80px 2rem; text-align: center; color: white;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; font-weight: 700;">Ready to Secure Your Future?</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 2.5rem; opacity: 0.95;">Provide us with some details, and let's tailor a quote that fits you perfectly.</p>
+            <button class="hero-btn" style="background: white; color: #2c3e87; padding: 1rem 3rem; font-size: 1.1rem; border: none; border-radius: 5px; cursor: pointer; font-weight: 600; transition: all 0.3s;" onclick="document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })">Get Your Free Quote</button>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="services" style="background: #f8f9fa; padding: 80px 2rem;">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+            <div class="service-card fade-in" style="background: white;">
+                <div class="service-content" style="padding: 3rem;">
+                    <div style="color: #f59e0b; font-size: 2rem; margin-bottom: 1rem;">★★★★★</div>
+                    <p style="font-style: italic; color: #666; margin-bottom: 1.5rem;">"EDULINK Group has been an invaluable partner for our institution. Their comprehensive solutions and expert advice have propelled our growth and stability in the education sector."</p>
+                    <div style="border-top: 2px solid #2c3e87; padding-top: 1rem;">
+                        <p style="font-weight: bold; color: #2c3e87;">John Smith</p>
+                        <p style="color: #666; font-size: 0.9rem;">Education Director</p>
+                    </div>
+                </div>
+            </div>
+            <div class="service-card fade-in" style="background: white;">
+                <div class="service-content" style="padding: 3rem;">
+                    <div style="color: #f59e0b; font-size: 2rem; margin-bottom: 1rem;">★★★★★</div>
+                    <p style="font-style: italic; color: #666; margin-bottom: 1.5rem;">"Partnering with EDULINK Group has transformed our business. Their team's dedication to our success and deep industry knowledge is truly commendable. A game-changer for us!"</p>
+                    <div style="border-top: 2px solid #2c3e87; padding-top: 1rem;">
+                        <p style="font-weight: bold; color: #2c3e87;">Sarah Johnson</p>
+                        <p style="color: #666; font-size: 0.9rem;">Business Owner</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -861,15 +735,6 @@
             <div class="stat-item fade-in">
                 <h3>100%</h3>
                 <p>Client Satisfaction</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Video Section -->
-    <section class="video-section">
-        <div class="video-container fade-in">
-            <div class="video-placeholder">
-                <div class="play-button"></div>
             </div>
         </div>
     </section>
@@ -926,16 +791,15 @@
             </div>
         </div>
         <div style="text-align: center; margin-top: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-            <h3 style="color: #2c3e87; margin-bottom: 1rem;">Payroll Services</h3>
-            <p style="font-size: 1.8rem; color: #2c3e87; font-weight: bold; margin-bottom: 1rem;">$680 + GST per annum, per employee</p>
+            <h3 style="color: #a58933; margin-bottom: 1rem;">Payroll Services</h3>
+            <p style="font-size: 1.8rem; color: #b39332; font-weight: bold; margin-bottom: 1rem;">$680 + GST per annum, per employee</p>
             <p style="color: #666;">Includes employee setup, STP processing, entitlement monitoring, TFN declarations, PAYG & superannuation, year-end reconciliation, and payment summaries.</p>
         </div>
     </section>
 
     <!-- FAQ Section -->
     <section class="faq">
-        <h2 class="section-title">We Offer Only the Best</h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; color: #666;">Embark on a journey of excellence with us. Our unwavering dedication to providing top-notch services ensures your business thrives.</p>
+        <h2 class="section-title">Frequently Asked Questions</h2>
         <div class="faq-container">
             <div class="faq-item fade-in">
                 <div class="faq-question">
@@ -1013,71 +877,10 @@
         </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section class="services" style="padding: 80px 2rem;">
-        <h2 class="section-title">How It Works</h2>
-        <div class="services-grid">
-            <div class="service-card fade-in">
-                <div class="service-image" style="background: linear-gradient(135deg, #2c3e87, #4c5493); height: 150px; font-size: 3rem; display: flex; align-items: center; justify-content: center; color: white;">
-                    <span style="font-weight: bold;">1</span>
-                </div>
-                <div class="service-content">
-                    <h3>Connect with Our Agent</h3>
-                    <p>Begin your journey by reaching out to our experienced agents. They're here to guide you through every step, answering questions and tailoring solutions to your unique needs.</p>
-                </div>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-image" style="background: linear-gradient(135deg, #2c3e87, #4c5493); height: 150px; font-size: 3rem; display: flex; align-items: center; justify-content: center; color: white;">
-                    <span style="font-weight: bold;">2</span>
-                </div>
-                <div class="service-content">
-                    <h3>Select Your Preferred Service</h3>
-                    <p>With expert advice at your disposal, choose a service that aligns perfectly with your business goals. Our diverse range ensures you have options that cater to your specific requirements.</p>
-                </div>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-image" style="background: linear-gradient(135deg, #2c3e87, #4c5493); height: 150px; font-size: 3rem; display: flex; align-items: center; justify-content: center; color: white;">
-                    <span style="font-weight: bold;">3</span>
-                </div>
-                <div class="service-content">
-                    <h3>Enjoy Efficiency</h3>
-                    <p>Once you've made your selection, our streamlined process ensures quick and hassle-free service. Enjoy peace of mind knowing your accounts are managed by professionals.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="services" style="background: #f8f9fa; padding: 80px 2rem;">
-        <h2 class="section-title">What Our Clients Say</h2>
-        <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
-            <div class="service-card fade-in" style="background: white;">
-                <div class="service-content" style="padding: 3rem;">
-                    <div style="color: #f59e0b; font-size: 2rem; margin-bottom: 1rem;">★★★★★</div>
-                    <p style="font-style: italic; color: #666; margin-bottom: 1.5rem;">"EDULINK Group has been an invaluable partner for our institution. Their comprehensive solutions and expert advice have propelled our growth and stability in the education sector."</p>
-                    <div style="border-top: 2px solid #2c3e87; padding-top: 1rem;">
-                        <p style="font-weight: bold; color: #2c3e87;">John Smith</p>
-                        <p style="color: #666; font-size: 0.9rem;">Education Director</p>
-                    </div>
-                </div>
-            </div>
-            <div class="service-card fade-in" style="background: white;">
-                <div class="service-content" style="padding: 3rem;">
-                    <div style="color: #f59e0b; font-size: 2rem; margin-bottom: 1rem;">★★★★★</div>
-                    <p style="font-style: italic; color: #666; margin-bottom: 1.5rem;">"Partnering with EDULINK Group has transformed our business. Their team's dedication to our success and deep industry knowledge is truly commendable. A game-changer for us!"</p>
-                    <div style="border-top: 2px solid #2c3e87; padding-top: 1rem;">
-                        <p style="font-weight: bold; color: #2c3e87;">Sarah Johnson</p>
-                        <p style="color: #666; font-size: 0.9rem;">Business Owner</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Blog Section -->
     <section class="blog" id="blog">
         <h2 class="section-title">News & Insights</h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; color: #666;">Welcome to our news and insights hub, where we share valuable industry knowledge, trends, and updates to keep you ahead of the curve.</p>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; color: #666;">Welcome to our news and insights hub, where we share valuable industry knowledge, trends, and updates to keep you ahead of the curve. Explore our latest articles, reports, and expert opinions below.</p>
         <div class="blog-grid">
             <div class="blog-card fade-in">
                 <div class="blog-image">
@@ -1217,24 +1020,23 @@
                     <li><a href="#services">Business Advisory</a></li>
                 </ul>
             </div>
-            <div class="footer-section">
+           <div class="footer-section">
                 <h3>Contact Us</h3>
                 <ul class="footer-links">
                     <li><i class="fas fa-phone"></i> 0413 363 698</li>
-                    <li><i class="fas fa-envelope"></i> edulink.bookservices@gmail.com</li>
+                    <li style="display: flex; align-items: center; gap: 10px;"><i class="fas fa-envelope"></i> <span>edulink.bookservices@gmail.com</span></li>
                     <li><i class="fas fa-map-marker-alt"></i> Suite 2.2, 72 Queen Street<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Campbelltown, NSW 2560</li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 EDULINK Group Pty Ltd. All rights reserved. | ABN: [Your ABN] | Privacy Policy | Terms of Service</p>
+        <p>&copy; 2025 EDULINK Group Pty Ltd. All rights reserved. | Privacy Policy | Terms of Service</p>
         </div>
     </footer>
 
     <script>
         // Scroll animation
-        const observerOptions = {
-            threshold: 0.1,
+        const observerOptions = {threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
 
@@ -1256,12 +1058,10 @@
                 const faqItem = question.parentElement;
                 const isActive = faqItem.classList.contains('active');
                 
-                // Close all FAQ items
                 document.querySelectorAll('.faq-item').forEach(item => {
                     item.classList.remove('active');
                 });
                 
-                // Open clicked item if it wasn't active
                 if (!isActive) {
                     faqItem.classList.add('active');
                 }
@@ -1281,6 +1081,16 @@
                 }
             });
         });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbar = document.getElementById('navbar');
+        
+        if (menuToggle) {
+            menuToggle.addEventListener('click', function() {
+                navbar.classList.toggle('active');
+            });
+        }
 
         // Form submission
         document.querySelector('.contact-form').addEventListener('submit', function(e) {
@@ -1321,11 +1131,6 @@
         if (statsSection) {
             statsObserver.observe(statsSection);
         }
-
-        // Play button functionality
-        document.querySelector('.play-button')?.addEventListener('click', function() {
-            alert('Video player would open here!');
-        });
 
         // Pricing button clicks
         document.querySelectorAll('.pricing-btn').forEach(btn => {

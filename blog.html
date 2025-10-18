@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Blog & Insights - EDULINK Group</title>
+    
+    <style>
+        /* ===== BLOG PAGE SPECIFIC STYLES ===== */
+        
+        /* Featured Post */
+        .featured-post {
+            background: linear-gradient(135deg, #B8860B, #DAA520);
+            color: white;
+            padding: 3rem;
+            border-radius: 10px;
+            margin-bottom: 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .featured-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .featured-content .meta {
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .featured-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .featured-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: white;
+            color: #8B6914;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .featured-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .featured-image {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        /* Categories */
+        .categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .category-btn {
+            padding: 0.7rem 1.5rem;
+            background: white;
+            border: 2px solid #B8860B;
+            color: #B8860B;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: linear-gradient(135deg, #B8860B, #DAA520);
+            color: white;
+        }
+
+        /* Blog Grid */
+        .blog-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(184, 134, 11, 0.15);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, #B8860B, #DAA520);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .blog-content {
+            padding: 2rem;
+        }
+
+        .blog-content h3 {
+            color: #8B6914;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .blog-content p {
+            color: #777;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            color: #999;
+            flex-wrap: wrap;
+        }
+
+        .blog-category {
+            background: linear-gradient(135deg, #B8860B, #DAA520);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .blog-date {
+            display: flex;
+            align-items: center;
+        }
+
+        .blog-excerpt {
+            color: #777;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .read-more {
+            color: #B8860B;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: gap 0.3s;
+        }
+
+        .read-more:hover {
+            gap: 0.5rem;
+            color: #8B6914;
+        }
+
+        .read-more::after {
+            content: "→";
+            margin-left: 0.5rem;
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 3rem;
+        }
+
+        .page-btn {
+            padding: 0.7rem 1.2rem;
+            background: white;
+            border: 2px solid #B8860B;
+            color: #B8860B;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+        }
+
+        .page-btn:hover,
+        .page-btn.active {
+            background: linear-gradient(135deg, #B8860B, #DAA520);
+            color: white;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 4rem 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .newsletter h2 {
+            color: #8B6914;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .newsletter p {
+            color: #777;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid #e8eef5;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: #B8860B;
+        }
+
+        .newsletter-form button {
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #B8860B, #DAA520);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .newsletter-form button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(184, 134, 11, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .featured-post {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .categories {
+                flex-direction: column;
+            }
+
+            .category-btn {
+                width: 100%;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-calculator"></i> EDULINK Group
+            </div>
+            <nav class="navbar" id="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>News and Insights Hub</h1>
+        <p>Welcome to our knowledge center where we share valuable industry insights, trends, and updates to keep you ahead of the curve. Explore our latest articles, reports, and expert opinions.</p>
+    </section>
+
+    <div class="container" style="padding: 4rem 2rem;">
+        <section class="featured-post">
+            <div class="featured-content">
+                <span class="blog-category" style="display: inline-block; margin-bottom: 1rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px;">Featured</span>
+                <h2 style="font-size: 2.2rem; margin-bottom: 1rem; line-height: 1.3;">Single Touch Payroll Phase 2: What You Need to Know</h2>
+                <div class="meta" style="margin-bottom: 1.5rem; opacity: 0.9;">📅 October 15, 2025 • ⏱️ 5 min read</div>
+                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">The Australian Tax Office has rolled out significant updates to Single Touch Payroll. Learn what changes are coming and how to prepare your business for compliance.</p>
+                <a href="#" class="featured-btn">Read Full Article</a>
+            </div>
+            <div class="featured-image">📊</div>
+        </section>
+
+        <div class="categories">
+            <button class="category-btn active" data-category="all">All Posts</button>
+            <button class="category-btn" data-category="bookkeeping">Bookkeeping Tips</button>
+            <button class="category-btn" data-category="payroll">Payroll Updates</button>
+            <button class="category-btn" data-category="tax">Tax & Compliance</button>
+            <button class="category-btn" data-category="business">Business Growth</button>
+            <button class="category-btn" data-category="news">Industry News</button>
+        </div>
+
+        <div class="blog-grid">
+            <article class="blog-card" data-category="tax">
+                <div class="blog-image">💰</div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">Tax & Compliance</span>
+                        <span class="blog-date">📅 October 12, 2025</span>
+                    </div>
+                    <h3>Understanding BAS Lodgement Deadlines for 2025</h3>
+                    <p class="blog-excerpt">Stay on top of your Business Activity Statement deadlines and avoid penalties. We break down the key dates you need to remember this year.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+
+            <article class="blog-card" data-category="bookkeeping">
+                <div class="blog-image">📚</div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">Bookkeeping Tips</span>
+                        <span class="blog-date">📅 October 10, 2025</span>
+                    </div>
+                    <h3>5 Common Bookkeeping Mistakes Small Businesses Make</h3>
+                    <p class="blog-excerpt">Learn about the most frequent bookkeeping errors and how to avoid them. Proper record-keeping can save you time and money in the long run.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+
+            <article class="blog-card" data-category="payroll">
+                <div class="blog-image">👥</div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">Payroll Updates</span>
+                        <span class="blog-date">📅 October 8, 2025</span>
+                    </div>
+                    <h3>Superannuation Changes: What Employers Need to Know</h3>
+                    <p class="blog-excerpt">The superannuation guarantee rate has increased. Find out how this affects your payroll obligations and what steps to take.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+
+            <article class="blog-card" data-category="business">
+                <div class="blog-image">📈</div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">Business Growth</span>
+                        <span class="blog-date">📅 October 5, 2025</span>
+                    </div>
+                    <h3>How Outsourcing Accounting Can Scale Your Business</h3>
+                    <p class="blog-excerpt">Discover the benefits of outsourcing your accounting functions and how it can free up resources for business growth and development.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+
+            <article class="blog-card" data-category="bookkeeping">
+                <div class="blog-image">💻</div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">Bookkeeping Tips</span>
+                        <span class="blog-date">📅 October 3, 2025</span>
+                    </div>
+                    <h3>QuickBooks Online vs Xero: Which is Right for You?</h3>
+                    <p class="blog-excerpt">A comprehensive comparison of the two leading cloud accounting platforms to help you choose the best solution for your business needs.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+
+            <article class="blog-card" data-category="tax">
+                <div class="blog-image">📋</div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">Tax & Compliance</span>
+                        <span class="blog-date">📅 October 1, 2025</span>
+                    </div>
+                    <h3>Year-End Tax Planning Strategies for Small Business</h3>
+                    <p class="blog-excerpt">Maximize your tax deductions and minimize liability with these essential year-end planning tips for business owners.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+
+            <article class="blog-card" data-category="payroll">
+                <div class="blog-image">⏰</div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">Payroll Updates</span>
+                        <span class="blog-date">📅 September 28, 2025</span>
+                    </div>
+                    <h3>Managing Employee Leave Entitlements: A Complete Guide</h3>
+                    <p class="blog-excerpt">Understanding annual leave, sick leave, and long service leave obligations to ensure compliance and employee satisfaction.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+
+            <article class="blog-card" data-category="news">
+                <div class="blog-image">📰</div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">Industry News</span>
+                        <span class="blog-date">📅 September 25, 2025</span>
+                    </div>
+                    <h3>ATO Announces New Compliance Measures for 2026</h3>
+                    <p class="blog-excerpt">The Australian Taxation Office has revealed new compliance requirements. Stay informed about what's changing and how to prepare.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+
+            <article class="blog-card" data-category="business">
+                <div class="blog-image">💡</div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">Business Growth</span>
+                        <span class="blog-date">📅 September 22, 2025</span>
+                    </div>
+                    <h3>Cashflow Management Tips for Growing Businesses</h3>
+                    <p class="blog-excerpt">Learn effective strategies to manage your cashflow, predict shortfalls, and maintain healthy financial operations as you scale.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+        </div>
+
+        <div class="pagination">
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn">Next →</button>
+        </div>
+
+        <section class="newsletter">
+            <h2>Stay Updated With Our Newsletter</h2>
+            <p>Get the latest insights, tips, and industry news delivered straight to your inbox.</p>
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- ===== UPDATED FOOTER ===== -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-calculator"></i> EDULINK Group</h3>
+                <p>EDULINK Group leads the way in providing specialized payroll management and bookkeeping services. With an in-depth understanding of distinctive needs, we offer tailored solutions to ensure seamless operations.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Our Services</h3>
+                <ul class="footer-links">
+                    <li><a href="services.html">Payroll Services</a></li>
+                    <li><a href="services.html">Bookkeeping Solutions</a></li>
+                    <li><a href="services.html">BAS Preparation</a></li>
+                    <li><a href="services.html">Financial Reports</a></li>
+                    <li><a href="services.html">Business Advisory</a></li>
+                </ul>
+            </div>
+             <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-phone"></i> 0413 363 698</li>
+                    <li style="display: flex; align-items: center; gap: 10px;"><i class="fas fa-envelope"></i> <span>edulink.bookservices@gmail.com</span></li>
+                    <li><i class="fas fa-map-marker-alt"></i> Suite 2.2, 72 Queen Street<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Campbelltown, NSW 2560</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 EDULINK Group Pty Ltd. All rights reserved. | Privacy Policy | Terms of Service</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('navbar').classList.toggle('active');
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    document.getElementById('navbar').classList.remove('active');
+                }
+            });
+        });
+
+        // Category filter functionality
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const blogCards = document.querySelectorAll('.blog-card');
+
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const category = this.getAttribute('data-category');
+
+                blogCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Pagination
+        const pageBtns = document.querySelectorAll('.page-btn');
+        pageBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                if (this.textContent.includes('Next') || this.textContent.includes('Previous')) {
+                    return;
+                }
+                pageBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+
+        // Newsletter form
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for subscribing! You will receive our latest updates.');
+            this.reset();
+        });
+
+        // Read more links
+        document.querySelectorAll('.read-more, .featured-btn').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('This would open the full blog post. Article content coming soon!');
+            });
+        });
+    </script>
+</body>
+</html>

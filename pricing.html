@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="EDULINK Group - Professional bookkeeping and payroll management services in Australia. Tailored solutions for businesses of all sizes." />
+  <title>EDULINK Group | Professional Bookkeeping & Payroll Services in Australia</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* ===== PRICING PAGE SPECIFIC STYLES ===== */
+    
+    /* Pricing Section */
+    .pricing {
+        padding: 100px 2rem;
+        background: white;
+    }
+
+    .pricing-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2.5rem;
+    }
+
+    .pricing-card {
+        background: white;
+        border: 2px solid #e8eef5;
+        border-radius: 16px;
+        padding: 2.5rem;
+        text-align: center;
+        transition: all 0.3s;
+        position: relative;
+    }
+
+    .pricing-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #B8860B, #DAA520);
+        transform: scaleX(0);
+        transition: transform 0.4s;
+        border-radius: 16px 16px 0 0;
+    }
+
+    .pricing-card:hover::before {
+        transform: scaleX(1);
+    }
+
+    .pricing-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 60px rgba(184, 134, 11, 0.15);
+        border-color: #B8860B;
+    }
+
+    .pricing-card.featured {
+        border: 2px solid #B8860B;
+        background: linear-gradient(to bottom, #ffffff 0%, #FFF9E6 100%);
+    }
+
+    .pricing-card.featured::before {
+        transform: scaleX(1);
+    }
+
+    .pricing-card-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .pricing-card h3 {
+        color: #8B6914;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+
+    .pricing-card > p {
+        color: #777;
+        margin-bottom: 1rem;
+        font-size: 0.95rem;
+    }
+
+    .price {
+        font-size: 3.5rem;
+        color: #B8860B;
+        font-weight: 800;
+        margin: 1rem 0;
+        line-height: 1;
+    }
+
+    .price span {
+        font-size: 1.5rem;
+    }
+
+    .price-subtitle {
+        font-size: 1rem;
+        color: #999;
+        margin-bottom: 1.5rem;
+    }
+
+    .description {
+        color: #888;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+
+    .pricing-card ul {
+        list-style: none;
+        margin: 2rem 0;
+        text-align: left;
+        padding: 0;
+    }
+
+    .pricing-card ul li {
+        padding: 0.7rem 0;
+        color: #666;
+        font-size: 0.95rem;
+        display: flex;
+        align-items: start;
+        gap: 0.7rem;
+    }
+
+    .pricing-card ul li::before {
+        content: '✓';
+        color: #B8860B;
+        font-weight: 700;
+        font-size: 1.1rem;
+        flex-shrink: 0;
+    }
+
+    .pricing-btn {
+        background: linear-gradient(135deg, #B8860B, #DAA520);
+        color: white;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all 0.3s;
+        width: 100%;
+    }
+
+    .pricing-btn:hover {
+        background: linear-gradient(135deg, #8B6914, #B8860B);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(184, 134, 11, 0.3);
+    }
+
+    /* Turnover Table */
+    .turnover-table {
+        max-width: 800px;
+        margin: 3rem auto 4rem;
+        overflow-x: auto;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        border-radius: 12px;
+    }
+
+    .turnover-table table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+    }
+
+    .turnover-table thead {
+        background: linear-gradient(135deg, #B8860B, #DAA520);
+        color: white;
+    }
+
+    .turnover-table th,
+    .turnover-table td {
+        padding: 1.2rem 1.5rem;
+        text-align: left;
+        font-size: 1rem;
+    }
+
+    .turnover-table th {
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-size: 0.9rem;
+    }
+
+    .turnover-table tbody tr {
+        border-bottom: 1px solid #e8eef5;
+        transition: background 0.3s;
+    }
+
+    .turnover-table tbody tr:hover {
+        background: #FFF9E6;
+    }
+
+    .turnover-table tbody tr:last-child {
+        border-bottom: none;
+    }
+
+    .turnover-table td:last-child {
+        font-weight: 700;
+        color: #B8860B;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .pricing-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .turnover-table {
+            margin: 2rem 1rem 3rem;
+        }
+
+        .turnover-table th,
+        .turnover-table td {
+            padding: 1rem;
+            font-size: 0.9rem;
+        }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-calculator"></i> EDULINK Group
+            </div>
+            <nav class="navbar" id="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="pricing.html" class="active">Pricing</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        </div>
+    </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h5 class="hero-subtitle">TAILORED FINANCIAL SOLUTIONS</h5>
+      <h1 class="hero-title">Professional Bookkeeping & Payroll Services</h1>
+      <p class="hero-text">
+        Complete financial management support for businesses of all sizes — accurate, compliant, and growth-ready.
+      </p>
+      <a href="#contact" class="btn-primary">Get a Custom Quote</a>
+    </div>
+  </section>
+
+  <!-- ===== PRICING SECTION ===== -->
+  <section class="pricing section" id="pricing">
+    <div class="container">
+      <h2 class="section-title">Transparent Pricing for Your Financial Needs</h2>
+      <p style="text-align: center; max-width: 900px; margin: 0 auto 3rem; color: #666; font-size: 1.1rem;">
+        Our bookkeeping services are tailored to the annual turnover of your business. We provide complete financial management support, ensuring your accounts are always accurate, compliant, and growth-ready.
+      </p>
+      
+      <!-- Turnover Table -->
+      <div class="turnover-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Turnover Threshold</th>
+              <th>Monthly Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>$0 – $100,000</td><td>$89 + GST</td></tr>
+            <tr><td>$100,001 – $300,000</td><td>$169 + GST</td></tr>
+            <tr><td>$300,001 – $500,000</td><td>$259 + GST</td></tr>
+            <tr><td>$500,001 – $750,000</td><td>$299 + GST</td></tr>
+            <tr><td>$750,001 – $1,000,000</td><td>$349 + GST</td></tr>
+            <tr><td>$1,000,001 – $1,300,000</td><td>$389 + GST</td></tr>
+            <tr><td>$1,300,001 – $1,500,000</td><td>$429 + GST</td></tr>
+            <tr><td>$1,500,001 – $2,000,000</td><td>$629 + GST</td></tr>
+            <tr><td>$2,000,001 – $2,200,000</td><td>$649 + GST</td></tr>
+            <tr><td>$2,200,001 – $2,500,000</td><td>$679 + GST</td></tr>
+            <tr><td>$2,500,001 – $2,800,000</td><td>$729 + GST</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- FULL BOOKKEEPING PACKAGE -->
+        <div class="pricing-card">
+          <div class="pricing-card-icon">✅</div>
+          <h3>Full Bookkeeping & Advisory Package</h3>
+          <div class="price">Custom</div>
+          <div class="price-subtitle">Based on Turnover</div>
+          <p class="description">End-to-end bookkeeping and business advisory — everything you need to manage your business with confidence.</p>
+          <ul>
+            <li>Initial Free Consultation</li>
+            <li>Quarterly Review of Accounts</li>
+            <li>QuickBooks Online Subscription</li>
+            <li>Data Entry for Sales, Purchases, Receipts & Payments</li>
+            <li>Bank & Petty Cash Reconciliation</li>
+            <li>Payroll Processing (up to 5 staff)</li>
+            <li>End of Year Payroll Summaries (up to 5 accounts)</li>
+            <li>BAS Preparation & Lodgement</li>
+            <li>Monthly Balance Sheet & Profit & Loss Reports</li>
+            <li>Cashflow Management & Expense Tracking</li>
+            <li>Accountant-Ready Workpapers</li>
+            <li>ATO & Accountant Communication</li>
+            <li>Telephone/Email Support (up to 10 per month)</li>
+          </ul>
+          <button class="pricing-btn">Get Started</button>
+        </div>
+
+        <!-- SUPPORT ONLY PACKAGE (FEATURED) -->
+        <div class="pricing-card featured">
+          <div class="pricing-card-icon">💡</div>
+          <h3>Support-Only Package</h3>
+          <div class="price">$145</div>
+          <div class="price-subtitle">+ GST / month</div>
+          <p class="description">For businesses that manage their own books but want expert oversight and professional support when needed.</p>
+          <ul>
+            <li>3 hours of support or training per month</li>
+            <li>Help with accounting software setup</li>
+            <li>Troubleshooting & bookkeeping queries</li>
+            <li>Guidance from a Registered BAS Agent & Experienced Bookkeeper</li>
+          </ul>
+          <p style="color: #666; font-style: italic; margin: 1.5rem 0;">Best suited for those who want professional guidance without full-service bookkeeping.</p>
+          <button class="pricing-btn">Get Started</button>
+        </div>
+
+        <!-- PAYROLL PACKAGE -->
+        <div class="pricing-card">
+          <div class="pricing-card-icon">💼</div>
+          <h3>Payroll Services</h3>
+          <div class="price">$680</div>
+          <div class="price-subtitle">+ GST per employee / year</div>
+          <p class="description">Comprehensive payroll management to ensure accurate, compliant, and timely payments for your staff.</p>
+          <ul>
+            <li>Employee Setup & Configuration</li>
+            <li>Weekly/Fortnightly/Monthly Pay Runs</li>
+            <li>Single Touch Payroll (STP) Lodge to ATO</li>
+            <li>Entitlement Monitoring (Leave & Benefits)</li>
+            <li>Tax File Number (TFN) Declarations</li>
+            <li>PAYG & Superannuation Review & Lodgement</li>
+            <li>Year-End Reconciliation</li>
+            <li>Payment Summaries Report & Lodge</li>
+            <li>Payroll Year Rollover (if applicable)</li>
+          </ul>
+          <button class="pricing-btn">Get Started</button>
+        </div>
+      </div>
+
+      <p style="text-align: center; margin-top: 3rem; color: #666; font-style: italic; max-width: 800px; margin-left: auto; margin-right: auto;">
+        💡 Ideal for small-to-medium businesses that want peace of mind knowing everything—bookkeeping, BAS lodgement, and payroll—is taken care of by certified professionals.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta">
+    <div class="container">
+      <h2>Need a Custom Plan?</h2>
+      <p>We can tailor bookkeeping, payroll, and advisory solutions based on your business structure and industry needs.</p>
+      <a href="contact.html" class="btn-primary">Contact Us Today</a>
+    </div>
+  </section>
+
+  <!-- ===== UPDATED FOOTER ===== -->
+  <footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3><i class="fas fa-calculator"></i> EDULINK Group</h3>
+            <p>EDULINK Group leads the way in providing specialized payroll management and bookkeeping services. With an in-depth understanding of distinctive needs, we offer tailored solutions to ensure seamless operations.</p>
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Our Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Our Services</h3>
+            <ul class="footer-links">
+                <li><a href="services.html">Payroll Services</a></li>
+                <li><a href="services.html">Bookkeeping Solutions</a></li>
+                <li><a href="services.html">BAS Preparation</a></li>
+                <li><a href="services.html">Financial Reports</a></li>
+                <li><a href="services.html">Business Advisory</a></li>
+            </ul>
+        </div>
+         <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-phone"></i> 0413 363 698</li>
+                    <li style="display: flex; align-items: center; gap: 10px;"><i class="fas fa-envelope"></i> <span>edulink.bookservices@gmail.com</span></li>
+                    <li><i class="fas fa-map-marker-alt"></i> Suite 2.2, 72 Queen Street<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Campbelltown, NSW 2560</li>
+                </ul>
+            </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 EDULINK Group Pty Ltd. All rights reserved. | Privacy Policy | Terms of Service</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+      document.getElementById('navbar').classList.toggle('active');
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          document.getElementById('navbar').classList.remove('active');
+        }
+      });
+    });
+
+    // Active nav on scroll
+    window.addEventListener('scroll', function() {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.navbar a');
+      
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= (sectionTop - 200)) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Pricing button clicks
+    document.querySelectorAll('.pricing-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const plan = this.closest('.pricing-card').querySelector('h3').textContent;
+        window.location.href = 'contact.html?plan=' + encodeURIComponent(plan);
+      });
+    });
+  </script>
+</body>
+</html>

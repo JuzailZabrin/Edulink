@@ -1,0 +1,16 @@
+Section,Field,Type,Required,Notes
+Entity,Legal name,string,Yes,
+Entity,ABN,string,Yes,
+Entity,ACN,string,Yes,
+Entity,TFN,string,Conditional,Lawful purpose + consent
+Entity,Registered office address,string,Yes,
+Entity,Principal place of business,string,Yes,
+Directors,Director list & IDs,file/string,Yes,Each director POI per TPB guidance
+Tax,GST registration status,enum,Yes,Registered/Not/Cancelled + date
+Tax,PAYG withholding status,enum,If applicable,
+Financials,Trial balance (FY),file,Yes,CSV/XLS/GL export
+Financials,Financial statements,file,Yes,"P&L, Balance Sheet, Notes"
+Financials,Depreciation schedule,file,If applicable,
+Financials,Loan/HP schedules,file,If applicable,
+Other,Related party transactions,file/string,If applicable,Division 7A details
+Returns,Prior-year return & notices,file,If new client,"Tax return, NOA, BAS history"

@@ -1,0 +1,13 @@
+Section,Field,Type,Required,Notes
+Entity,Trust name,string,Yes,
+Entity,ABN,string,If applicable,
+Entity,TFN,string,Conditional,
+Governing,Trust deed (latest),file,Yes,& any variations
+Governing,Appointor/Principal details,string,Yes,
+Trustee,Trustee details,string,Yes,Individual/Corporate
+Beneficiaries,Beneficiary register,file/string,Yes,TFNs with consent
+Resolutions,Distribution resolutions (30 June),file,Yes,Timely resolutions
+Financials,Trial balance (FY),file,Yes,
+Financials,Financial statements,file,Yes,
+Capital,Loan/UTE/Div7A to/from related parties,file/string,If applicable,
+Returns,Prior-year return & NOA,file,If new client,
