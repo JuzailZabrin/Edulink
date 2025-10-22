@@ -6,19 +6,188 @@
     <title>Contact Us - EDULINK Group</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
     
     <style>
-        /* ===== CONTACT PAGE SPECIFIC STYLES ===== */
-        
-        /* Content Container */
+        /* ===== GLOBAL STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #555;
+            overflow-x: hidden;
+            background-color: #ffffff;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: #ffffff;
+            padding: 1rem 0;
+            position: relative;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo span {
+            display: none;
+        }
+
+        .logo img {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s;
+            position: relative;
+            padding: 0.5rem 0;
+            white-space: nowrap;
+        }
+
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: #B8860B;
+            transition: width 0.3s;
+        }
+
+        .navbar a:hover::after,
+        .navbar a.active::after {
+            width: 100%;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: #B8860B;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #B8860B;
+        }
+
+      .hero {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.85), rgba(104, 102, 102, 0.85)), 
+                url(bookkeeping.webp) center/cover no-repeat;
+    color: #fff;
+    padding: 180px 2rem 120px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(0, 0, 0, 0.1) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== CONTENT CONTAINER ===== */
         .content-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 4rem 2rem;
         }
 
-        /* Contact Wrapper */
+        /* ===== CONTACT WRAPPER ===== */
         .contact-wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -41,6 +210,12 @@
             background: white;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .info-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(184, 134, 11, 0.15);
         }
 
         .info-icon {
@@ -130,10 +305,22 @@
             border-radius: 5px;
             margin-bottom: 1rem;
             text-align: center;
+            animation: slideDown 0.3s ease;
         }
 
         .success-message.show {
             display: block;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Form Elements */
@@ -240,8 +427,131 @@
             margin-bottom: 0;
         }
 
-        /* Responsive Design */
+        /* ===== SCROLL ANIMATIONS ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #3D2817;
+            color: white;
+            padding: 80px 2rem 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            color: #DAA520;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .footer-section p {
+            color: #CCC;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.7rem;
+        }
+
+        .footer-links a {
+            color: #CCC;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #DAA520;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #B8860B, #DAA520);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-icon:hover {
+            background: linear-gradient(135deg, #DAA520, #FFD700);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(218, 165, 32, 0.4);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #5A4329;
+            color: #999;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
         @media (max-width: 768px) {
+            .navbar {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .navbar.active {
+                display: block;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            }
+
+            .navbar.active ul {
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
             .contact-wrapper {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -263,19 +573,30 @@
                 padding: 2rem;
                 text-align: center;
             }
+.map-container {
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- ===== HEADER ===== -->
     <header>
-        <div class="container">
+        <div class="header-container">
             <div class="logo">
-                <i class="fas fa-calculator"></i> EDULINK Group
+                <img src="logo1.png" alt="EDULINK Group Logo">
+                <span>EDULINK Group</span>
             </div>
             <nav class="navbar" id="navbar">
                 <ul class="nav-links">
-                    <li><a href="index.html" >Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
@@ -286,15 +607,17 @@
             <div class="menu-toggle" id="menu-toggle">&#9776;</div>
         </div>
     </header>
-    
+
     <section class="hero">
-        <h1>Questions? Need Expert Advice?</h1>
-        <p>We're here to help. Feel free to reach out to our dedicated team. Your success is our top priority.</p>
+        <div class="hero-content">
+            <h1>Need Expert Advice?</h1>
+            <p>We're here to help. Feel free to reach out to our dedicated team. Your success is our top priority.</p>
+        </div>
     </section>
 
     <div class="content-container">
         <div class="contact-wrapper">
-            <div class="contact-info">
+            <div class="contact-info fade-in">
                 <h2>Get In Touch</h2>
                 
                 <div class="info-item">
@@ -337,7 +660,7 @@
                 </div>
             </div>
 
-            <div class="contact-form">
+            <div class="contact-form fade-in">
                 <h2>Send Us a Message</h2>
                 <div class="success-message" id="successMessage">
                     Thank you! Your message has been sent successfully. We'll get back to you soon.
@@ -386,54 +709,58 @@
             </div>
         </div>
 
-        <section class="map-section">
-            <h2>Find Us</h2>
-            <div class="map-placeholder">
-                <i class="fas fa-map-marker-alt" style="margin-right: 1rem;"></i>Suite 2.2, 72 Queen Street, Campbelltown NSW 2560
-            </div>
-        </section>
+        <section class="map-section fade-in">
+    <h2>Find Us</h2>
+    <div class="map-container">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.179464192197!2d150.81347347491764!3d-34.0668161746401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b129a50e469bfb7%3A0x5017d681632b8a0!2s72%20Queen%20St%2C%20Campbelltown%20NSW%202560%2C%20Australia!5e0!3m2!1sen!2slk!4v1729580280330!5m2!1sen!2slk"
+            width="100%"
+            height="400"
+            style="border:0; border-radius:10px;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</section>
 
-        <section class="cta-section">
-            <h2>Feel Free to Reach Out Anytime, Anywhere!</h2>
-            <p>Whether you have questions about our services or need a custom quote, we're always ready to assist you.</p>
-        </section>
+       
     </div>
 
-   <!-- ===== UPDATED FOOTER ===== -->
-<footer>
-    <div class="footer-content">
-        <div class="footer-section">
-            <h3><i class="fas fa-calculator"></i> EDULINK Group</h3>
-            <p>EDULINK Group leads the way in providing specialized payroll management and bookkeeping services. With an in-depth understanding of distinctive needs, we offer tailored solutions to ensure seamless operations.</p>
-            <div class="social-links">
-                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-calculator"></i> EDULINK Group</h3>
+                <p>EDULINK Group leads the way in providing specialized payroll management and bookkeeping services. With an in-depth understanding of distinctive needs, we offer tailored solutions to ensure seamless operations.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
-        </div>
-        <div class="footer-section">
-            <h3>Quick Links</h3>
-            <ul class="footer-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Our Services</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h3>Our Services</h3>
-            <ul class="footer-links">
-                <li><a href="services.html">Payroll Services</a></li>
-                <li><a href="services.html">Bookkeeping Solutions</a></li>
-                <li><a href="services.html">BAS Preparation</a></li>
-                <li><a href="services.html">Financial Reports</a></li>
-                <li><a href="services.html">Business Advisory</a></li>
-            </ul>
-        </div>
-        <div class="footer-section">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Our Services</h3>
+                <ul class="footer-links">
+                    <li><a href="services.html">Payroll Services</a></li>
+                    <li><a href="services.html">Bookkeeping Solutions</a></li>
+                    <li><a href="services.html">BAS Preparation</a></li>
+                    <li><a href="services.html">Financial Reports</a></li>
+                    <li><a href="services.html">Business Advisory</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
                 <h3>Contact Us</h3>
                 <ul class="footer-links">
                     <li><i class="fas fa-phone"></i> 0413 363 698</li>
@@ -441,11 +768,11 @@
                     <li><i class="fas fa-map-marker-alt"></i> Suite 2.2, 72 Queen Street<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Campbelltown, NSW 2560</li>
                 </ul>
             </div>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; 2025 EDULINK Group Pty Ltd. All rights reserved. | Privacy Policy | Terms of Service</p>
-    </div>
-</footer>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 EDULINK Group Pty Ltd. All rights reserved. | Privacy Policy | Terms of Service</p>
+        </div>
+    </footer>
 
     <script>
         // Mobile menu toggle
@@ -453,7 +780,7 @@
             document.getElementById('navbar').classList.toggle('active');
         });
 
-        // Smooth scroll
+        // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -465,47 +792,35 @@
             });
         });
 
-        // Active nav on scroll
-        window.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.navbar a');
-            
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Form submission
+        // Contact form submission
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            // Show success message
             const successMessage = document.getElementById('successMessage');
             successMessage.classList.add('show');
-            
-            // Reset form
             this.reset();
-            
-            // Hide success message after 5 seconds
             setTimeout(function() {
                 successMessage.classList.remove('show');
             }, 5000);
-            
-            // Scroll to top of form
             document.querySelector('.contact-form').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Scroll animation observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
         });
     </script>
 </body>
-</html>
+</html

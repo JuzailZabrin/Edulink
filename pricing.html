@@ -7,220 +7,574 @@
   <title>EDULINK Group | Professional Bookkeeping & Payroll Services in Australia</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
   
   <style>
-    /* ===== PRICING PAGE SPECIFIC STYLES ===== */
-    
-    /* Pricing Section */
-    .pricing {
-        padding: 100px 2rem;
-        background: white;
+    /* ===== GLOBAL STYLES ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .pricing-grid {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 2.5rem;
+    body {
+      font-family: 'Poppins', 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #555;
+      overflow-x: hidden;
+      background-color: #ffffff;
     }
 
-    .pricing-card {
-        background: white;
-        border: 2px solid #e8eef5;
-        border-radius: 16px;
-        padding: 2.5rem;
-        text-align: center;
-        transition: all 0.3s;
-        position: relative;
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
     }
 
-    .pricing-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: linear-gradient(90deg, #B8860B, #DAA520);
-        transform: scaleX(0);
-        transition: transform 0.4s;
-        border-radius: 16px 16px 0 0;
+    /* ===== HEADER ===== */
+    header {
+      background: #ffffff;
+      padding: 1rem 0;
+      position: relative;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      border-bottom: 1px solid #f0f0f0;
     }
 
-    .pricing-card:hover::before {
-        transform: scaleX(1);
+    .header-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 80px;
     }
 
-    .pricing-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 60px rgba(184, 134, 11, 0.15);
-        border-color: #B8860B;
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
     }
 
-    .pricing-card.featured {
-        border: 2px solid #B8860B;
-        background: linear-gradient(to bottom, #ffffff 0%, #FFF9E6 100%);
+    .logo span {
+      display: none;
     }
 
-    .pricing-card.featured::before {
-        transform: scaleX(1);
+    .logo img {
+      height: 80px;
+      width: auto;
+      object-fit: contain;
     }
 
-    .pricing-card-icon {
-        font-size: 3rem;
-        margin-bottom: 1rem;
+    .navbar {
+      display: flex;
+      align-items: center;
     }
 
-    .pricing-card h3 {
-        color: #8B6914;
-        font-size: 1.5rem;
-        font-weight: 700;
-        margin-bottom: 0.5rem;
+    .navbar ul {
+      display: flex;
+      list-style: none;
+      gap: 2.5rem;
+      align-items: center;
+      margin: 0;
+      padding: 0;
     }
 
-    .pricing-card > p {
-        color: #777;
-        margin-bottom: 1rem;
-        font-size: 0.95rem;
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2.5rem;
+      align-items: center;
+      margin: 0;
+      padding: 0;
     }
 
-    .price {
-        font-size: 3.5rem;
-        color: #B8860B;
-        font-weight: 800;
-        margin: 1rem 0;
-        line-height: 1;
+    .navbar a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s;
+      position: relative;
+      padding: 0.5rem 0;
+      white-space: nowrap;
     }
 
-    .price span {
-        font-size: 1.5rem;
+    .navbar a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: #B8860B;
+      transition: width 0.3s;
     }
 
-    .price-subtitle {
-        font-size: 1rem;
-        color: #999;
-        margin-bottom: 1.5rem;
+    .navbar a:hover::after,
+    .navbar a.active::after {
+      width: 100%;
     }
 
-    .description {
-        color: #888;
-        font-size: 0.95rem;
-        line-height: 1.6;
-        margin-bottom: 1.5rem;
+    .navbar a:hover,
+    .navbar a.active {
+      color: #B8860B;
     }
 
-    .pricing-card ul {
-        list-style: none;
-        margin: 2rem 0;
-        text-align: left;
-        padding: 0;
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #B8860B;
     }
 
-    .pricing-card ul li {
-        padding: 0.7rem 0;
-        color: #666;
-        font-size: 0.95rem;
-        display: flex;
-        align-items: start;
-        gap: 0.7rem;
+     .hero {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.85), rgba(104, 102, 102, 0.85)), 
+                url(bookkeeping.webp) center/cover no-repeat;
+    color: #fff;
+    padding: 180px 2rem 120px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(0, 0, 0, 0.1) 0%, transparent 50%);
+      z-index: 1;
     }
 
-    .pricing-card ul li::before {
-        content: '✓';
-        color: #B8860B;
-        font-weight: 700;
-        font-size: 1.1rem;
-        flex-shrink: 0;
+    .hero-content {
+      position: relative;
+      z-index: 2;
     }
 
-    .pricing-btn {
-        background: linear-gradient(135deg, #B8860B, #DAA520);
-        color: white;
-        padding: 1rem 2rem;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        font-size: 1rem;
-        font-weight: 600;
-        transition: all 0.3s;
-        width: 100%;
+   
+
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+      animation: fadeInUp 1s ease 0.2s both;
     }
 
-    .pricing-btn:hover {
-        background: linear-gradient(135deg, #8B6914, #B8860B);
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(184, 134, 11, 0.3);
+    .hero-text {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeInUp 1s ease 0.4s both;
     }
 
-    /* Turnover Table */
+    .btn-primary {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: #000;
+      color: white;
+      text-decoration: none;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
+      animation: fadeInUp 1s ease 0.6s both;
+    }
+
+    .btn-primary:hover {
+      background: #333;
+      transform: translateY(-3px);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Scroll Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s, transform 0.6s;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== PRICING SECTION ===== */
+    .section {
+      padding: 100px 2rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #8B6914;
+      margin-bottom: 1rem;
+      font-weight: 800;
+    }
+
+    /* ===== TURNOVER TABLE ===== */
     .turnover-table {
-        max-width: 800px;
-        margin: 3rem auto 4rem;
-        overflow-x: auto;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        border-radius: 12px;
+      max-width: 800px;
+      margin: 3rem auto 4rem;
+      overflow-x: auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border-radius: 12px;
     }
 
     .turnover-table table {
-        width: 100%;
-        border-collapse: collapse;
-        background: white;
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
     }
 
     .turnover-table thead {
-        background: linear-gradient(135deg, #B8860B, #DAA520);
-        color: white;
+      background: linear-gradient(135deg, #B8860B, #DAA520);
+      color: white;
     }
 
     .turnover-table th,
     .turnover-table td {
-        padding: 1.2rem 1.5rem;
-        text-align: left;
-        font-size: 1rem;
+      padding: 1.2rem 1.5rem;
+      text-align: left;
+      font-size: 1rem;
     }
 
     .turnover-table th {
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 0.9rem;
     }
 
     .turnover-table tbody tr {
-        border-bottom: 1px solid #e8eef5;
-        transition: background 0.3s;
+      border-bottom: 1px solid #e8eef5;
+      transition: background 0.3s;
     }
 
     .turnover-table tbody tr:hover {
-        background: #FFF9E6;
+      background: #FFF9E6;
     }
 
     .turnover-table tbody tr:last-child {
-        border-bottom: none;
+      border-bottom: none;
     }
 
     .turnover-table td:last-child {
-        font-weight: 700;
-        color: #B8860B;
+      font-weight: 700;
+      color: #B8860B;
     }
 
-    /* Responsive Design */
+    /* ===== PRICING GRID ===== */
+    .pricing-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .pricing-card {
+      background: white;
+      border: 2px solid #e8eef5;
+      border-radius: 16px;
+      padding: 2.5rem;
+      text-align: center;
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .pricing-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #B8860B, #DAA520);
+      transform: scaleX(0);
+      transition: transform 0.4s;
+      border-radius: 16px 16px 0 0;
+    }
+
+    .pricing-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 60px rgba(184, 134, 11, 0.15);
+      border-color: #B8860B;
+    }
+
+    .pricing-card.featured {
+      border: 2px solid #B8860B;
+      background: linear-gradient(to bottom, #ffffff 0%, #FFF9E6 100%);
+    }
+
+    .pricing-card.featured::before {
+      transform: scaleX(1);
+    }
+
+    .pricing-card-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .pricing-card h3 {
+      color: #8B6914;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .pricing-card > p {
+      color: #777;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .price {
+      font-size: 3.5rem;
+      color: #B8860B;
+      font-weight: 800;
+      margin: 1rem 0;
+      line-height: 1;
+    }
+
+    .price span {
+      font-size: 1.5rem;
+    }
+
+    .price-subtitle {
+      font-size: 1rem;
+      color: #999;
+      margin-bottom: 1.5rem;
+    }
+
+    .description {
+      color: #888;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-card ul {
+      list-style: none;
+      margin: 2rem 0;
+      text-align: left;
+      padding: 0;
+    }
+
+    .pricing-card ul li {
+      padding: 0.7rem 0;
+      color: #666;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: start;
+      gap: 0.7rem;
+    }
+
+    .pricing-card ul li::before {
+      content: '✓';
+      color: #B8860B;
+      font-weight: 700;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .pricing-btn {
+      background: linear-gradient(135deg, #B8860B, #DAA520);
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: all 0.3s;
+      width: 100%;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .pricing-btn:hover {
+      background: linear-gradient(135deg, #8B6914, #B8860B);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(184, 134, 11, 0.3);
+    }
+
+    /* ===== CTA ===== */
+    .cta {
+      background: linear-gradient(135deg, #B8860B, #DAA520);
+      color: white;
+      padding: 3rem;
+      border-radius: 10px;
+      text-align: center;
+      margin: 4rem 0;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #3D2817;
+      color: white;
+      padding: 80px 2rem 30px;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-section h3 {
+      color: #DAA520;
+      margin-bottom: 1.5rem;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    .footer-section p {
+      color: #CCC;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.7rem;
+    }
+
+    .footer-links a {
+      color: #CCC;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: #DAA520;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .social-icon {
+      width: 45px;
+      height: 45px;
+      background: linear-gradient(135deg, #B8860B, #DAA520);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .social-icon:hover {
+      background: linear-gradient(135deg, #DAA520, #FFD700);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(218, 165, 32, 0.4);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid #5A4329;
+      color: #999;
+    }
+
+    /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
-        .pricing-grid {
-            grid-template-columns: 1fr;
-        }
+      .navbar {
+        display: none;
+      }
 
-        .turnover-table {
-            margin: 2rem 1rem 3rem;
-        }
+      .menu-toggle {
+        display: block;
+      }
 
-        .turnover-table th,
-        .turnover-table td {
-            padding: 1rem;
-            font-size: 0.9rem;
-        }
+      .navbar.active {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      }
+
+      .navbar.active ul {
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1rem;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .hero-text {
+        font-size: 1rem;
+      }
+
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .turnover-table {
+        margin: 2rem 1rem 3rem;
+      }
+
+      .turnover-table th,
+      .turnover-table td {
+        padding: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -228,46 +582,46 @@
 
   <!-- ===== HEADER ===== -->
   <header>
-        <div class="container">
-            <div class="logo">
-                <i class="fas fa-calculator"></i> EDULINK Group
-            </div>
-            <nav class="navbar" id="navbar">
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="pricing.html" class="active">Pricing</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </nav>
-            <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-        </div>
-    </header>
+    <div class="header-container">
+      <div class="logo">
+        <img src="logo1.png" alt="EDULINK Group Logo">
+        <span>EDULINK Group</span>
+      </div>
+      <nav class="navbar" id="navbar">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="pricing.html" class="active">Pricing</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    </div>
+  </header>
 
   <!-- ===== HERO ===== -->
   <section class="hero" id="home">
     <div class="hero-content">
-      <h5 class="hero-subtitle">TAILORED FINANCIAL SOLUTIONS</h5>
       <h1 class="hero-title">Professional Bookkeeping & Payroll Services</h1>
       <p class="hero-text">
-        Complete financial management support for businesses of all sizes — accurate, compliant, and growth-ready.
+        Complete financial management support for businesses of all sizes – accurate, compliant, and growth-ready.
       </p>
-      <a href="#contact" class="btn-primary">Get a Custom Quote</a>
+      <a href="#pricing" class="btn-primary">Get a Custom Quote</a>
     </div>
   </section>
 
   <!-- ===== PRICING SECTION ===== -->
-  <section class="pricing section" id="pricing">
+  <section class="section" id="pricing">
     <div class="container">
-      <h2 class="section-title">Transparent Pricing for Your Financial Needs</h2>
-      <p style="text-align: center; max-width: 900px; margin: 0 auto 3rem; color: #666; font-size: 1.1rem;">
+      <h2 class="section-title fade-in">Transparent Pricing for Your Financial Needs</h2>
+      <p class="fade-in" style="text-align: center; max-width: 900px; margin: 0 auto 3rem; color: #666; font-size: 1.1rem;">
         Our bookkeeping services are tailored to the annual turnover of your business. We provide complete financial management support, ensuring your accounts are always accurate, compliant, and growth-ready.
       </p>
       
       <!-- Turnover Table -->
-      <div class="turnover-table">
+      <div class="turnover-table fade-in">
         <table>
           <thead>
             <tr>
@@ -293,12 +647,12 @@
 
       <div class="pricing-grid">
         <!-- FULL BOOKKEEPING PACKAGE -->
-        <div class="pricing-card">
+        <div class="pricing-card fade-in">
           <div class="pricing-card-icon">✅</div>
           <h3>Full Bookkeeping & Advisory Package</h3>
           <div class="price">Custom</div>
           <div class="price-subtitle">Based on Turnover</div>
-          <p class="description">End-to-end bookkeeping and business advisory — everything you need to manage your business with confidence.</p>
+          <p class="description">End-to-end bookkeeping and business advisory – everything you need to manage your business with confidence.</p>
           <ul>
             <li>Initial Free Consultation</li>
             <li>Quarterly Review of Accounts</li>
@@ -318,7 +672,7 @@
         </div>
 
         <!-- SUPPORT ONLY PACKAGE (FEATURED) -->
-        <div class="pricing-card featured">
+        <div class="pricing-card featured fade-in">
           <div class="pricing-card-icon">💡</div>
           <h3>Support-Only Package</h3>
           <div class="price">$145</div>
@@ -335,7 +689,7 @@
         </div>
 
         <!-- PAYROLL PACKAGE -->
-        <div class="pricing-card">
+        <div class="pricing-card fade-in">
           <div class="pricing-card-icon">💼</div>
           <h3>Payroll Services</h3>
           <div class="price">$680</div>
@@ -356,14 +710,14 @@
         </div>
       </div>
 
-      <p style="text-align: center; margin-top: 3rem; color: #666; font-style: italic; max-width: 800px; margin-left: auto; margin-right: auto;">
+      <p class="fade-in" style="text-align: center; margin-top: 3rem; color: #666; font-style: italic; max-width: 800px; margin-left: auto; margin-right: auto;">
         💡 Ideal for small-to-medium businesses that want peace of mind knowing everything—bookkeeping, BAS lodgement, and payroll—is taken care of by certified professionals.
       </p>
     </div>
   </section>
 
   <!-- ===== CTA ===== -->
-  <section class="cta">
+  <section class="cta fade-in">
     <div class="container">
       <h2>Need a Custom Plan?</h2>
       <p>We can tailor bookkeeping, payroll, and advisory solutions based on your business structure and industry needs.</p>
@@ -371,7 +725,7 @@
     </div>
   </section>
 
-  <!-- ===== UPDATED FOOTER ===== -->
+  <!-- ===== FOOTER ===== -->
   <footer>
     <div class="footer-content">
         <div class="footer-section">
@@ -425,6 +779,24 @@
       document.getElementById('navbar').classList.toggle('active');
     });
 
+    // Scroll animation
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -433,28 +805,6 @@
         if (target) {
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
           document.getElementById('navbar').classList.remove('active');
-        }
-      });
-    });
-
-    // Active nav on scroll
-    window.addEventListener('scroll', function() {
-      const sections = document.querySelectorAll('section[id]');
-      const navLinks = document.querySelectorAll('.navbar a');
-      
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (scrollY >= (sectionTop - 200)) {
-          current = section.getAttribute('id');
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) {
-          link.classList.add('active');
         }
       });
     });

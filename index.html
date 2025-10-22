@@ -7,24 +7,186 @@
     <title>EDULINK Group | Professional Bookkeeping & Payroll Services in Australia</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
     <style>
-        /* ===== INDEX PAGE SPECIFIC STYLES ===== */
-        .hero-content {
+        /* ===== GLOBAL STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #555;
+            overflow-x: hidden;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: #ffffff;
+            padding: 1rem 0;
             position: relative;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo span {
+            display: none;
+        }
+
+        .logo img {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s;
+            position: relative;
+            padding: 0.5rem 0;
+            white-space: nowrap;
+        }
+
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: #B8860B;
+            transition: width 0.3s;
+        }
+
+        .navbar a:hover::after,
+        .navbar a.active::after {
+            width: 100%;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: #B8860B;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #B8860B;
+        }
+
+       .hero {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.85), rgba(104, 102, 102, 0.85)), 
+                url(bookkeeping.webp) center/cover no-repeat;
+    color: #fff;
+    padding: 180px 2rem 120px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(0, 0, 0, 0.1) 0%, transparent 50%);
             z-index: 1;
         }
 
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
         .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
             animation: fadeInUp 1s ease;
         }
 
         .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
             animation: fadeInUp 1s ease 0.2s both;
         }
 
         .hero-btn {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 12px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: 0.3s ease;
             animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .hero-btn:hover {
+            background-color: #333;
         }
 
         @keyframes fadeInUp {
@@ -36,6 +198,68 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+
+        /* ===== COMMON SECTIONS ===== */
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #8B6914;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #B8860B, #DAA520);
+            border-radius: 2px;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn, .btn-primary {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, #231b05, #211a07);
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(184, 134, 11, 0.3);
+        }
+
+        .btn:hover, .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(184, 134, 11, 0.4);
+            background: linear-gradient(135deg, #8B6914, #B8860B);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #B8860B;
+            color: #B8860B;
+        }
+
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, #B8860B, #DAA520);
+            color: white;
         }
 
         /* Trust Section */
@@ -54,27 +278,46 @@
         }
 
         .trust-badge {
-            background: linear-gradient(135deg, #B8860B, #DAA520);
-            color: white;
-            padding: 3rem;
+            position: relative;
             border-radius: 16px;
-            display: inline-block;
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
             box-shadow: 0 10px 30px rgba(184, 134, 11, 0.2);
         }
 
-        .trust-badge h3 {
-            font-size: 3.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: 800;
+        .trust-badge-bg {
+            background: linear-gradient(135deg, #B8860B, #DAA520);
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            padding: 6rem 3rem;
         }
 
-        .trust-badge p {
-            font-size: 1.2rem;
+        .trust-badge-bg h3 {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .trust-badge-bg p {
+            font-size: 1.4rem;
+            position: relative;
+            z-index: 1;
+            text-align: center;
         }
 
         .trust-info h2 {
             color: #8B6914;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 1.5rem;
             font-weight: 700;
         }
@@ -359,72 +602,6 @@
             transform: rotate(180deg);
         }
 
-        /* Blog Section */
-        .blog {
-            padding: 100px 2rem;
-            background: #f8f9fa;
-        }
-
-        .blog-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .blog-card {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-        }
-
-        .blog-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(184, 134, 11, 0.15);
-        }
-
-        .blog-image {
-            width: 100%;
-            height: 220px;
-            background: linear-gradient(135deg, #B8860B, #DAA520);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: white;
-        }
-
-        .blog-content {
-            padding: 2rem;
-        }
-
-        .blog-content h3 {
-            color: #8B6914;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            font-size: 1.3rem;
-        }
-
-        .blog-content p {
-            color: #777;
-            line-height: 1.7;
-            margin-bottom: 1rem;
-        }
-
-        .blog-content a {
-            color: #B8860B;
-            font-weight: 600;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .blog-content a:hover {
-            color: #8B6914;
-        }
-
         /* Contact Section */
         .contact {
             padding: 100px 2rem;
@@ -487,13 +664,170 @@
             font-weight: 700;
         }
 
-        .contact-form > p {
-            color: #777;
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 1rem;
+            width: 100%;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #B8860B, #DAA520);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #8B6914, #B8860B);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(184, 134, 11, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #3D2817;
+            color: white;
+            padding: 80px 2rem 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            color: #DAA520;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .footer-section p {
+            color: #CCC;
+            line-height: 1.7;
             margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.7rem;
+        }
+
+        .footer-links a {
+            color: #CCC;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #DAA520;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #B8860B, #DAA520);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-icon:hover {
+            background: linear-gradient(135deg, #DAA520, #FFD700);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(218, 165, 32, 0.4);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #5A4329;
+            color: #999;
+        }
+
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* Responsive */
         @media (max-width: 768px) {
+            .navbar {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .navbar.active {
+                display: block;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            }
+
+            .navbar.active ul {
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
             .trust-content,
             .contact-container {
                 grid-template-columns: 1fr;
@@ -504,8 +838,15 @@
             }
 
             .services-grid,
-            .pricing-grid,
-            .blog-grid {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .footer-content {
                 grid-template-columns: 1fr;
             }
         }
@@ -514,9 +855,10 @@
 <body>
     <!-- ===== HEADER ===== -->
     <header>
-        <div class="container">
+        <div class="header-container">
             <div class="logo">
-                <i class="fas fa-calculator"></i> EDULINK Group
+                <img src="logo1.png" alt="EDULINK Group Logo">
+                <span>EDULINK Group</span>
             </div>
             <nav class="navbar" id="navbar">
                 <ul class="nav-links">
@@ -535,7 +877,7 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Your Numbers, Our Expertise</h1>
+            <h1>EduLink Group</h1>
             <p>From bookkeeping to payroll, we handle the details so you can focus on growing your business with confidence</p>
             <button class="hero-btn">Get Started</button>
         </div>
@@ -546,8 +888,10 @@
         <div class="trust-content fade-in">
             <div>
                 <div class="trust-badge">
-                    <h3>8+</h3>
-                    <p>Years of Excellence</p>
+                    <div class="trust-badge-bg">
+                        <h3>8+</h3>
+                        <p>Years of Excellence</p>
+                    </div>
                 </div>
             </div>
             <div class="trust-info">
@@ -877,44 +1221,6 @@
         </div>
     </section>
 
-    <!-- Blog Section -->
-    <section class="blog" id="blog">
-        <h2 class="section-title">News & Insights</h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; color: #666;">Welcome to our news and insights hub, where we share valuable industry knowledge, trends, and updates to keep you ahead of the curve. Explore our latest articles, reports, and expert opinions below.</p>
-        <div class="blog-grid">
-            <div class="blog-card fade-in">
-                <div class="blog-image">
-                    <i class="fas fa-calculator"></i>
-                </div>
-                <div class="blog-content">
-                    <h3>Payroll Management Best Practices</h3>
-                    <p>Learn the essential strategies for managing payroll efficiently and ensuring compliance with Australian regulations.</p>
-                    <a href="#" style="color: #2c3e87; font-weight: bold;">Read More →</a>
-                </div>
-            </div>
-            <div class="blog-card fade-in">
-                <div class="blog-image">
-                    <i class="fas fa-book"></i>
-                </div>
-                <div class="blog-content">
-                    <h3>Bookkeeping Tips for Small Business</h3>
-                    <p>Discover how proper bookkeeping can transform your small business operations and financial clarity.</p>
-                    <a href="#" style="color: #2c3e87; font-weight: bold;">Read More →</a>
-                </div>
-            </div>
-            <div class="blog-card fade-in">
-                <div class="blog-image">
-                    <i class="fas fa-file-invoice-dollar"></i>
-                </div>
-                <div class="blog-content">
-                    <h3>Understanding BAS and Tax Obligations</h3>
-                    <p>A comprehensive guide to Business Activity Statements and meeting your tax obligations in Australia.</p>
-                    <a href="#" style="color: #2c3e87; font-weight: bold;">Read More →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <h2 class="section-title">Get in Touch</h2>
@@ -1007,7 +1313,7 @@
                     <li><a href="#services">Our Services</a></li>
                     <li><a href="#pricing">Pricing</a></li>
                     <li><a href="#about">About Us</a></li>
-                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                 </ul>
             </div>
             <div class="footer-section">

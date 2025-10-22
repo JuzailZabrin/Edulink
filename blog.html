@@ -3,15 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Insights - EDULINK Group</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>Blog & Insights - EDULINK Group</title>
     
     <style>
-        /* ===== BLOG PAGE SPECIFIC STYLES ===== */
-        
-        /* Featured Post */
+        /* ===== GLOBAL STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #555;
+            overflow-x: hidden;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: #ffffff;
+            padding: 1rem 0;
+            position: relative;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo span {
+            display: none;
+        }
+
+        .logo img {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s;
+            position: relative;
+            padding: 0.5rem 0;
+            white-space: nowrap;
+        }
+
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: #B8860B;
+            transition: width 0.3s;
+        }
+
+        .navbar a:hover::after,
+        .navbar a.active::after {
+            width: 100%;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: #B8860B;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #B8860B;
+        }
+
+        .hero {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.85), rgba(104, 102, 102, 0.85)), 
+                url(bookkeeping.webp) center/cover no-repeat;
+    color: #fff;
+    padding: 180px 2rem 120px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(0, 0, 0, 0.1) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+        .hero-btn {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 12px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: 0.3s ease;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .hero-btn:hover {
+            background-color: #333;
+        }
+
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== FEATURED POST ===== */
         .featured-post {
             background: linear-gradient(135deg, #B8860B, #DAA520);
             color: white;
@@ -25,8 +214,9 @@
         }
 
         .featured-content h2 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin-bottom: 1rem;
+            line-height: 1.3;
         }
 
         .featured-content .meta {
@@ -37,7 +227,7 @@
         .featured-content p {
             font-size: 1.1rem;
             line-height: 1.8;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .featured-btn {
@@ -66,7 +256,7 @@
             font-size: 4rem;
         }
 
-        /* Categories */
+        /* ===== CATEGORIES ===== */
         .categories {
             display: flex;
             justify-content: center;
@@ -97,7 +287,7 @@
             color: white;
         }
 
-        /* Blog Grid */
+        /* ===== BLOG GRID ===== */
         .blog-grid {
             max-width: 1200px;
             margin: 0 auto;
@@ -139,12 +329,6 @@
             margin-bottom: 1rem;
             font-weight: 700;
             font-size: 1.3rem;
-        }
-
-        .blog-content p {
-            color: #777;
-            line-height: 1.7;
-            margin-bottom: 1rem;
         }
 
         .blog-meta {
@@ -195,7 +379,7 @@
             margin-left: 0.5rem;
         }
 
-        /* Pagination */
+        /* ===== PAGINATION ===== */
         .pagination {
             display: flex;
             justify-content: center;
@@ -221,7 +405,7 @@
             color: white;
         }
 
-        /* Newsletter */
+        /* ===== NEWSLETTER ===== */
         .newsletter {
             background: white;
             padding: 3rem;
@@ -281,8 +465,131 @@
             box-shadow: 0 5px 15px rgba(184, 134, 11, 0.3);
         }
 
-        /* Responsive Design */
+        /* ===== SCROLL ANIMATIONS ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #3D2817;
+            color: white;
+            padding: 80px 2rem 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            color: #DAA520;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .footer-section p {
+            color: #CCC;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.7rem;
+        }
+
+        .footer-links a {
+            color: #CCC;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #DAA520;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #B8860B, #DAA520);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-icon:hover {
+            background: linear-gradient(135deg, #DAA520, #FFD700);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(218, 165, 32, 0.4);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #5A4329;
+            color: #999;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
         @media (max-width: 768px) {
+            .navbar {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .navbar.active {
+                display: block;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            }
+
+            .navbar.active ul {
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
             .featured-post {
                 grid-template-columns: 1fr;
             }
@@ -302,14 +609,19 @@
             .newsletter-form {
                 flex-direction: column;
             }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
+        <div class="header-container">
             <div class="logo">
-                <i class="fas fa-calculator"></i> EDULINK Group
+                <img src="logo1.png" alt="EDULINK Group Logo">
+                <span>EDULINK Group</span>
             </div>
             <nav class="navbar" id="navbar">
                 <ul class="nav-links">
@@ -326,23 +638,26 @@
     </header>
 
     <section class="hero">
-        <h1>News and Insights Hub</h1>
-        <p>Welcome to our knowledge center where we share valuable industry insights, trends, and updates to keep you ahead of the curve. Explore our latest articles, reports, and expert opinions.</p>
+        <div class="hero-content">
+            <h1>News and Insights Hub</h1>
+            <p>Welcome to our knowledge center — your source for key insights, trends, and expert updates. Explore our latest articles and reports.</p>
+                    <button class="hero-btn">Get Started</button>
+        </div>
     </section>
 
     <div class="container" style="padding: 4rem 2rem;">
-        <section class="featured-post">
+        <section class="featured-post fade-in">
             <div class="featured-content">
                 <span class="blog-category" style="display: inline-block; margin-bottom: 1rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px;">Featured</span>
-                <h2 style="font-size: 2.2rem; margin-bottom: 1rem; line-height: 1.3;">Single Touch Payroll Phase 2: What You Need to Know</h2>
-                <div class="meta" style="margin-bottom: 1.5rem; opacity: 0.9;">📅 October 15, 2025 • ⏱️ 5 min read</div>
-                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">The Australian Tax Office has rolled out significant updates to Single Touch Payroll. Learn what changes are coming and how to prepare your business for compliance.</p>
+                <h2>Single Touch Payroll Phase 2: What You Need to Know</h2>
+                <div class="meta">📅 October 15, 2025 • ⏱️ 5 min read</div>
+                <p>The Australian Tax Office has rolled out significant updates to Single Touch Payroll. Learn what changes are coming and how to prepare your business for compliance.</p>
                 <a href="#" class="featured-btn">Read Full Article</a>
             </div>
             <div class="featured-image">📊</div>
         </section>
 
-        <div class="categories">
+        <div class="categories fade-in">
             <button class="category-btn active" data-category="all">All Posts</button>
             <button class="category-btn" data-category="bookkeeping">Bookkeeping Tips</button>
             <button class="category-btn" data-category="payroll">Payroll Updates</button>
@@ -352,7 +667,7 @@
         </div>
 
         <div class="blog-grid">
-            <article class="blog-card" data-category="tax">
+            <article class="blog-card fade-in" data-category="tax">
                 <div class="blog-image">💰</div>
                 <div class="blog-content">
                     <div class="blog-meta">
@@ -365,7 +680,7 @@
                 </div>
             </article>
 
-            <article class="blog-card" data-category="bookkeeping">
+            <article class="blog-card fade-in" data-category="bookkeeping">
                 <div class="blog-image">📚</div>
                 <div class="blog-content">
                     <div class="blog-meta">
@@ -378,7 +693,7 @@
                 </div>
             </article>
 
-            <article class="blog-card" data-category="payroll">
+            <article class="blog-card fade-in" data-category="payroll">
                 <div class="blog-image">👥</div>
                 <div class="blog-content">
                     <div class="blog-meta">
@@ -391,7 +706,7 @@
                 </div>
             </article>
 
-            <article class="blog-card" data-category="business">
+            <article class="blog-card fade-in" data-category="business">
                 <div class="blog-image">📈</div>
                 <div class="blog-content">
                     <div class="blog-meta">
@@ -404,7 +719,7 @@
                 </div>
             </article>
 
-            <article class="blog-card" data-category="bookkeeping">
+            <article class="blog-card fade-in" data-category="bookkeeping">
                 <div class="blog-image">💻</div>
                 <div class="blog-content">
                     <div class="blog-meta">
@@ -417,7 +732,7 @@
                 </div>
             </article>
 
-            <article class="blog-card" data-category="tax">
+            <article class="blog-card fade-in" data-category="tax">
                 <div class="blog-image">📋</div>
                 <div class="blog-content">
                     <div class="blog-meta">
@@ -430,7 +745,7 @@
                 </div>
             </article>
 
-            <article class="blog-card" data-category="payroll">
+            <article class="blog-card fade-in" data-category="payroll">
                 <div class="blog-image">⏰</div>
                 <div class="blog-content">
                     <div class="blog-meta">
@@ -443,7 +758,7 @@
                 </div>
             </article>
 
-            <article class="blog-card" data-category="news">
+            <article class="blog-card fade-in" data-category="news">
                 <div class="blog-image">📰</div>
                 <div class="blog-content">
                     <div class="blog-meta">
@@ -456,7 +771,7 @@
                 </div>
             </article>
 
-            <article class="blog-card" data-category="business">
+            <article class="blog-card fade-in" data-category="business">
                 <div class="blog-image">💡</div>
                 <div class="blog-content">
                     <div class="blog-meta">
@@ -470,14 +785,14 @@
             </article>
         </div>
 
-        <div class="pagination">
+        <div class="pagination fade-in">
             <button class="page-btn active">1</button>
             <button class="page-btn">2</button>
             <button class="page-btn">3</button>
             <button class="page-btn">Next →</button>
         </div>
 
-        <section class="newsletter">
+        <section class="newsletter fade-in">
             <h2>Stay Updated With Our Newsletter</h2>
             <p>Get the latest insights, tips, and industry news delivered straight to your inbox.</p>
             <form class="newsletter-form" id="newsletterForm">
@@ -487,7 +802,6 @@
         </section>
     </div>
 
-    <!-- ===== UPDATED FOOTER ===== -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -521,7 +835,7 @@
                     <li><a href="services.html">Business Advisory</a></li>
                 </ul>
             </div>
-             <div class="footer-section">
+            <div class="footer-section">
                 <h3>Contact Us</h3>
                 <ul class="footer-links">
                     <li><i class="fas fa-phone"></i> 0413 363 698</li>
@@ -541,7 +855,7 @@
             document.getElementById('navbar').classList.toggle('active');
         });
 
-        // Smooth scroll
+        // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -574,7 +888,7 @@
             });
         });
 
-        // Pagination
+        // Pagination functionality
         const pageBtns = document.querySelectorAll('.page-btn');
         pageBtns.forEach(btn => {
             btn.addEventListener('click', function() {
@@ -587,19 +901,37 @@
             });
         });
 
-        // Newsletter form
+        // Newsletter form submission
         document.getElementById('newsletterForm').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Thank you for subscribing! You will receive our latest updates.');
             this.reset();
         });
 
-        // Read more links
+        // Read more and featured button functionality
         document.querySelectorAll('.read-more, .featured-btn').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 alert('This would open the full blog post. Article content coming soon!');
             });
+        });
+
+        // Scroll animation observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
         });
     </script>
 </body>
