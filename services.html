@@ -21,7 +21,71 @@
       overflow-x: hidden;
       background-color: #ffffff;
     }
+ /* ===== TOP BAR ===== */
+        .top-bar {
+            background: linear-gradient(135deg, #B8860B, #DAA520);
+            color: white;
+            padding: 0.75rem 0;
+            font-size: 0.9rem;
+        }
 
+        .top-bar-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar-left {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .top-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .top-bar-item i {
+            font-size: 1rem;
+        }
+
+        .top-bar-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .top-bar-right span {
+            margin-right: 0.5rem;
+        }
+
+        .social-top {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .social-top a {
+            color: white;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .social-top a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
     /* ===== HEADER ===== */
     header {
       background: #ffffff;
@@ -628,8 +692,38 @@
     }
   </style>
 </head>
-
 <body>
+
+ <!-- ===== TOP BAR ===== -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="top-bar-left">
+                <div class="top-bar-item">
+                    <i class="fas fa-phone"></i>
+                    <span>0413 363 698</span>
+                </div>
+                <div class="top-bar-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>edulink.bookservices@gmail.com</span>
+                </div>
+                <div class="top-bar-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Mon - Fri: 9:00 AM - 5:00 PM</span>
+                </div>
+            </div>
+            <div class="top-bar-right">
+                <span>Follow Us:</span>
+                <div class="social-top">
+                    <a href="https://www.facebook.com/share/178M8gTi9Q/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/Edulink_Group" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/edulink.group?utm_source=qr&igsh=MWNsYXpwdXh6djE4aA==" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
   <!-- ===== HEADER ===== -->
   <header>
     <div class="header-container">
@@ -806,13 +900,13 @@
                     <a href="https://www.instagram.com/edulink.group?utm_source=qr&igsh=MWNsYXpwdXh6djE4aA==" class="social-icon"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-            <div class="footer-section">
+             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Our Services</a></li>
+                   <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="about.html">About Us</a></li>
                     <li><a href="blog.html">Blog</a></li>
                 </ul>
             </div>
