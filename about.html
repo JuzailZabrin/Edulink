@@ -21,9 +21,10 @@
             overflow-x: hidden;
             background-color: #ffffff;
         }
- /* ===== TOP BAR ===== */
+
+        /* ===== TOP BAR ===== */
         .top-bar {
-            background: linear-gradient(135deg, #B8860B, #DAA520);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.85), rgba(179, 160, 99, 0.85));
             color: white;
             padding: 0.75rem 0;
             font-size: 0.9rem;
@@ -36,37 +37,49 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
         .top-bar-left {
             display: flex;
             gap: 2rem;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .top-bar-item {
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            white-space: nowrap;
         }
 
         .top-bar-item i {
             font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .top-bar-item span {
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .top-bar-right {
             display: flex;
             align-items: center;
             gap: 1rem;
+            flex-wrap: wrap;
         }
 
-        .top-bar-right span {
+        .top-bar-right > span {
             margin-right: 0.5rem;
         }
 
         .social-top {
             display: flex;
             gap: 0.75rem;
+            flex-wrap: wrap;
         }
 
         .social-top a {
@@ -80,6 +93,7 @@
             border-radius: 50%;
             transition: all 0.3s;
             text-decoration: none;
+            flex-shrink: 0;
         }
 
         .social-top a:hover {
@@ -121,7 +135,7 @@
         }
 
         .logo img {
-            height: 80px;
+            height: 90px;
             width: auto;
             object-fit: contain;
         }
@@ -129,6 +143,7 @@
         .navbar {
             display: flex;
             align-items: center;
+            gap: 3rem;
         }
 
         .navbar ul {
@@ -188,15 +203,15 @@
             color: #B8860B;
         }
 
-         .hero {
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.85), rgba(104, 102, 102, 0.85)), 
-                url(bookkeeping.webp) center/cover no-repeat;
-    color: #fff;
-    padding: 180px 2rem 120px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
+        .hero {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.85), rgba(104, 102, 102, 0.85)), 
+                        url(bookkeeping.webp) center/cover no-repeat;
+            color: #fff;
+            padding: 180px 2rem 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
 
         .hero::before {
             content: '';
@@ -231,7 +246,8 @@
             opacity: 0.95;
             animation: fadeInUp 1s ease 0.2s both;
         }
- .hero-btn {
+
+        .hero-btn {
             background-color: #000;
             color: #fff;
             border: none;
@@ -246,6 +262,7 @@
         .hero-btn:hover {
             background-color: #333;
         }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -355,13 +372,13 @@
         /* ===== MISSION VISION ===== */
         .mission-vision {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 3rem;
             margin: 3rem 0;
         }
 
         .mv-card {
-            background: linear-gradient(135deg, #B8860B, #DAA520);
+            background: linear-gradient(135deg, #9f9d99, #d5d1c5);
             color: white;
             padding: 3rem;
             border-radius: 10px;
@@ -423,7 +440,7 @@
 
         /* ===== CTA ===== */
         .cta {
-            background: linear-gradient(135deg, #B8860B, #DAA520);
+            background: linear-gradient(135deg, #a79e88, #c6bfab);
             color: white;
             padding: 3rem;
             border-radius: 10px;
@@ -474,7 +491,7 @@
 
         /* ===== FOOTER ===== */
         footer {
-            background: #3D2817;
+            background: #4c4747f4;
             color: white;
             padding: 80px 2rem 30px;
         }
@@ -523,6 +540,7 @@
             display: flex;
             gap: 1rem;
             margin-top: 1.5rem;
+            flex-wrap: wrap;
         }
 
         .social-icon {
@@ -551,8 +569,110 @@
             color: #999;
         }
 
-        /* ===== RESPONSIVE ===== */
+        /* ===== RESPONSIVE DESIGN ===== */
+        
+        /* Large tablets and below */
+        @media (max-width: 1024px) {
+            .top-bar-container {
+                padding: 0 1.5rem;
+            }
+
+            .top-bar-left {
+                gap: 1.5rem;
+            }
+
+            .top-bar-item {
+                font-size: 0.85rem;
+            }
+
+            .navbar ul {
+                gap: 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .content-container {
+                padding: 3rem 1.5rem;
+            }
+        }
+
+        /* Tablets and smaller */
+        @media (max-width: 900px) {
+            .top-bar {
+                font-size: 0.85rem;
+                padding: 0.6rem 0;
+            }
+
+            .top-bar-left {
+                gap: 1rem;
+            }
+
+            .top-bar-item span {
+                font-size: 0.8rem;
+            }
+
+            .top-bar-right > span {
+                display: none;
+            }
+        }
+
+        /* Mobile devices */
         @media (max-width: 768px) {
+            .top-bar {
+                font-size: 0.75rem;
+                padding: 0.5rem 0;
+            }
+
+            .top-bar-container {
+                flex-direction: column;
+                gap: 0.75rem;
+                padding: 0.75rem 1rem;
+                align-items: stretch;
+            }
+
+            .top-bar-left {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: flex-start;
+                width: 100%;
+            }
+
+            .top-bar-item {
+                width: 100%;
+                font-size: 0.75rem;
+            }
+
+            .top-bar-right {
+                width: 100%;
+                justify-content: center;
+                gap: 0.75rem;
+            }
+
+            .social-top {
+                gap: 0.5rem;
+            }
+
+            .social-top a {
+                width: 28px;
+                height: 28px;
+                font-size: 0.85rem;
+            }
+
+            .header-container {
+                padding: 0 1rem;
+                min-height: 70px;
+            }
+
+            .logo img {
+                height: 60px;
+            }
+
             .navbar {
                 display: none;
             }
@@ -569,30 +689,268 @@
                 right: 0;
                 background: white;
                 box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                padding: 1rem 0;
             }
 
             .navbar.active ul {
                 flex-direction: column;
-                padding: 2rem;
-                gap: 1rem;
+                padding: 1rem;
+                gap: 0;
+            }
+
+            .navbar.active ul li {
+                width: 100%;
+                border-bottom: 1px solid #f0f0f0;
+            }
+
+            .navbar.active a {
+                display: block;
+                padding: 1rem;
+                width: 100%;
+            }
+
+            .hero {
+                padding: 100px 1.5rem 80px;
             }
 
             .hero h1 {
-                font-size: 2rem;
+                font-size: 1.75rem;
+                margin-bottom: 1rem;
             }
 
             .hero p {
                 font-size: 1rem;
+                margin-bottom: 1.5rem;
             }
 
-            .three-columns,
-            .mission-vision,
+            .hero-btn {
+                padding: 10px 24px;
+                font-size: 14px;
+            }
+
+            .content-container {
+                padding: 2rem 1rem;
+            }
+
+            .history {
+                padding: 2rem 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .history h2 {
+                font-size: 1.5rem;
+            }
+
+            .history p {
+                font-size: 1rem;
+            }
+
+            .history ul li {
+                font-size: 0.95rem;
+            }
+
+            .section {
+                margin-bottom: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .three-columns {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                margin: 2rem 0;
+            }
+
+            .column-card {
+                padding: 1.5rem;
+            }
+
+            .column-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .mission-vision {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                margin: 2rem 0;
+            }
+
+            .mv-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .mv-card h3 {
+                font-size: 1.5rem;
+            }
+
+            .mv-card p {
+                font-size: 1rem;
+            }
+
+            .why-choose {
+                padding: 2rem 1.5rem;
+                margin: 2rem 0;
+            }
+
+            .why-choose h2 {
+                font-size: 1.5rem;
+            }
+
             .benefits-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .benefit-item {
+                padding: 1.25rem;
+            }
+
+            .cta {
+                padding: 2rem 1.5rem;
+                margin: 2rem 0;
+            }
+
+            .cta h2 {
+                font-size: 1.5rem;
+            }
+
+            .cta p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 0.875rem 2rem;
+                font-size: 0.95rem;
+            }
+
+            footer {
+                padding: 40px 1rem 20px;
             }
 
             .footer-content {
                 grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-section h3 {
+                font-size: 1.2rem;
+            }
+
+            .footer-links li {
+                word-wrap: break-word;
+            }
+        }
+
+        /* Small mobile devices */
+        @media (max-width: 480px) {
+            .top-bar {
+                font-size: 0.7rem;
+            }
+
+            .top-bar-item {
+                font-size: 0.7rem;
+            }
+
+            .top-bar-item i {
+                font-size: 0.9rem;
+            }
+
+            .social-top a {
+                width: 26px;
+                height: 26px;
+                font-size: 0.8rem;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .history h2,
+            .why-choose h2 {
+                font-size: 1.3rem;
+            }
+
+            .column-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .mv-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .cta h2 {
+                font-size: 1.3rem;
+            }
+
+            .btn {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 360px) {
+            .top-bar-container {
+                padding: 0.5rem;
+            }
+
+            .top-bar-item {
+                font-size: 0.65rem;
+            }
+
+            .top-bar-item i {
+                font-size: 0.85rem;
+            }
+
+            .logo img {
+                height: 50px;
+            }
+
+            .hero h1 {
+                font-size: 1.3rem;
+            }
+
+            .hero p {
+                font-size: 0.85rem;
+            }
+
+            .hero-btn {
+                padding: 8px 20px;
+                font-size: 13px;
+            }
+        }
+
+        /* Landscape orientation for mobile */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .top-bar {
+                padding: 0.4rem 0;
+            }
+
+            .top-bar-container {
+                padding: 0.4rem 1rem;
+            }
+
+            .hero {
+                padding: 80px 1.5rem 60px;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+                margin-bottom: 1rem;
             }
         }
     </style>
@@ -618,20 +976,19 @@
             <div class="top-bar-right">
                 <span>Follow Us:</span>
                 <div class="social-top">
-                    <a href="https://www.facebook.com/share/178M8gTi9Q/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://x.com/Edulink_Group" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.instagram.com/edulink.group?utm_source=qr&igsh=MWNsYXpwdXh6djE4aA==" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.facebook.com/share/178M8gTi9Q/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/Edulink_Group" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/edulink.group?utm_source=qr&igsh=MWNsYXpwdXh6djE4aA==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
         </div>
     </div>
 
-    
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="logo1.png" alt="EDULINK Group Logo">
+                <img src="logo.jpeg" alt="EDULINK Group Logo">
                 <span>EDULINK Group</span>
             </div>
             <nav class="navbar" id="navbar">
@@ -653,7 +1010,8 @@
         <div class="hero-content">
             <h1>Expert Bookkeeping & Payroll Services You Can Trust!</h1>
             <p>"Reliable Bookkeeping & Payroll Solutions for Your Business."</p>
-              <button class="hero-btn">Get Started</button>
+            <button class="hero-btn">Get Started</button>
+        </div>
     </section>
 
     <!-- ===== MAIN CONTENT ===== -->
@@ -743,17 +1101,17 @@
                 <h3><i class="fas fa-calculator"></i> EDULINK Group</h3>
                 <p>EDULINK Group leads the way in providing specialized payroll management and bookkeeping services. With an in-depth understanding of distinctive needs, we offer tailored solutions to ensure seamless operations.</p>
                 <div class="social-links">
-                    <a href="https://www.facebook.com/share/178M8gTi9Q/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://x.com/Edulink_Group" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.instagram.com/edulink.group?utm_source=qr&igsh=MWNsYXpwdXh6djE4aA==" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/178M8gTi9Q/" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/Edulink_Group" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/edulink.group?utm_source=qr&igsh=MWNsYXpwdXh6djE4aA==" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-             <div class="footer-section">
+            <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
                     <li><a href="index.html">Home</a></li>
-                   <li><a href="about.html">About Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
                     <li><a href="blog.html">Blog</a></li>
@@ -769,7 +1127,7 @@
                     <li><a href="services.html">Business Advisory</a></li>
                 </ul>
             </div>
-           <div class="footer-section">
+            <div class="footer-section">
                 <h3>Contact Us</h3>
                 <ul class="footer-links">
                     <li><i class="fas fa-phone"></i> 0413 363 698</li>
@@ -779,16 +1137,32 @@
             </div>
         </div>
         <div class="footer-bottom">
-        <p>&copy; 2025 EDULINK Group Pty Ltd. All rights reserved. | Privacy Policy | Terms of Service</p>
+            <p>&copy; 2025 EDULINK Group Pty Ltd. All rights reserved. | Privacy Policy | Terms of Service</p>
         </div>
     </footer>
-
 
     <!-- ===== JS ===== -->
     <script>
         // Mobile menu toggle
         document.getElementById('menu-toggle').addEventListener('click', () => {
             document.getElementById('navbar').classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const navbar = document.getElementById('navbar');
+            const menuToggle = document.getElementById('menu-toggle');
+            
+            if (!navbar.contains(e.target) && !menuToggle.contains(e.target)) {
+                navbar.classList.remove('active');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.navbar a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navbar').classList.remove('active');
+            });
         });
 
         // Scroll animation

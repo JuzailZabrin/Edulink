@@ -22,9 +22,10 @@
             overflow-x: hidden;
             background-color: #ffffff;
         }
- /* ===== TOP BAR ===== */
+
+        /* ===== TOP BAR ===== */
         .top-bar {
-            background: linear-gradient(135deg, #B8860B, #DAA520);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.85), rgba(179, 160, 99, 0.85));
             color: white;
             padding: 0.75rem 0;
             font-size: 0.9rem;
@@ -37,22 +38,27 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
         .top-bar-left {
             display: flex;
             gap: 2rem;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .top-bar-item {
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            white-space: nowrap;
         }
 
         .top-bar-item i {
             font-size: 1rem;
+            flex-shrink: 0;
         }
 
         .top-bar-right {
@@ -81,13 +87,15 @@
             border-radius: 50%;
             transition: all 0.3s;
             text-decoration: none;
+            flex-shrink: 0;
         }
 
         .social-top a:hover {
             background: rgba(255, 255, 255, 0.3);
             transform: translateY(-2px);
         }
-        /* ===== HEADER ===== */
+
+       /* ===== HEADER ===== */
         header {
             background: #ffffff;
             padding: 1rem 0;
@@ -121,7 +129,7 @@
         }
 
         .logo img {
-            height: 80px;
+            height: 90px;
             width: auto;
             object-fit: contain;
         }
@@ -129,6 +137,7 @@
         .navbar {
             display: flex;
             align-items: center;
+            gap: 3rem;
         }
 
         .navbar ul {
@@ -181,23 +190,24 @@
             color: #B8860B;
         }
 
-        .menu-toggle {
-            display: none;
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: #B8860B;
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #B8860B;
+    }
+
+        /* ===== HERO ===== */
+        .hero {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.85), rgba(104, 102, 102, 0.85)), 
+                        url(bookkeeping.webp) center/cover no-repeat;
+            color: #fff;
+            padding: 180px 2rem 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
-
-      .hero {
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.85), rgba(104, 102, 102, 0.85)), 
-                url(bookkeeping.webp) center/cover no-repeat;
-    color: #fff;
-    padding: 180px 2rem 120px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
 
         .hero::before {
             content: '';
@@ -286,6 +296,7 @@
             font-size: 2rem;
             margin-right: 1.5rem;
             color: #B8860B;
+            flex-shrink: 0;
         }
 
         .info-content h3 {
@@ -297,11 +308,13 @@
         .info-content p {
             color: #777;
             line-height: 1.6;
+            word-break: break-word;
         }
 
         .info-content a {
             color: #B8860B;
             text-decoration: none;
+            word-break: break-all;
         }
 
         .info-content a:hover {
@@ -332,6 +345,7 @@
             justify-content: space-between;
             padding: 0.5rem 0;
             border-bottom: 1px solid #f0f0f0;
+            gap: 1rem;
         }
 
         .hours-list li:last-child {
@@ -345,6 +359,7 @@
 
         .time {
             color: #777;
+            text-align: right;
         }
 
         /* Contact Form */
@@ -410,6 +425,7 @@
             font-size: 1rem;
             font-family: 'Poppins', sans-serif;
             transition: border-color 0.3s;
+            width: 100%;
         }
 
         .form-group input:focus,
@@ -459,39 +475,20 @@
             font-size: 2rem;
         }
 
-        .map-placeholder {
+        .map-container {
             width: 100%;
             height: 400px;
-            background: linear-gradient(135deg, #B8860B, #DAA520);
             border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
 
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, #B8860B, #DAA520);
-            color: white;
-            padding: 3rem;
-            border-radius: 10px;
-            text-align: center;
-            margin: 4rem 0;
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
         }
 
-        .cta-section h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .cta-section p {
-            font-size: 1.1rem;
-            margin-bottom: 0;
-        }
-
-        /* ===== SCROLL ANIMATIONS ===== */
+        /* Scroll Animations */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -505,7 +502,7 @@
 
         /* ===== FOOTER ===== */
         footer {
-            background: #3D2817;
+            background: #4c4747f4;
             color: white;
             padding: 80px 2rem 30px;
         }
@@ -538,6 +535,7 @@
 
         .footer-links li {
             margin-bottom: 0.7rem;
+            word-break: break-word;
         }
 
         .footer-links a {
@@ -554,6 +552,7 @@
             display: flex;
             gap: 1rem;
             margin-top: 1.5rem;
+            flex-wrap: wrap;
         }
 
         .social-icon {
@@ -567,6 +566,7 @@
             justify-content: center;
             text-decoration: none;
             transition: all 0.3s;
+            flex-shrink: 0;
         }
 
         .social-icon:hover {
@@ -583,13 +583,71 @@
         }
 
         /* ===== RESPONSIVE DESIGN ===== */
-        @media (max-width: 768px) {
-            .navbar {
-                display: none;
+        
+        /* Tablet and below (1024px) */
+        @media (max-width: 1024px) {
+            .navbar ul {
+                gap: 1.5rem;
             }
 
-            .menu-toggle {
-                display: block;
+            .navbar a {
+                font-size: 0.95rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-wrapper {
+                gap: 3rem;
+            }
+
+            .content-container {
+                padding: 3rem 2rem;
+            }
+        }
+
+        /* Mobile and tablet (768px) */
+        @media (max-width: 768px) {
+            /* Top Bar */
+            .top-bar {
+                font-size: 0.8rem;
+            }
+
+            .top-bar-container {
+                flex-direction: column;
+                gap: 0.5rem;
+                padding: 0.75rem 1rem;
+            }
+
+            .top-bar-left {
+                flex-direction: column;
+                gap: 0.5rem;
+                width: 100%;
+                align-items: flex-start;
+            }
+
+            .top-bar-item {
+                font-size: 0.85rem;
+            }
+
+            .top-bar-right {
+                width: 100%;
+                justify-content: center;
+            }
+
+            /* Header */
+            .header-container {
+                padding: 0 1rem;
+                min-height: 70px;
+            }
+
+            .logo img {
+                height: 60px;
+            }
+
+            .navbar {
+                display: none;
             }
 
             .navbar.active {
@@ -600,12 +658,32 @@
                 right: 0;
                 background: white;
                 box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                animation: slideDown 0.3s ease;
             }
 
             .navbar.active ul {
                 flex-direction: column;
-                padding: 2rem;
-                gap: 1rem;
+                padding: 1.5rem;
+                gap: 0.5rem;
+            }
+
+            .navbar.active li {
+                width: 100%;
+            }
+
+            .navbar.active a {
+                display: block;
+                padding: 1rem;
+                border-bottom: 1px solid #f0f0f0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            /* Hero */
+            .hero {
+                padding: 120px 1.5rem 80px;
             }
 
             .hero h1 {
@@ -616,37 +694,191 @@
                 font-size: 1rem;
             }
 
+            /* Content */
+            .content-container {
+                padding: 2rem 1rem;
+            }
+
             .contact-wrapper {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
 
+            .contact-info h2,
+            .contact-form h2 {
+                font-size: 1.5rem;
+            }
+
+            .info-item {
+                padding: 1rem;
+            }
+
+            .info-icon {
+                font-size: 1.5rem;
+                margin-right: 1rem;
+            }
+
+            .info-content h3 {
+                font-size: 1rem;
+            }
+
+            .info-content p {
+                font-size: 0.9rem;
+            }
+
+            .business-hours {
+                padding: 1.5rem;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+
+            .form-group input,
+            .form-group textarea,
+            .form-group select {
+                padding: 0.875rem;
+                font-size: 0.95rem;
+            }
+
+            /* Map */
+            .map-section {
+                padding: 2rem 1rem;
+                margin: 2rem 0;
+            }
+
+            .map-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .map-container {
+                height: 300px;
+            }
+
+            /* Footer */
+            footer {
+                padding: 50px 1rem 20px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-section h3 {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Small mobile (480px) */
+        @media (max-width: 480px) {
+            .top-bar-item span {
+                font-size: 0.75rem;
+            }
+
+            .top-bar-right span {
+                display: none;
+            }
+
+            .social-top a {
+                width: 28px;
+                height: 28px;
+            }
+
+            .logo img {
+                height: 50px;
+            }
+
+            .hero {
+                padding: 100px 1rem 60px;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .content-container {
+                padding: 1.5rem 0.75rem;
+            }
+
+            .contact-info h2,
+            .contact-form h2,
+            .map-section h2 {
+                font-size: 1.25rem;
+            }
+
             .info-item {
                 flex-direction: column;
                 text-align: center;
+                padding: 1rem;
             }
 
             .info-icon {
                 margin-right: 0;
-                margin-bottom: 1rem;
+                margin-bottom: 0.75rem;
             }
 
-            .map-placeholder {
-                height: 300px;
-                font-size: 1.2rem;
-                padding: 2rem;
+            .hours-list li {
+                flex-direction: column;
+                gap: 0.25rem;
                 text-align: center;
             }
-.map-container {
-    width: 100%;
-    height: 400px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-}
 
-            .footer-content {
-                grid-template-columns: 1fr;
+            .time {
+                text-align: center;
+            }
+
+            .contact-form {
+                padding: 1rem;
+            }
+
+            .map-section {
+                padding: 1.5rem 0.75rem;
+            }
+
+            .map-container {
+                height: 250px;
+            }
+
+            .footer-section h3 {
+                font-size: 1rem;
+            }
+
+            .footer-section p,
+            .footer-links li {
+                font-size: 0.9rem;
+            }
+
+            .social-icon {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        /* Extra small screens (360px) */
+        @media (max-width: 360px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 0.85rem;
+            }
+
+            .form-group input,
+            .form-group textarea,
+            .form-group select {
+                padding: 0.75rem;
+                font-size: 0.9rem;
+            }
+
+            .submit-btn {
+                padding: 0.875rem 1.5rem;
+                font-size: 0.95rem;
             }
         }
     </style>
@@ -684,7 +916,7 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="logo1.png" alt="EDULINK Group Logo">
+                <img src="logo.jpeg" alt="EDULINK Group Logo">
                 <span>EDULINK Group</span>
             </div>
             <nav class="navbar" id="navbar">
@@ -697,7 +929,7 @@
                     <li><a href="contact.html" class="active">Contact Us</a></li>
                 </ul>
             </nav>
-            <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">&#9776;</button>
         </div>
     </header>
 
@@ -803,24 +1035,22 @@
         </div>
 
         <section class="map-section fade-in">
-    <h2>Find Us</h2>
-    <div class="map-container">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.179464192197!2d150.81347347491764!3d-34.0668161746401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b129a50e469bfb7%3A0x5017d681632b8a0!2s72%20Queen%20St%2C%20Campbelltown%20NSW%202560%2C%20Australia!5e0!3m2!1sen!2slk!4v1729580280330!5m2!1sen!2slk"
-            width="100%"
-            height="400"
-            style="border:0; border-radius:10px;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-    </div>
-</section>
-
-       
+            <h2>Find Us</h2>
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.179464192197!2d150.81347347491764!3d-34.0668161746401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b129a50e469bfb7%3A0x5017d681632b8a0!2s72%20Queen%20St%2C%20Campbelltown%20NSW%202560%2C%20Australia!5e0!3m2!1sen!2slk!4v1729580280330!5m2!1sen!2slk"
+                    width="100%"
+                    height="400"
+                    style="border:0; border-radius:10px;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
     </div>
 
-   <!-- Footer -->
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -833,12 +1063,12 @@
                     <a href="https://www.instagram.com/edulink.group?utm_source=qr&igsh=MWNsYXpwdXh6djE4aA==" class="social-icon"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-             <div class="footer-section">
+            <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
                     <li><a href="index.html">Home</a></li>
-                   <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html"> Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
                     <li><a href="blog.html">Blog</a></li>
                 </ul>
@@ -853,7 +1083,7 @@
                     <li><a href="services.html">Business Advisory</a></li>
                 </ul>
             </div>
-           <div class="footer-section">
+            <div class="footer-section">
                 <h3>Contact Us</h3>
                 <ul class="footer-links">
                     <li><i class="fas fa-phone"></i> 0413 363 698</li>
@@ -863,7 +1093,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-        <p>&copy; 2025 EDULINK Group Pty Ltd. All rights reserved. | Privacy Policy | Terms of Service</p>
+            <p>&copy; 2025 EDULINK Group Pty Ltd. All rights reserved. | Privacy Policy | Terms of Service</p>
         </div>
     </footer>
 
@@ -871,6 +1101,16 @@
         // Mobile menu toggle
         document.getElementById('menu-toggle').addEventListener('click', function() {
             document.getElementById('navbar').classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navbar = document.getElementById('navbar');
+            const menuToggle = document.getElementById('menu-toggle');
+            
+            if (!navbar.contains(event.target) && !menuToggle.contains(event.target)) {
+                navbar.classList.remove('active');
+            }
         });
 
         // Smooth scroll for navigation links
@@ -882,6 +1122,13 @@
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     document.getElementById('navbar').classList.remove('active');
                 }
+            });
+        });
+
+        // Close mobile menu when clicking on nav links
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('navbar').classList.remove('active');
             });
         });
 
@@ -914,6 +1161,17 @@
         document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
+
+        // Handle window resize
+        let resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                if (window.innerWidth > 768) {
+                    document.getElementById('navbar').classList.remove('active');
+                }
+            }, 250);
+        });
     </script>
 </body>
-</html
+</html>

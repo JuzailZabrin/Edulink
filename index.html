@@ -31,10 +31,11 @@
 
         /* ===== TOP BAR ===== */
         .top-bar {
-            background: linear-gradient(135deg, #B8860B, #DAA520);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.85), rgba(179, 160, 99, 0.85));
             color: white;
             padding: 0.75rem 0;
             font-size: 0.9rem;
+            display: block;
         }
 
         .top-bar-container {
@@ -98,22 +99,25 @@
         /* ===== HEADER ===== */
         header {
             background: #ffffff;
-            padding: 0;
+            padding: 1rem 0;
             position: relative;
             width: 100%;
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-bottom: 1px solid #f0f0f0;
         }
 
         .header-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 1.25rem 2rem;
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            min-height: 80px;
         }
+
 
         .logo {
             display: flex;
@@ -211,17 +215,19 @@
             font-size: 1.8rem;
             cursor: pointer;
             color: #B8860B;
+            background: none;
+            border: none;
         }
 
-       .hero {
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.85), rgba(104, 102, 102, 0.85)), 
-                url(bookkeeping.webp) center/cover no-repeat;
-    color: #fff;
-    padding: 180px 2rem 120px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
+        .hero {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.85), rgba(104, 102, 102, 0.85)), url(bookkeeping.webp) center/cover no-repeat;
+            color: #fff;
+            padding: 180px 2rem 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
         .hero::before {
             content: '';
             position: absolute;
@@ -467,7 +473,7 @@
             background: white;
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
         }
@@ -480,12 +486,17 @@
         .service-image {
             width: 100%;
             height: 200px;
-            background: linear-gradient(135deg, #B8860B, #DAA520);
+            background: linear-gradient(135deg, #c5b99c, #DAA520);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3.5rem;
-            color: white;
+        }
+
+        .service-image img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
         }
 
         .service-content {
@@ -502,6 +513,7 @@
         .service-content p {
             color: #777;
             line-height: 1.7;
+            font-size: 1rem;
         }
 
         /* Stats Section */
@@ -788,7 +800,7 @@
 
         /* Footer */
         footer {
-            background: #3D2817;
+            background: #4c4747f4;
             color: white;
             padding: 80px 2rem 30px;
         }
@@ -877,74 +889,559 @@
             transform: translateY(0);
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
+        /* ===== RESPONSIVE DESIGN ===== */
+        
+        /* Tablets (landscape and portrait) */
+        @media (max-width: 1024px) {
             .top-bar {
-                display: none;
+                font-size: 0.85rem;
             }
 
-            .navbar {
-                display: none;
+            .top-bar-left {
+                gap: 1.5rem;
             }
 
-            .menu-toggle {
-                display: block;
+            .top-bar-item {
+                gap: 0.4rem;
             }
 
-            .navbar.active {
-                display: block;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: white;
-                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-                padding: 2rem;
+            .header-container {
+                padding: 0 1.5rem;
             }
 
-            .navbar.active ul {
-                flex-direction: column;
-                gap: 1rem;
+            .navbar ul {
+                gap: 1.5rem;
+            }
+
+            .navbar a {
+                font-size: 0.95rem;
             }
 
             .cta-button {
+                padding: 0.65rem 1.5rem;
+                font-size: 0.95rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .trust-content {
+                gap: 3rem;
+            }
+
+            .trust-info h2 {
+                font-size: 2.2rem;
+            }
+
+            .trust-badge-bg h3 {
+                font-size: 3rem;
+            }
+
+            .trust-badge-bg p {
+                font-size: 1.2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 2rem;
+            }
+
+            .stats-grid {
+                gap: 2rem;
+            }
+
+            .stat-item h3 {
+                font-size: 2.5rem;
+            }
+
+            .pricing-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+        }
+
+        /* Mobile devices */
+        @media (max-width: 768px) {
+            .top-bar {
                 display: block;
-                text-align: center;
-                margin-top: 1rem;
+                font-size: 0.75rem;
+                padding: 0.5rem 0;
+            }
+
+            .top-bar-container {
+                flex-direction: column;
+                gap: 0.75rem;
+                padding: 0 1rem;
+            }
+
+            .top-bar-left {
+                flex-direction: column;
+                gap: 0.5rem;
+                width: 100%;
+                align-items: flex-start;
+            }
+
+            .top-bar-item {
+                font-size: 0.8rem;
+            }
+
+            .top-bar-right {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .top-bar-right span {
+                display: none;
+            }
+
+            .header-container {
+                min-height: 70px;
+                padding: 0 1rem;
             }
 
             .logo img {
                 height: 60px;
             }
 
+            .navbar {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: white;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                padding: 2rem;
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .navbar.active {
+                display: flex;
+            }
+
+            .navbar ul {
+                flex-direction: column;
+                gap: 0;
+                width: 100%;
+            }
+
+            .navbar li {
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid #f0f0f0;
+            }
+
+            .navbar a {
+                display: block;
+                padding: 1rem;
+                width: 100%;
+            }
+
+            .navbar a::after {
+                display: none;
+            }
+
+            .cta-button {
+                display: block;
+                text-align: center;
+                margin-top: 1rem;
+                width: 100%;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero {
+                padding: 120px 1.5rem 80px;
+            }
+
             .hero h1 {
                 font-size: 2rem;
+                margin-bottom: 1rem;
             }
 
             .hero p {
                 font-size: 1rem;
+                margin-bottom: 1.5rem;
             }
 
-            .trust-content,
-            .contact-container {
+            .hero-btn {
+                padding: 10px 24px;
+                font-size: 15px;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+                padding-bottom: 15px;
+            }
+
+            .section-title::after {
+                width: 60px;
+                height: 3px;
+            }
+
+            .trust-section {
+                padding: 60px 1.5rem;
+            }
+
+            .trust-content {
                 grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .trust-badge-bg {
+                padding: 4rem 2rem;
+            }
+
+            .trust-badge-bg h3 {
+                font-size: 2.5rem;
+            }
+
+            .trust-badge-bg p {
+                font-size: 1.1rem;
+            }
+
+            .trust-info h2 {
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+            }
+
+            .trust-info > p {
+                font-size: 1rem;
             }
 
             .trust-features {
                 grid-template-columns: 1fr;
+                gap: 1.25rem;
             }
 
-            .services-grid,
+            .feature-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
+
+            .services {
+                padding: 60px 1.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .service-image {
+                height: 180px;
+            }
+
+            .service-image img {
+                width: 60px;
+                height: 60px;
+            }
+
+            .service-content {
+                padding: 1.5rem;
+            }
+
+            .service-content h3 {
+                font-size: 1.2rem;
+            }
+
+            .service-content p {
+                font-size: 0.95rem;
+            }
+
+            .stats {
+                padding: 60px 1.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .stat-item h3 {
+                font-size: 2.5rem;
+            }
+
+            .stat-item p {
+                font-size: 1rem;
+            }
+
+            .pricing {
+                padding: 60px 1.5rem;
+            }
+
             .pricing-grid {
                 grid-template-columns: 1fr;
+                gap: 2rem;
             }
 
-            .section-title {
-                font-size: 1.8rem;
+            .pricing-card {
+                padding: 2rem;
+            }
+
+            .pricing-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .price {
+                font-size: 2.5rem;
+            }
+
+            .price span {
+                font-size: 1.2rem;
+            }
+
+            .pricing-features {
+                margin: 1.5rem 0;
+            }
+
+            .pricing-features li {
+                font-size: 0.9rem;
+                padding: 0.6rem 0;
+            }
+
+            .faq {
+                padding: 60px 1.5rem;
+            }
+
+            .faq-question {
+                padding: 1.25rem;
+                font-size: 0.95rem;
+            }
+
+            .faq-answer {
+                padding: 0 1.25rem;
+                font-size: 0.95rem;
+            }
+
+            .faq-item.active .faq-answer {
+                padding: 0 1.25rem 1.25rem;
+            }
+
+            .contact {
+                padding: 60px 1.5rem;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .contact-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+
+            .contact-item {
+                gap: 1rem;
+            }
+
+            .contact-form h3 {
+                font-size: 1.5rem;
+            }
+
+            .form-group input,
+            .form-group textarea,
+            .form-group select {
+                padding: 0.875rem;
+                font-size: 0.95rem;
+            }
+
+            footer {
+                padding: 60px 1.5rem 20px;
             }
 
             .footer-content {
                 grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-section h3 {
+                font-size: 1.2rem;
+            }
+
+            .social-icon {
+                width: 40px;
+                height: 40px;
+            }
+
+            .btn, .btn-primary {
+                padding: 0.875rem 2rem;
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Small mobile devices */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .header-container {
+                padding: 0 1rem;
+            }
+
+            .logo img {
+                height: 50px;
+            }
+
+            .menu-toggle {
+                font-size: 1.5rem;
+            }
+
+            .hero {
+                padding: 100px 1rem 60px;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .trust-badge-bg {
+                padding: 3rem 1.5rem;
+            }
+
+            .trust-badge-bg h3 {
+                font-size: 2rem;
+            }
+
+            .trust-badge-bg p {
+                font-size: 1rem;
+            }
+
+            .trust-info h2 {
+                font-size: 1.5rem;
+            }
+
+            .services-grid {
+                gap: 1.5rem;
+            }
+
+            .service-image {
+                height: 160px;
+            }
+
+            .service-image img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .service-content {
+                padding: 1.25rem;
+            }
+
+            .service-content h3 {
+                font-size: 1.1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .stat-item h3 {
+                font-size: 2rem;
+            }
+
+            .pricing-card {
+                padding: 1.5rem;
+            }
+
+            .price {
+                font-size: 2rem;
+            }
+
+            .contact-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+
+            .social-icon {
+                width: 38px;
+                height: 38px;
+                font-size: 0.9rem;
+            }
+
+            .footer-bottom p {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Extra responsive adjustments for very small screens */
+        @media (max-width: 360px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+
+            .trust-badge-bg h3 {
+                font-size: 1.75rem;
+            }
+
+            .stat-item h3 {
+                font-size: 1.75rem;
+            }
+
+            .pricing-card h3 {
+                font-size: 1.15rem;
+            }
+        }
+
+        /* Landscape mode adjustments for mobile */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .hero {
+                padding: 80px 1.5rem 60px;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+                margin-bottom: 1rem;
+            }
+
+            .trust-badge-bg {
+                padding: 3rem 2rem;
+            }
+
+            .services,
+            .stats,
+            .pricing,
+            .faq,
+            .contact {
+                padding: 50px 1.5rem;
             }
         }
     </style>
@@ -983,7 +1480,7 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="logo1.png" alt="EDULINK Group Logo">
+                <img src="logo.jpeg" alt="EDULINK Group Logo">
                 <span>EDULINK Group</span>
             </div>
             <nav class="navbar" id="navbar">
@@ -996,7 +1493,7 @@
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </nav>
-            <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">&#9776;</button>
         </div>
     </header>
 
@@ -1043,39 +1540,48 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <h2 class="section-title">Streamlined Services Tailored to Your Business Needs</h2>
-        <div class="services-grid">
-            <div class="service-card fade-in">
-                <div class="service-image">
-                    <i class="fas fa-users"></i>
-                </div>
-                <div class="service-content">
-                    <h3>Personalized Payroll Management</h3>
-                    <p>We understand that every business is unique. That's why we offer tailor-made payroll solutions designed to fit your specific needs.</p>
-                </div>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-image">
-                    <i class="fas fa-book-open"></i>
-                </div>
-                <div class="service-content">
-                    <h3>The Best Bookkeeping</h3>
-                    <p>In the realm of Bookkeeping management, precision is paramount, we raise the bar by delivering unparalleled bookkeeping services designed to elevate your business operations.</p>
-                </div>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-image">
-                    <i class="fas fa-bolt"></i>
-                </div>
-                <div class="service-content">
-                    <h3>Swift and Sufficient</h3>
-                    <p>Our team is dedicated to providing you with solutions that are not only fast, but also easy to navigate.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+   <!-- Services Section -->
+<section class="services" id="services">
+  <h2 class="section-title">Streamlined Services Tailored to Your Business Needs</h2>
+  <div class="services-grid">
+
+    <!-- Service Card 1 -->
+    <div class="service-card fade-in">
+      <div class="service-image">
+        <img src="https://phase3.co.uk/wp-content/uploads/2023/08/poor-payroll-management-company-reputation.jpg" alt="Payroll Management Logo">
+      </div>
+      <div class="service-content">
+        <h3>Personalized Payroll Management</h3>
+        <p>We understand that every business is unique. That's why we offer tailor-made payroll solutions designed to fit your specific needs.</p>
+      </div>
+    </div>
+
+    <!-- Service Card 2 -->
+    <div class="service-card fade-in">
+      <div class="service-image">
+        <img src="logo.jpeg" alt="Bookkeeping Logo">
+      </div>
+      <div class="service-content">
+        <h3>The Best Bookkeeping</h3>
+        <p>In the realm of Bookkeeping management, precision is paramount, we raise the bar by delivering unparalleled bookkeeping services designed to elevate your business operations.</p>
+      </div>
+    </div>
+
+    <!-- Service Card 3 -->
+    <div class="service-card fade-in">
+      <div class="service-image">
+        <img src="images/swift-logo.png" alt="Swift and Sufficient Logo">
+      </div>
+      <div class="service-content">
+        <h3>Swift and Sufficient</h3>
+        <p>Our team is dedicated to providing you with solutions that are not only fast, but also easy to navigate.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
 
     <!-- Benefits Section -->
     <section class="services" style="background: #f8f9fa; padding: 80px 2rem;">
@@ -1163,7 +1669,7 @@
     <!-- Testimonials Section -->
     <section class="services" style="background: #f8f9fa; padding: 80px 2rem;">
         <h2 class="section-title">What Our Clients Say</h2>
-        <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+        <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
             <div class="service-card fade-in" style="background: white;">
                 <div class="service-content" style="padding: 3rem;">
                     <div style="color: #f59e0b; font-size: 2rem; margin-bottom: 1rem;">★★★★★</div>
@@ -1216,7 +1722,7 @@
             <div class="pricing-card fade-in">
                 <h3>Bookkeeping Starter</h3>
                 <p style="color: #666; margin-bottom: 0.5rem;">Turnover: $0 - $100,000</p>
-                <div class="price">$89<span style="font-size: 1.5rem;">/mo</span></div>
+                <div class="price">$89<span>/mo</span></div>
                 <p style="color: #666; font-size: 0.9rem;">+ GST</p>
                 <ul class="pricing-features">
                     <li>Initial Free Consultation</li>
@@ -1232,7 +1738,7 @@
             <div class="pricing-card fade-in">
                 <h3>Bookkeeping Standard</h3>
                 <p style="color: #666; margin-bottom: 0.5rem;">Turnover: $100,001 - $500,000</p>
-                <div class="price">$169<span style="font-size: 1.5rem;">/mo</span></div>
+                <div class="price">$169<span>/mo</span></div>
                 <p style="color: #666; font-size: 0.9rem;">+ GST</p>
                 <ul class="pricing-features">
                     <li>Everything in Starter</li>
@@ -1247,7 +1753,7 @@
             <div class="pricing-card fade-in">
                 <h3>Support Package</h3>
                 <p style="color: #666; margin-bottom: 0.5rem;">For Self-Managed Books</p>
-                <div class="price">$145<span style="font-size: 1.5rem;">/mo</span></div>
+                <div class="price">$145<span>/mo</span></div>
                 <p style="color: #666; font-size: 0.9rem;">+ GST</p>
                 <ul class="pricing-features">
                     <li>3 Hours Support/Training</li>
@@ -1310,43 +1816,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="services" id="about" style="background: #f8f9fa;">
-        <h2 class="section-title">About EDULINK Group</h2>
-        <div style="max-width: 900px; margin: 0 auto; text-align: center;">
-            <p style="font-size: 1.1rem; color: #666; line-height: 1.8; margin-bottom: 3rem;">Founded in 2017, EDULINK Group has steadily grown by working alongside a network of trusted tax agents. We specialize exclusively in Accounting, Bookkeeping, and Payroll Services—allowing our clients to focus on running their businesses while we ensure their financial records remain accurate, compliant, and up to date.</p>
-        </div>
-        <div class="services-grid" style="margin-top: 3rem;">
-            <div class="service-card fade-in">
-                <div class="service-image" style="height: 150px; font-size: 2.5rem;">
-                    <i class="fas fa-certificate"></i>
-                </div>
-                <div class="service-content">
-                    <h3>Our Certified Team</h3>
-                    <p>Our strength lies in our team of certified professionals, each possessing a wealth of experience in Bookkeeping and Payroll Management with deep industry knowledge.</p>
-                </div>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-image" style="height: 150px; font-size: 2.5rem;">
-                    <i class="fas fa-handshake"></i>
-                </div>
-                <div class="service-content">
-                    <h3>Trusted Company</h3>
-                    <p>Trust is the cornerstone of our operations. For years, we've built a reputation as a reliable partner, offering steadfast support and innovative solutions.</p>
-                </div>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-image" style="height: 150px; font-size: 2.5rem;">
-                    <i class="fas fa-bullseye"></i>
-                </div>
-                <div class="service-content">
-                    <h3>Our Mission</h3>
-                    <p>To excel in providing unparalleled payroll management and bookkeeping services, ensuring progress and efficiency for seamless business operations.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <h2 class="section-title">Get in Touch</h2>
@@ -1391,7 +1860,7 @@
                 </div>
             </div>
             <form class="contact-form fade-in">
-                <h3 style="color: #2c3e87; margin-bottom: 1.5rem;">Ready to Get Started?</h3>
+                <h3>Ready to Get Started?</h3>
                 <p style="color: #666; margin-bottom: 2rem;">Provide us with some details, and let's tailor a solution that fits you perfectly.</p>
                 <div class="form-group">
                     <input type="text" placeholder="Your Name *" required>
@@ -1436,7 +1905,7 @@
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
                     <li><a href="index.html">Home</a></li>
-                   <li><a href="about.html">About Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
                     <li><a href="blog.html">Blog</a></li>
@@ -1452,7 +1921,7 @@
                     <li><a href="services.html">Business Advisory</a></li>
                 </ul>
             </div>
-           <div class="footer-section">
+            <div class="footer-section">
                 <h3>Contact Us</h3>
                 <ul class="footer-links">
                     <li><i class="fas fa-phone"></i> 0413 363 698</li>
@@ -1462,13 +1931,14 @@
             </div>
         </div>
         <div class="footer-bottom">
-        <p>&copy; 2025 EDULINK Group Pty Ltd. All rights reserved. | Privacy Policy | Terms of Service</p>
+            <p>&copy; 2025 EDULINK Group Pty Ltd. All rights reserved. | Privacy Policy | Terms of Service</p>
         </div>
     </footer>
 
     <script>
         // Scroll animation
-        const observerOptions = {threshold: 0.1,
+        const observerOptions = {
+            threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
 
@@ -1510,6 +1980,12 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
+                    
+                    // Close mobile menu if open
+                    const navbar = document.getElementById('navbar');
+                    if (navbar.classList.contains('active')) {
+                        navbar.classList.remove('active');
+                    }
                 }
             });
         });
@@ -1521,8 +1997,25 @@
         if (menuToggle) {
             menuToggle.addEventListener('click', function() {
                 navbar.classList.toggle('active');
+                
+                // Change icon when menu is open
+                if (navbar.classList.contains('active')) {
+                    this.innerHTML = '&#10005;'; // X icon
+                } else {
+                    this.innerHTML = '&#9776;'; // Hamburger icon
+                }
             });
         }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInside = navbar.contains(event.target) || menuToggle.contains(event.target);
+            
+            if (!isClickInside && navbar.classList.contains('active')) {
+                navbar.classList.remove('active');
+                menuToggle.innerHTML = '&#9776;';
+            }
+        });
 
         // Form submission
         document.querySelector('.contact-form').addEventListener('submit', function(e) {
@@ -1535,13 +2028,16 @@
         function animateCounter(element, target, duration) {
             let current = 0;
             const increment = target / (duration / 16);
+            const hasPlus = element.textContent.includes('+');
+            const hasPercent = element.textContent.includes('%');
+            
             const timer = setInterval(() => {
                 current += increment;
                 if (current >= target) {
-                    element.textContent = target + (element.textContent.includes('+') ? '+' : '');
+                    element.textContent = target + (hasPlus ? '+' : '') + (hasPercent ? '%' : '');
                     clearInterval(timer);
                 } else {
-                    element.textContent = Math.floor(current);
+                    element.textContent = Math.floor(current) + (hasPlus ? '+' : '') + (hasPercent ? '%' : '');
                 }
             }, 16);
         }
@@ -1551,7 +2047,8 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     document.querySelectorAll('.stat-item h3').forEach(stat => {
-                        const target = parseInt(stat.textContent);
+                        const text = stat.textContent;
+                        const target = parseInt(text.replace(/\D/g, ''));
                         animateCounter(stat, target, 2000);
                     });
                     statsObserver.unobserve(entry.target);
@@ -1575,6 +2072,24 @@
         // Hero button
         document.querySelector('.hero-btn')?.addEventListener('click', function() {
             document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Handle window resize
+        let resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                // Close mobile menu on resize to larger screen
+                if (window.innerWidth > 768 && navbar.classList.contains('active')) {
+                    navbar.classList.remove('active');
+                    menuToggle.innerHTML = '&#9776;';
+                }
+            }, 250);
+        });
+
+        // Add loading class removal
+        window.addEventListener('load', function() {
+            document.body.classList.add('loaded');
         });
     </script>
 </body>
