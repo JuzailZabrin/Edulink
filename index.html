@@ -7,317 +7,9 @@
     <title>EDULINK Group | Professional Bookkeeping & Payroll Services in Australia</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <style>
-        /* ===== GLOBAL STYLES ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', 'Segoe UI', sans-serif;
-            line-height: 1.6;
-            color: #555;
-            overflow-x: hidden;
-            background-color: #ffffff;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* ===== TOP BAR ===== */
-        .top-bar {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.85), rgba(179, 160, 99, 0.85));
-            color: white;
-            padding: 0.75rem 0;
-            font-size: 0.9rem;
-            display: block;
-        }
-
-        .top-bar-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .top-bar-left {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .top-bar-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .top-bar-item i {
-            font-size: 1rem;
-        }
-
-        .top-bar-right {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .top-bar-right span {
-            margin-right: 0.5rem;
-        }
-
-        .social-top {
-            display: flex;
-            gap: 0.75rem;
-        }
-
-        .social-top a {
-            color: white;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            transition: all 0.3s;
-            text-decoration: none;
-        }
-
-        .social-top a:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-        }
-
-        /* ===== HEADER ===== */
-        header {
-            background: #ffffff;
-            padding: 1rem 0;
-            position: relative;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .header-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            min-height: 80px;
-        }
-
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-
-        .logo span {
-            display: none;
-        }
-
-        .logo img {
-            height: 90px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        .navbar {
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-        }
-
-        .navbar ul {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-            align-items: center;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-            align-items: center;
-            margin: 0;
-            padding: 0;
-        }
-
-        .navbar a {
-            text-decoration: none;
-            color: #555;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: color 0.3s;
-            position: relative;
-            padding: 0.5rem 0;
-            white-space: nowrap;
-        }
-
-        .navbar a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: #B8860B;
-            transition: width 0.3s;
-        }
-
-        .navbar a:hover::after,
-        .navbar a.active::after {
-            width: 100%;
-        }
-
-        .navbar a:hover,
-        .navbar a.active {
-            color: #B8860B;
-        }
-
-        .cta-button {
-            background: linear-gradient(135deg, #B8860B, #DAA520);
-            color: white;
-            padding: 0.75rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1rem;
-            transition: all 0.3s;
-            white-space: nowrap;
-            box-shadow: 0 4px 15px rgba(184, 134, 11, 0.3);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(184, 134, 11, 0.4);
-        }
-
-        .menu-toggle {
-            display: none;
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: #B8860B;
-            background: none;
-            border: none;
-        }
-
-        .hero {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.85), rgba(104, 102, 102, 0.85)), url(bookkeeping.webp) center/cover no-repeat;
-            color: #fff;
-            padding: 180px 2rem 120px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 20%, rgba(0, 0, 0, 0.1) 0%, transparent 50%);
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            animation: fadeInUp 1s ease;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-            animation: fadeInUp 1s ease 0.2s both;
-        }
-
-        .hero-btn {
-            background-color: #000;
-            color: #fff;
-            border: none;
-            padding: 12px 28px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 8px;
-            transition: 0.3s ease;
-            animation: fadeInUp 1s ease 0.4s both;
-        }
-
-        .hero-btn:hover {
-            background-color: #333;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* ===== COMMON SECTIONS ===== */
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            color: #8B6914;
-            margin-bottom: 1rem;
-            font-weight: 800;
-            position: relative;
-            padding-bottom: 20px;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, #B8860B, #DAA520);
-            border-radius: 2px;
-        }
-
-        .content-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
+            
         /* ===== BUTTONS ===== */
         .btn, .btn-primary {
             display: inline-block;
@@ -473,7 +165,7 @@
             background: white;
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
         }
@@ -486,17 +178,12 @@
         .service-image {
             width: 100%;
             height: 200px;
-            background: linear-gradient(135deg, #c5b99c, #DAA520);
+            background: linear-gradient(135deg, #B8860B, #DAA520);
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-
-        .service-image img {
-            width: 70px;
-            height: 70px;
-            object-fit: contain;
-            filter: brightness(0) invert(1);
+            font-size: 3.5rem;
+            color: white;
         }
 
         .service-content {
@@ -513,7 +200,6 @@
         .service-content p {
             color: #777;
             line-height: 1.7;
-            font-size: 1rem;
         }
 
         /* Stats Section */
@@ -798,85 +484,7 @@
             box-shadow: 0 5px 15px rgba(184, 134, 11, 0.3);
         }
 
-        /* Footer */
-        footer {
-            background: #4c4747f4;
-            color: white;
-            padding: 80px 2rem 30px;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-section h3 {
-            color: #DAA520;
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-            font-weight: 700;
-        }
-
-        .footer-section p {
-            color: #CCC;
-            line-height: 1.7;
-            margin-bottom: 1rem;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.7rem;
-        }
-
-        .footer-links a {
-            color: #CCC;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: #DAA520;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .social-icon {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, #B8860B, #DAA520);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-
-        .social-icon:hover {
-            background: linear-gradient(135deg, #DAA520, #FFD700);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(218, 165, 32, 0.4);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid #5A4329;
-            color: #999;
-        }
-
+        
         /* Scroll Animations */
         .fade-in {
             opacity: 0;
@@ -889,561 +497,6 @@
             transform: translateY(0);
         }
 
-        /* ===== RESPONSIVE DESIGN ===== */
-        
-        /* Tablets (landscape and portrait) */
-        @media (max-width: 1024px) {
-            .top-bar {
-                font-size: 0.85rem;
-            }
-
-            .top-bar-left {
-                gap: 1.5rem;
-            }
-
-            .top-bar-item {
-                gap: 0.4rem;
-            }
-
-            .header-container {
-                padding: 0 1.5rem;
-            }
-
-            .navbar ul {
-                gap: 1.5rem;
-            }
-
-            .navbar a {
-                font-size: 0.95rem;
-            }
-
-            .cta-button {
-                padding: 0.65rem 1.5rem;
-                font-size: 0.95rem;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .trust-content {
-                gap: 3rem;
-            }
-
-            .trust-info h2 {
-                font-size: 2.2rem;
-            }
-
-            .trust-badge-bg h3 {
-                font-size: 3rem;
-            }
-
-            .trust-badge-bg p {
-                font-size: 1.2rem;
-            }
-
-            .services-grid {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: 2rem;
-            }
-
-            .stats-grid {
-                gap: 2rem;
-            }
-
-            .stat-item h3 {
-                font-size: 2.5rem;
-            }
-
-            .pricing-grid {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            }
-        }
-
-        /* Mobile devices */
-        @media (max-width: 768px) {
-            .top-bar {
-                display: block;
-                font-size: 0.75rem;
-                padding: 0.5rem 0;
-            }
-
-            .top-bar-container {
-                flex-direction: column;
-                gap: 0.75rem;
-                padding: 0 1rem;
-            }
-
-            .top-bar-left {
-                flex-direction: column;
-                gap: 0.5rem;
-                width: 100%;
-                align-items: flex-start;
-            }
-
-            .top-bar-item {
-                font-size: 0.8rem;
-            }
-
-            .top-bar-right {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .top-bar-right span {
-                display: none;
-            }
-
-            .header-container {
-                min-height: 70px;
-                padding: 0 1rem;
-            }
-
-            .logo img {
-                height: 60px;
-            }
-
-            .navbar {
-                display: none;
-                position: fixed;
-                top: 70px;
-                left: 0;
-                right: 0;
-                background: white;
-                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-                padding: 2rem;
-                flex-direction: column;
-                gap: 0;
-            }
-
-            .navbar.active {
-                display: flex;
-            }
-
-            .navbar ul {
-                flex-direction: column;
-                gap: 0;
-                width: 100%;
-            }
-
-            .navbar li {
-                width: 100%;
-                text-align: center;
-                border-bottom: 1px solid #f0f0f0;
-            }
-
-            .navbar a {
-                display: block;
-                padding: 1rem;
-                width: 100%;
-            }
-
-            .navbar a::after {
-                display: none;
-            }
-
-            .cta-button {
-                display: block;
-                text-align: center;
-                margin-top: 1rem;
-                width: 100%;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .hero {
-                padding: 120px 1.5rem 80px;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-                margin-bottom: 1rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .hero-btn {
-                padding: 10px 24px;
-                font-size: 15px;
-            }
-
-            .section-title {
-                font-size: 1.75rem;
-                padding-bottom: 15px;
-            }
-
-            .section-title::after {
-                width: 60px;
-                height: 3px;
-            }
-
-            .trust-section {
-                padding: 60px 1.5rem;
-            }
-
-            .trust-content {
-                grid-template-columns: 1fr;
-                gap: 2.5rem;
-            }
-
-            .trust-badge-bg {
-                padding: 4rem 2rem;
-            }
-
-            .trust-badge-bg h3 {
-                font-size: 2.5rem;
-            }
-
-            .trust-badge-bg p {
-                font-size: 1.1rem;
-            }
-
-            .trust-info h2 {
-                font-size: 1.8rem;
-                margin-bottom: 1rem;
-            }
-
-            .trust-info > p {
-                font-size: 1rem;
-            }
-
-            .trust-features {
-                grid-template-columns: 1fr;
-                gap: 1.25rem;
-            }
-
-            .feature-icon {
-                width: 45px;
-                height: 45px;
-                font-size: 1.1rem;
-            }
-
-            .services {
-                padding: 60px 1.5rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .service-image {
-                height: 180px;
-            }
-
-            .service-image img {
-                width: 60px;
-                height: 60px;
-            }
-
-            .service-content {
-                padding: 1.5rem;
-            }
-
-            .service-content h3 {
-                font-size: 1.2rem;
-            }
-
-            .service-content p {
-                font-size: 0.95rem;
-            }
-
-            .stats {
-                padding: 60px 1.5rem;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-            }
-
-            .stat-item h3 {
-                font-size: 2.5rem;
-            }
-
-            .stat-item p {
-                font-size: 1rem;
-            }
-
-            .pricing {
-                padding: 60px 1.5rem;
-            }
-
-            .pricing-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .pricing-card {
-                padding: 2rem;
-            }
-
-            .pricing-card h3 {
-                font-size: 1.3rem;
-            }
-
-            .price {
-                font-size: 2.5rem;
-            }
-
-            .price span {
-                font-size: 1.2rem;
-            }
-
-            .pricing-features {
-                margin: 1.5rem 0;
-            }
-
-            .pricing-features li {
-                font-size: 0.9rem;
-                padding: 0.6rem 0;
-            }
-
-            .faq {
-                padding: 60px 1.5rem;
-            }
-
-            .faq-question {
-                padding: 1.25rem;
-                font-size: 0.95rem;
-            }
-
-            .faq-answer {
-                padding: 0 1.25rem;
-                font-size: 0.95rem;
-            }
-
-            .faq-item.active .faq-answer {
-                padding: 0 1.25rem 1.25rem;
-            }
-
-            .contact {
-                padding: 60px 1.5rem;
-            }
-
-            .contact-container {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .contact-icon {
-                width: 50px;
-                height: 50px;
-                font-size: 1.3rem;
-            }
-
-            .contact-item {
-                gap: 1rem;
-            }
-
-            .contact-form h3 {
-                font-size: 1.5rem;
-            }
-
-            .form-group input,
-            .form-group textarea,
-            .form-group select {
-                padding: 0.875rem;
-                font-size: 0.95rem;
-            }
-
-            footer {
-                padding: 60px 1.5rem 20px;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .footer-section h3 {
-                font-size: 1.2rem;
-            }
-
-            .social-icon {
-                width: 40px;
-                height: 40px;
-            }
-
-            .btn, .btn-primary {
-                padding: 0.875rem 2rem;
-                font-size: 0.95rem;
-            }
-        }
-
-        /* Small mobile devices */
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 1rem;
-            }
-
-            .header-container {
-                padding: 0 1rem;
-            }
-
-            .logo img {
-                height: 50px;
-            }
-
-            .menu-toggle {
-                font-size: 1.5rem;
-            }
-
-            .hero {
-                padding: 100px 1rem 60px;
-            }
-
-            .hero h1 {
-                font-size: 1.75rem;
-            }
-
-            .hero p {
-                font-size: 0.95rem;
-            }
-
-            .section-title {
-                font-size: 1.5rem;
-            }
-
-            .trust-badge-bg {
-                padding: 3rem 1.5rem;
-            }
-
-            .trust-badge-bg h3 {
-                font-size: 2rem;
-            }
-
-            .trust-badge-bg p {
-                font-size: 1rem;
-            }
-
-            .trust-info h2 {
-                font-size: 1.5rem;
-            }
-
-            .services-grid {
-                gap: 1.5rem;
-            }
-
-            .service-image {
-                height: 160px;
-            }
-
-            .service-image img {
-                width: 50px;
-                height: 50px;
-            }
-
-            .service-content {
-                padding: 1.25rem;
-            }
-
-            .service-content h3 {
-                font-size: 1.1rem;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .stat-item h3 {
-                font-size: 2rem;
-            }
-
-            .pricing-card {
-                padding: 1.5rem;
-            }
-
-            .price {
-                font-size: 2rem;
-            }
-
-            .contact-icon {
-                width: 45px;
-                height: 45px;
-                font-size: 1.2rem;
-            }
-
-            .social-icon {
-                width: 38px;
-                height: 38px;
-                font-size: 0.9rem;
-            }
-
-            .footer-bottom p {
-                font-size: 0.85rem;
-            }
-        }
-
-        /* Extra responsive adjustments for very small screens */
-        @media (max-width: 360px) {
-            .hero h1 {
-                font-size: 1.5rem;
-            }
-
-            .hero p {
-                font-size: 0.9rem;
-            }
-
-            .section-title {
-                font-size: 1.3rem;
-            }
-
-            .trust-badge-bg h3 {
-                font-size: 1.75rem;
-            }
-
-            .stat-item h3 {
-                font-size: 1.75rem;
-            }
-
-            .pricing-card h3 {
-                font-size: 1.15rem;
-            }
-        }
-
-        /* Landscape mode adjustments for mobile */
-        @media (max-height: 600px) and (orientation: landscape) {
-            .hero {
-                padding: 80px 1.5rem 60px;
-            }
-
-            .hero h1 {
-                font-size: 1.75rem;
-                margin-bottom: 0.75rem;
-            }
-
-            .hero p {
-                font-size: 0.95rem;
-                margin-bottom: 1rem;
-            }
-
-            .trust-badge-bg {
-                padding: 3rem 2rem;
-            }
-
-            .services,
-            .stats,
-            .pricing,
-            .faq,
-            .contact {
-                padding: 50px 1.5rem;
-            }
-        }
     </style>
 </head>
 <body>
@@ -1486,14 +539,14 @@
             <nav class="navbar" id="navbar">
                 <ul class="nav-links">
                     <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="about.html" >About Us</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </nav>
-            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+            <div class="menu-toggle" id="menu-toggle">&#9776;</div>
         </div>
     </header>
 
@@ -1540,48 +593,39 @@
         </div>
     </section>
 
-   <!-- Services Section -->
-<section class="services" id="services">
-  <h2 class="section-title">Streamlined Services Tailored to Your Business Needs</h2>
-  <div class="services-grid">
-
-    <!-- Service Card 1 -->
-    <div class="service-card fade-in">
-      <div class="service-image">
-        <img src="https://phase3.co.uk/wp-content/uploads/2023/08/poor-payroll-management-company-reputation.jpg" alt="Payroll Management Logo">
-      </div>
-      <div class="service-content">
-        <h3>Personalized Payroll Management</h3>
-        <p>We understand that every business is unique. That's why we offer tailor-made payroll solutions designed to fit your specific needs.</p>
-      </div>
-    </div>
-
-    <!-- Service Card 2 -->
-    <div class="service-card fade-in">
-      <div class="service-image">
-        <img src="logo.jpeg" alt="Bookkeeping Logo">
-      </div>
-      <div class="service-content">
-        <h3>The Best Bookkeeping</h3>
-        <p>In the realm of Bookkeeping management, precision is paramount, we raise the bar by delivering unparalleled bookkeeping services designed to elevate your business operations.</p>
-      </div>
-    </div>
-
-    <!-- Service Card 3 -->
-    <div class="service-card fade-in">
-      <div class="service-image">
-        <img src="images/swift-logo.png" alt="Swift and Sufficient Logo">
-      </div>
-      <div class="service-content">
-        <h3>Swift and Sufficient</h3>
-        <p>Our team is dedicated to providing you with solutions that are not only fast, but also easy to navigate.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2 class="section-title">Streamlined Services Tailored to Your Business Needs</h2>
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <div class="service-image">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="service-content">
+                    <h3>Personalized Payroll Management</h3>
+                    <p>We understand that every business is unique. That's why we offer tailor-made payroll solutions designed to fit your specific needs.</p>
+                </div>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-image">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <div class="service-content">
+                    <h3>The Best Bookkeeping</h3>
+                    <p>In the realm of Bookkeeping management, precision is paramount, we raise the bar by delivering unparalleled bookkeeping services designed to elevate your business operations.</p>
+                </div>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-image">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <div class="service-content">
+                    <h3>Swift and Sufficient</h3>
+                    <p>Our team is dedicated to providing you with solutions that are not only fast, but also easy to navigate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Benefits Section -->
     <section class="services" style="background: #f8f9fa; padding: 80px 2rem;">
@@ -1669,7 +713,7 @@
     <!-- Testimonials Section -->
     <section class="services" style="background: #f8f9fa; padding: 80px 2rem;">
         <h2 class="section-title">What Our Clients Say</h2>
-        <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+        <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
             <div class="service-card fade-in" style="background: white;">
                 <div class="service-content" style="padding: 3rem;">
                     <div style="color: #f59e0b; font-size: 2rem; margin-bottom: 1rem;">★★★★★</div>
@@ -1722,8 +766,8 @@
             <div class="pricing-card fade-in">
                 <h3>Bookkeeping Starter</h3>
                 <p style="color: #666; margin-bottom: 0.5rem;">Turnover: $0 - $100,000</p>
-                <div class="price">$89<span>/mo</span></div>
-                <p style="color: #666; font-size: 0.9rem;">+ GST</p>
+                <div class="price">$98<span style="font-size: 1.5rem;">/mo</span></div>
+                <p style="color: #666; font-size: 0.9rem;">Monthly Cost (inc GST)</p>
                 <ul class="pricing-features">
                     <li>Initial Free Consultation</li>
                     <li>Quarterly Account Reviews</li>
@@ -1738,8 +782,8 @@
             <div class="pricing-card fade-in">
                 <h3>Bookkeeping Standard</h3>
                 <p style="color: #666; margin-bottom: 0.5rem;">Turnover: $100,001 - $500,000</p>
-                <div class="price">$169<span>/mo</span></div>
-                <p style="color: #666; font-size: 0.9rem;">+ GST</p>
+                <div class="price">$186<span style="font-size: 1.5rem;">/mo</span></div>
+                <p style="color: #666; font-size: 0.9rem;">Monthly Cost (inc GST)</p>
                 <ul class="pricing-features">
                     <li>Everything in Starter</li>
                     <li>Enhanced Support</li>
@@ -1753,8 +797,8 @@
             <div class="pricing-card fade-in">
                 <h3>Support Package</h3>
                 <p style="color: #666; margin-bottom: 0.5rem;">For Self-Managed Books</p>
-                <div class="price">$145<span>/mo</span></div>
-                <p style="color: #666; font-size: 0.9rem;">+ GST</p>
+                <div class="price">$160<span style="font-size: 1.5rem;">/mo</span></div>
+                <p style="color: #666; font-size: 0.9rem;">Monthly Cost (inc GST)</p>
                 <ul class="pricing-features">
                     <li>3 Hours Support/Training</li>
                     <li>Software Setup Assistance</li>
@@ -1768,8 +812,8 @@
         </div>
         <div style="text-align: center; margin-top: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
             <h3 style="color: #a58933; margin-bottom: 1rem;">Payroll Services</h3>
-            <p style="font-size: 1.8rem; color: #b39332; font-weight: bold; margin-bottom: 1rem;">$680 + GST per annum, per employee</p>
-            <p style="color: #666;">Includes employee setup, STP processing, entitlement monitoring, TFN declarations, PAYG & superannuation, year-end reconciliation, and payment summaries.</p>
+            <p style="font-size: 1.8rem; color: #b39332; font-weight: bold; margin-bottom: 1rem;">$748 per annum, per employee</p>
+            <p style="color: #666;">Annual Cost (inc GST). Includes employee setup, STP processing, entitlement monitoring, TFN declarations, PAYG & superannuation, year-end reconciliation, and payment summaries.</p>
         </div>
     </section>
 
@@ -1792,7 +836,7 @@
                     <span class="faq-toggle">▼</span>
                 </div>
                 <div class="faq-answer">
-                    <p>Our payroll service includes employee setup, weekly/fortnightly/monthly pay runs, Single Touch Payroll (STP) lodgement, leave tracking, superannuation management, and year-end reconciliations at $680 + GST per employee annually.</p>
+                    <p>Our payroll service includes employee setup, weekly/fortnightly/monthly pay runs, Single Touch Payroll (STP) lodgement, leave tracking, superannuation management, and year-end reconciliations at $748 (inc GST) per employee annually.</p>
                 </div>
             </div>
             <div class="faq-item fade-in">
@@ -1860,7 +904,7 @@
                 </div>
             </div>
             <form class="contact-form fade-in">
-                <h3>Ready to Get Started?</h3>
+                <h3 style="color: #2c3e87; margin-bottom: 1.5rem;">Ready to Get Started?</h3>
                 <p style="color: #666; margin-bottom: 2rem;">Provide us with some details, and let's tailor a solution that fits you perfectly.</p>
                 <div class="form-group">
                     <input type="text" placeholder="Your Name *" required>
@@ -1905,7 +949,7 @@
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
+                   <li><a href="about.html">About Us</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
                     <li><a href="blog.html">Blog</a></li>
@@ -1921,7 +965,7 @@
                     <li><a href="services.html">Business Advisory</a></li>
                 </ul>
             </div>
-            <div class="footer-section">
+           <div class="footer-section">
                 <h3>Contact Us</h3>
                 <ul class="footer-links">
                     <li><i class="fas fa-phone"></i> 0413 363 698</li>
@@ -1931,14 +975,13 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 EDULINK Group Pty Ltd. All rights reserved. | Privacy Policy | Terms of Service</p>
+        <p>&copy; 2025 EDULINK Group Pty Ltd. All rights reserved. | Privacy Policy | Terms of Service</p>
         </div>
     </footer>
 
     <script>
         // Scroll animation
-        const observerOptions = {
-            threshold: 0.1,
+        const observerOptions = {threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
 
@@ -1980,12 +1023,6 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
-                    
-                    // Close mobile menu if open
-                    const navbar = document.getElementById('navbar');
-                    if (navbar.classList.contains('active')) {
-                        navbar.classList.remove('active');
-                    }
                 }
             });
         });
@@ -1997,25 +1034,8 @@
         if (menuToggle) {
             menuToggle.addEventListener('click', function() {
                 navbar.classList.toggle('active');
-                
-                // Change icon when menu is open
-                if (navbar.classList.contains('active')) {
-                    this.innerHTML = '&#10005;'; // X icon
-                } else {
-                    this.innerHTML = '&#9776;'; // Hamburger icon
-                }
             });
         }
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const isClickInside = navbar.contains(event.target) || menuToggle.contains(event.target);
-            
-            if (!isClickInside && navbar.classList.contains('active')) {
-                navbar.classList.remove('active');
-                menuToggle.innerHTML = '&#9776;';
-            }
-        });
 
         // Form submission
         document.querySelector('.contact-form').addEventListener('submit', function(e) {
@@ -2028,16 +1048,13 @@
         function animateCounter(element, target, duration) {
             let current = 0;
             const increment = target / (duration / 16);
-            const hasPlus = element.textContent.includes('+');
-            const hasPercent = element.textContent.includes('%');
-            
             const timer = setInterval(() => {
                 current += increment;
                 if (current >= target) {
-                    element.textContent = target + (hasPlus ? '+' : '') + (hasPercent ? '%' : '');
+                    element.textContent = target + (element.textContent.includes('+') ? '+' : '');
                     clearInterval(timer);
                 } else {
-                    element.textContent = Math.floor(current) + (hasPlus ? '+' : '') + (hasPercent ? '%' : '');
+                    element.textContent = Math.floor(current);
                 }
             }, 16);
         }
@@ -2047,8 +1064,7 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     document.querySelectorAll('.stat-item h3').forEach(stat => {
-                        const text = stat.textContent;
-                        const target = parseInt(text.replace(/\D/g, ''));
+                        const target = parseInt(stat.textContent);
                         animateCounter(stat, target, 2000);
                     });
                     statsObserver.unobserve(entry.target);
@@ -2072,24 +1088,6 @@
         // Hero button
         document.querySelector('.hero-btn')?.addEventListener('click', function() {
             document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
-        });
-
-        // Handle window resize
-        let resizeTimer;
-        window.addEventListener('resize', function() {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(function() {
-                // Close mobile menu on resize to larger screen
-                if (window.innerWidth > 768 && navbar.classList.contains('active')) {
-                    navbar.classList.remove('active');
-                    menuToggle.innerHTML = '&#9776;';
-                }
-            }, 250);
-        });
-
-        // Add loading class removal
-        window.addEventListener('load', function() {
-            document.body.classList.add('loaded');
         });
     </script>
 </body>

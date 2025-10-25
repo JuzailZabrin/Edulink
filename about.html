@@ -6,263 +6,9 @@
     <title>About Us - EDULINK Group</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <style>
-        /* ===== GLOBAL STYLES ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', 'Segoe UI', sans-serif;
-            line-height: 1.6;
-            color: #555;
-            overflow-x: hidden;
-            background-color: #ffffff;
-        }
-
-        /* ===== TOP BAR ===== */
-        .top-bar {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.85), rgba(179, 160, 99, 0.85));
-            color: white;
-            padding: 0.75rem 0;
-            font-size: 0.9rem;
-        }
-
-        .top-bar-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .top-bar-left {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .top-bar-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            white-space: nowrap;
-        }
-
-        .top-bar-item i {
-            font-size: 1rem;
-            flex-shrink: 0;
-        }
-
-        .top-bar-item span {
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .top-bar-right {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .top-bar-right > span {
-            margin-right: 0.5rem;
-        }
-
-        .social-top {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-        }
-
-        .social-top a {
-            color: white;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            transition: all 0.3s;
-            text-decoration: none;
-            flex-shrink: 0;
-        }
-
-        .social-top a:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-        }
-
-        /* ===== HEADER ===== */
-        header {
-            background: #ffffff;
-            padding: 1rem 0;
-            position: relative;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .header-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            min-height: 80px;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-
-        .logo span {
-            display: none;
-        }
-
-        .logo img {
-            height: 90px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        .navbar {
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-        }
-
-        .navbar ul {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-            align-items: center;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-            align-items: center;
-            margin: 0;
-            padding: 0;
-        }
-
-        .navbar a {
-            text-decoration: none;
-            color: #555;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: color 0.3s;
-            position: relative;
-            padding: 0.5rem 0;
-            white-space: nowrap;
-        }
-
-        .navbar a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: #B8860B;
-            transition: width 0.3s;
-        }
-
-        .navbar a:hover::after,
-        .navbar a.active::after {
-            width: 100%;
-        }
-
-        .navbar a:hover,
-        .navbar a.active {
-            color: #B8860B;
-        }
-
-        .menu-toggle {
-            display: none;
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: #B8860B;
-        }
-
-        .hero {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.85), rgba(104, 102, 102, 0.85)), 
-                        url(bookkeeping.webp) center/cover no-repeat;
-            color: #fff;
-            padding: 180px 2rem 120px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 20%, rgba(0, 0, 0, 0.1) 0%, transparent 50%);
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            animation: fadeInUp 1s ease;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-            animation: fadeInUp 1s ease 0.2s both;
-        }
-
-        .hero-btn {
-            background-color: #000;
-            color: #fff;
-            border: none;
-            padding: 12px 28px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 8px;
-            transition: 0.3s ease;
-            animation: fadeInUp 1s ease 0.4s both;
-        }
-
-        .hero-btn:hover {
-            background-color: #333;
-        }
-
+       
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -274,12 +20,7 @@
             }
         }
 
-        /* ===== CONTENT CONTAINER ===== */
-        .content-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
+       
 
         /* ===== HISTORY SECTION ===== */
         .history {
@@ -397,46 +138,120 @@
             line-height: 1.8;
         }
 
-        /* ===== WHY CHOOSE ===== */
-        .why-choose {
-            background: #f8f9fa;
-            padding: 3rem;
-            border-radius: 10px;
-            margin: 3rem 0;
-        }
+       /* ===== WHY CHOOSE (HORIZONTAL SLIDER) ===== */
+.why-choose {
+  background: #f8f9fa;
+  padding: 3rem;
+  border-radius: 10px;
+  margin: 3rem 0;
+  position: relative;
+  text-align: center;
+}
 
-        .why-choose h2 {
-            color: #8B6914;
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 2rem;
-        }
+.why-choose h2 {
+  color: #8B6914;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  position: relative;
+  padding-bottom: 10px;
+}
 
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
+.why-choose h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #B8860B, #DAA520);
+  border-radius: 2px;
+}
 
-        .benefit-item {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid #B8860B;
-        }
+/* Horizontal container */
+.benefits-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-        .benefit-item h4 {
-            color: #8B6914;
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
+/* Horizontal scroll area */
+.benefits-slider {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 1rem;
+  scrollbar-width: none;
+}
 
-        .benefit-item p {
-            color: #777;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
+.benefits-slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* Benefit Card */
+.benefit-item {
+  flex: 0 0 300px;
+  background: white;
+  padding: 1.8rem;
+  border-radius: 10px;
+  border-left: 5px solid #B8860B;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  scroll-snap-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.benefit-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.benefit-item h4 {
+  color: #8B6914;
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.benefit-item p {
+  color: #777;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Scroll Buttons */
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, #B8860B, #DAA520);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.scroll-btn:hover {
+  background: #8B6914;
+}
+
+.scroll-btn.left {
+  left: -25px;
+}
+
+.scroll-btn.right {
+  right: -25px;
+}
+
 
         /* ===== CTA ===== */
         .cta {
@@ -489,470 +304,7 @@
             transform: translateY(0);
         }
 
-        /* ===== FOOTER ===== */
-        footer {
-            background: #4c4747f4;
-            color: white;
-            padding: 80px 2rem 30px;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-section h3 {
-            color: #DAA520;
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-            font-weight: 700;
-        }
-
-        .footer-section p {
-            color: #CCC;
-            line-height: 1.7;
-            margin-bottom: 1rem;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.7rem;
-        }
-
-        .footer-links a {
-            color: #CCC;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: #DAA520;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .social-icon {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, #B8860B, #DAA520);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-
-        .social-icon:hover {
-            background: linear-gradient(135deg, #DAA520, #FFD700);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(218, 165, 32, 0.4);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid #5A4329;
-            color: #999;
-        }
-
-        /* ===== RESPONSIVE DESIGN ===== */
-        
-        /* Large tablets and below */
-        @media (max-width: 1024px) {
-            .top-bar-container {
-                padding: 0 1.5rem;
-            }
-
-            .top-bar-left {
-                gap: 1.5rem;
-            }
-
-            .top-bar-item {
-                font-size: 0.85rem;
-            }
-
-            .navbar ul {
-                gap: 1.5rem;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .content-container {
-                padding: 3rem 1.5rem;
-            }
-        }
-
-        /* Tablets and smaller */
-        @media (max-width: 900px) {
-            .top-bar {
-                font-size: 0.85rem;
-                padding: 0.6rem 0;
-            }
-
-            .top-bar-left {
-                gap: 1rem;
-            }
-
-            .top-bar-item span {
-                font-size: 0.8rem;
-            }
-
-            .top-bar-right > span {
-                display: none;
-            }
-        }
-
-        /* Mobile devices */
-        @media (max-width: 768px) {
-            .top-bar {
-                font-size: 0.75rem;
-                padding: 0.5rem 0;
-            }
-
-            .top-bar-container {
-                flex-direction: column;
-                gap: 0.75rem;
-                padding: 0.75rem 1rem;
-                align-items: stretch;
-            }
-
-            .top-bar-left {
-                flex-direction: column;
-                gap: 0.5rem;
-                align-items: flex-start;
-                width: 100%;
-            }
-
-            .top-bar-item {
-                width: 100%;
-                font-size: 0.75rem;
-            }
-
-            .top-bar-right {
-                width: 100%;
-                justify-content: center;
-                gap: 0.75rem;
-            }
-
-            .social-top {
-                gap: 0.5rem;
-            }
-
-            .social-top a {
-                width: 28px;
-                height: 28px;
-                font-size: 0.85rem;
-            }
-
-            .header-container {
-                padding: 0 1rem;
-                min-height: 70px;
-            }
-
-            .logo img {
-                height: 60px;
-            }
-
-            .navbar {
-                display: none;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .navbar.active {
-                display: block;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: white;
-                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-                padding: 1rem 0;
-            }
-
-            .navbar.active ul {
-                flex-direction: column;
-                padding: 1rem;
-                gap: 0;
-            }
-
-            .navbar.active ul li {
-                width: 100%;
-                border-bottom: 1px solid #f0f0f0;
-            }
-
-            .navbar.active a {
-                display: block;
-                padding: 1rem;
-                width: 100%;
-            }
-
-            .hero {
-                padding: 100px 1.5rem 80px;
-            }
-
-            .hero h1 {
-                font-size: 1.75rem;
-                margin-bottom: 1rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .hero-btn {
-                padding: 10px 24px;
-                font-size: 14px;
-            }
-
-            .content-container {
-                padding: 2rem 1rem;
-            }
-
-            .history {
-                padding: 2rem 1.5rem;
-                margin-bottom: 2rem;
-            }
-
-            .history h2 {
-                font-size: 1.5rem;
-            }
-
-            .history p {
-                font-size: 1rem;
-            }
-
-            .history ul li {
-                font-size: 0.95rem;
-            }
-
-            .section {
-                margin-bottom: 2rem;
-            }
-
-            .section-title {
-                font-size: 1.75rem;
-            }
-
-            .three-columns {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-                margin: 2rem 0;
-            }
-
-            .column-card {
-                padding: 1.5rem;
-            }
-
-            .column-card h3 {
-                font-size: 1.3rem;
-            }
-
-            .mission-vision {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                margin: 2rem 0;
-            }
-
-            .mv-card {
-                padding: 2rem 1.5rem;
-            }
-
-            .mv-card h3 {
-                font-size: 1.5rem;
-            }
-
-            .mv-card p {
-                font-size: 1rem;
-            }
-
-            .why-choose {
-                padding: 2rem 1.5rem;
-                margin: 2rem 0;
-            }
-
-            .why-choose h2 {
-                font-size: 1.5rem;
-            }
-
-            .benefits-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .benefit-item {
-                padding: 1.25rem;
-            }
-
-            .cta {
-                padding: 2rem 1.5rem;
-                margin: 2rem 0;
-            }
-
-            .cta h2 {
-                font-size: 1.5rem;
-            }
-
-            .cta p {
-                font-size: 1rem;
-            }
-
-            .btn {
-                padding: 0.875rem 2rem;
-                font-size: 0.95rem;
-            }
-
-            footer {
-                padding: 40px 1rem 20px;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .footer-section h3 {
-                font-size: 1.2rem;
-            }
-
-            .footer-links li {
-                word-wrap: break-word;
-            }
-        }
-
-        /* Small mobile devices */
-        @media (max-width: 480px) {
-            .top-bar {
-                font-size: 0.7rem;
-            }
-
-            .top-bar-item {
-                font-size: 0.7rem;
-            }
-
-            .top-bar-item i {
-                font-size: 0.9rem;
-            }
-
-            .social-top a {
-                width: 26px;
-                height: 26px;
-                font-size: 0.8rem;
-            }
-
-            .hero h1 {
-                font-size: 1.5rem;
-            }
-
-            .hero p {
-                font-size: 0.9rem;
-            }
-
-            .section-title {
-                font-size: 1.5rem;
-            }
-
-            .history h2,
-            .why-choose h2 {
-                font-size: 1.3rem;
-            }
-
-            .column-card h3 {
-                font-size: 1.2rem;
-            }
-
-            .mv-card h3 {
-                font-size: 1.3rem;
-            }
-
-            .cta h2 {
-                font-size: 1.3rem;
-            }
-
-            .btn {
-                padding: 0.75rem 1.5rem;
-                font-size: 0.9rem;
-            }
-        }
-
-        /* Extra small devices */
-        @media (max-width: 360px) {
-            .top-bar-container {
-                padding: 0.5rem;
-            }
-
-            .top-bar-item {
-                font-size: 0.65rem;
-            }
-
-            .top-bar-item i {
-                font-size: 0.85rem;
-            }
-
-            .logo img {
-                height: 50px;
-            }
-
-            .hero h1 {
-                font-size: 1.3rem;
-            }
-
-            .hero p {
-                font-size: 0.85rem;
-            }
-
-            .hero-btn {
-                padding: 8px 20px;
-                font-size: 13px;
-            }
-        }
-
-        /* Landscape orientation for mobile */
-        @media (max-height: 600px) and (orientation: landscape) {
-            .top-bar {
-                padding: 0.4rem 0;
-            }
-
-            .top-bar-container {
-                padding: 0.4rem 1rem;
-            }
-
-            .hero {
-                padding: 80px 1.5rem 60px;
-            }
-
-            .hero h1 {
-                font-size: 1.5rem;
-            }
-
-            .hero p {
-                font-size: 0.95rem;
-                margin-bottom: 1rem;
-            }
-        }
+       
     </style>
 </head>
 <body> 
@@ -1065,27 +417,42 @@
             </div>
         </section>
 
-        <section class="why-choose fade-in">
-            <h2>Why Choose EDULINK Group?</h2>
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <h4>Competitive Pricing</h4>
-                    <p>We pride ourselves on fair and transparent pricing. Unlike many competitors, we don't charge for unnecessary extras—you only pay for the services you truly need.</p>
-                </div>
-                <div class="benefit-item">
-                    <h4>Time & Cost Savings</h4>
-                    <p>By outsourcing your accounting to us, you save substantial time and money, allowing you to focus on what matters most: running and growing your core business.</p>
-                </div>
-                <div class="benefit-item">
-                    <h4>Dedicated Expertise</h4>
-                    <p>Our team works closely with registered tax agents and accountants, ensuring accuracy and compliance in every report and reconciliation.</p>
-                </div>
-                <div class="benefit-item">
-                    <h4>Problem Solving</h4>
-                    <p>We eliminate high overheads, inefficiencies, and errors by delivering a streamlined, professional back-office service that reduces stress and ensures compliance.</p>
-                </div>
-            </div>
-        </section>
+        <!-- WHY CHOOSE SECTION (Horizontal Slider) -->
+<section class="why-choose fade-in">
+  <h2>Why Choose EDULINK Group?</h2>
+
+  <div class="benefits-container">
+    <button class="scroll-btn left" onclick="scrollBenefits(-1)">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+
+    <div class="benefits-slider" id="benefitsSlider">
+      <div class="benefit-item">
+        <h4>Competitive Pricing</h4>
+        <p>We pride ourselves on fair and transparent pricing. Unlike many competitors, we don't charge for unnecessary extras—you only pay for the services you truly need.</p>
+      </div>
+
+      <div class="benefit-item">
+        <h4>Time & Cost Savings</h4>
+        <p>By outsourcing your accounting to us, you save substantial time and money, allowing you to focus on what matters most: running and growing your core business.</p>
+      </div>
+
+      <div class="benefit-item">
+        <h4>Dedicated Expertise</h4>
+        <p>Our team works closely with registered tax agents and accountants, ensuring accuracy and compliance in every report and reconciliation.</p>
+      </div>
+
+      <div class="benefit-item">
+        <h4>Problem Solving</h4>
+        <p>We eliminate high overheads, inefficiencies, and errors by delivering a streamlined, professional back-office service that reduces stress and ensures compliance.</p>
+      </div>
+    </div>
+
+    <button class="scroll-btn right" onclick="scrollBenefits(1)">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+</section>
 
         <section class="cta fade-in">
             <h2>Ready to Partner With Us?</h2>
@@ -1196,6 +563,13 @@
                 }
             });
         });
+
+
+                function scrollBenefits(direction) {
+  const slider = document.getElementById('benefitsSlider');
+  const scrollAmount = 320; // adjust scroll distance
+  slider.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+}
     </script>
     
 </body>
