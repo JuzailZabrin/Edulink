@@ -39,8 +39,120 @@
         }
 
         .btn-secondary:hover {
-            background: linear-gradient(135deg, #B8860B, #DAA520);
+            background: linear-gradient(135deg, #B8860B, #B8860B);
             color: white;
+        }
+
+        /* Logo Showcase Section */
+        .logo-showcase-section {
+            background: linear-gradient(180deg, #857d7d 0%, #857d7d 100%);
+            padding: 80px 0 120px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-showcase-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            transform: skewY(-2deg);
+            transform-origin: bottom left;
+        }
+
+        .logo-showcase-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-showcase-section h2 {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: bold;
+            color: #ff8c00;
+            margin-bottom: 60px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 0 20px;
+        }
+
+        .logo-scroll-wrapper {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+
+        .logo-track {
+            display: flex;
+            gap: 80px;
+            animation: scroll 25s linear infinite;
+            width: fit-content;
+        }
+
+        .logo-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .logo-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 200px;
+            height: 100px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 140, 0, 0.1);
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .logo-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 140, 0, 0.3);
+            box-shadow: 0 10px 30px rgba(255, 140, 0, 0.2);
+        }
+
+        .logo-text {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        .logo-item img {
+            max-width: 140px;
+            max-height: 70px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            opacity: 0.9;
+            transition: all 0.3s ease;
+        }
+
+        .logo-item:hover img {
+            opacity: 1;
+            transform: scale(1.05);
         }
 
         /* Trust Section */
@@ -497,37 +609,62 @@
             transform: translateY(0);
         }
 
+        @media (max-width: 768px) {
+            .logo-showcase-section h2 {
+                font-size: 2rem;
+            }
+
+            .logo-item {
+                min-width: 160px;
+                height: 80px;
+                padding: 20px 35px;
+            }
+
+            .logo-text {
+                font-size: 1.2rem;
+            }
+
+            .logo-track {
+                gap: 50px;
+            }
+
+            .trust-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
     </style>
 </head>
 <body>
-    <!-- ===== TOP BAR ===== -->
-    <div class="top-bar">
-        <div class="top-bar-container">
-            <div class="top-bar-left">
-                <div class="top-bar-item">
-                    <i class="fas fa-phone"></i>
-                    <span>0413 363 698</span>
-                </div>
-                <div class="top-bar-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>edulink.bookservices@gmail.com</span>
-                </div>
-                <div class="top-bar-item">
-                    <i class="fas fa-clock"></i>
-                    <span>Mon - Fri: 9:00 AM - 5:00 PM</span>
-                </div>
+   <!-- ===== TOP BAR ===== -->
+<div class="top-bar">
+    <div class="top-bar-container">
+        <div class="top-bar-left">
+            <div class="top-bar-item">
+                <i class="fas fa-phone"></i>
+                <span>0413 363 698</span>
             </div>
-            <div class="top-bar-right">
-                <span>Follow Us:</span>
-                <div class="social-top">
-                    <a href="https://www.facebook.com/share/178M8gTi9Q/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://x.com/Edulink_Group" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.instagram.com/edulink.group?utm_source=qr&igsh=MWNsYXpwdXh6djE4aA==" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                </div>
+            <div class="top-bar-item">
+                <i class="fas fa-envelope"></i>
+                <span>edulink.bookservices@gmail.com</span>
+            </div>
+            <div class="top-bar-item">
+                <i class="fas fa-clock"></i>
+                <span>Mon - Fri: 9:00 AM - 5:00 PM</span>
             </div>
         </div>
+        <div class="top-bar-right">
+            <span>Follow Us:</span>
+            <div class="social-top">
+    <a href="https://www.facebook.com/share/178M8gTi9Q/" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://x.com/Edulink_Group" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com/edulink.group?utm_source=qr&igsh=MWNsYXpwdXh6djE4aA==" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+    <a href="#" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+</div>
+        </div>
     </div>
+</div>
 
     <!-- ===== HEADER ===== -->
     <header>
@@ -559,6 +696,7 @@
         </div>
     </section>
 
+   
     <!-- Trust Section -->
     <section class="trust-section">
         <div class="trust-content fade-in">
@@ -661,11 +799,74 @@
         </div>
     </section>
 
-    <!-- Excellence Section -->
-    <section class="services" style="padding: 80px 2rem;">
-        <h2 class="section-title">We Offer Only the Best</h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; color: #666; font-size: 1.1rem;">Embark on a journey of excellence with us. Our unwavering dedication to providing top-notch services ensures your business thrives. Don't settle for less, hire the best for your success.</p>
+    <!-- Logo Showcase Section -->
+    <section class="logo-showcase-section">
+       
+            
+            <div class="logo-scroll-wrapper">
+                <div class="logo-track">
+                    <!-- First set of logos -->
+                    <div class="logo-item">
+                        <img src="https://e7.pngegg.com/pngimages/259/161/png-clipart-logo-quickbooks-2016-the-best-guide-for-small-business-quickbooks-2016-the-missing-manual-the-official-intuit-guide-to-quickbooks-2016-font-online-training-text-logo-thumbnail.png" alt="QuickBooks">
+                    </div>
+                    
+                    <div class="logo-item">
+                        <img src="https://e7.pngegg.com/pngimages/1004/257/png-clipart-logo-xero-help-desk-brand-company-amazing-thailand-blue-company-thumbnail.png" alt="Xero">
+                    </div>
+                    
+                    <div class="logo-item">
+                        <img src="https://images.credly.com/images/87a93b6c-a871-4f0f-82ad-e9e85476128a/large_blob.png" alt="MYOB">
+                    </div>
+                    
+                    <div class="logo-item">
+                         <img src="https://d1iiooxwdowqwr.cloudfront.net/pub/appsubmissions/20190612024709_Payrollerlogo.png" alt="Payroller">
+                    </div>
+                    
+                    <div class="logo-item">
+                        <img src="https://www.elitebbs.com.au/media/logos/others/Reckon-Logo-Vertical__406xa.png" alt="Rekon Elite">
+                    </div>
+                    
+                    <div class="logo-item">
+                        <img src="https://media.licdn.com/dms/image/v2/C560BAQFda8RG1Rq6jA/company-logo_200_200/company-logo_200_200/0/1653002932499/lodgeit_logo?e=2147483647&v=beta&t=zc1Jd9fTtCVvPW0ZDrgACLKkWh5S_tYuSEMqGHvC02M" alt="LodgeiT">
+                    </div>
+                    
+                    <div class="logo-item">
+                        <img src="https://mma.prnewswire.com/media/2766812/EH_Stacked_Logo.jpg?p=facebook" alt="Employment hero">
+                    </div>
+
+                    <!-- Duplicate set for seamless loop -->
+                    <div class="logo-item">
+                        <img src="https://e7.pngegg.com/pngimages/259/161/png-clipart-logo-quickbooks-2016-the-best-guide-for-small-business-quickbooks-2016-the-missing-manual-the-official-intuit-guide-to-quickbooks-2016-font-online-training-text-logo-thumbnail.png" alt="QuickBooks">
+                    </div>
+                    
+                    <div class="logo-item">
+                        <img src="https://e7.pngegg.com/pngimages/1004/257/png-clipart-logo-xero-help-desk-brand-company-amazing-thailand-blue-company-thumbnail.png" alt="Xero">
+                    </div>
+                    
+                    <div class="logo-item">
+                        <img src="https://images.credly.com/images/87a93b6c-a871-4f0f-82ad-e9e85476128a/large_blob.png" alt="MYOB">
+                    </div>
+                    
+                    <div class="logo-item">
+                         <img src="https://d1iiooxwdowqwr.cloudfront.net/pub/appsubmissions/20190612024709_Payrollerlogo.png" alt="Payroller">
+                    </div>
+                    
+                    <div class="logo-item">
+                        <img src="https://www.elitebbs.com.au/media/logos/others/Reckon-Logo-Vertical__406xa.png" alt="Rekon Elite">
+                    </div>
+                    
+                    <div class="logo-item">
+                        <img src="https://media.licdn.com/dms/image/v2/C560BAQFda8RG1Rq6jA/company-logo_200_200/company-logo_200_200/0/1653002932499/lodgeit_logo?e=2147483647&v=beta&t=zc1Jd9fTtCVvPW0ZDrgACLKkWh5S_tYuSEMqGHvC02M" alt="LodgeiT">
+                    </div>
+                    
+                    <div class="logo-item">
+                        <img src="https://mma.prnewswire.com/media/2766812/EH_Stacked_Logo.jpg?p=facebook" alt="Employment hero">
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+
 
     <!-- How It Works Section -->
     <section class="services" style="background: #f8f9fa; padding: 80px 2rem;">
@@ -939,11 +1140,12 @@
                 <h3><i class="fas fa-calculator"></i> EDULINK Group</h3>
                 <p>EDULINK Group leads the way in providing specialized payroll management and bookkeeping services. With an in-depth understanding of distinctive needs, we offer tailored solutions to ensure seamless operations.</p>
                 <div class="social-links">
-                    <a href="https://www.facebook.com/share/178M8gTi9Q/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://x.com/Edulink_Group" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.instagram.com/edulink.group?utm_source=qr&igsh=MWNsYXpwdXh6djE4aA==" class="social-icon"><i class="fab fa-instagram"></i></a>
-                </div>
+                      <a href="https://www.facebook.com/share/178M8gTi9Q/" target="_blank" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                      <a href="https://x.com/Edulink_Group" target="_blank" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+                      <a href="https://www.instagram.com/edulink.group?utm_source=qr&igsh=MWNsYXpwdXh6djE4aA==" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                      <a href="#" target="_blank" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>

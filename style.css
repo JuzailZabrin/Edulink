@@ -73,29 +73,50 @@ body {
     margin-right: 0.5rem;
 }
 
+/* ===== SOCIAL ICONS ===== */
 .social-top {
     display: flex;
     gap: 0.75rem;
     flex-wrap: wrap;
 }
 
+/* Base style */
 .social-top a {
-    color: white;
     width: 30px;
     height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.2);
     border-radius: 50%;
-    transition: all 0.3s;
+    color: #fff;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
     text-decoration: none;
     flex-shrink: 0;
 }
 
+/* === Default Brand Colors === */
+.social-top a.facebook {
+    background-color: #1877F2;
+}
+
+.social-top a.twitter {
+    background-color: #000000; /* X/Twitter black */
+}
+
+.social-top a.instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, 
+                #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.social-top a.linkedin {
+    background-color: #0077B5;
+}
+
+/* === Hover Animation (no color change) === */
 .social-top a:hover {
-    background: rgba(255, 255, 255, 0.3);
     transform: translateY(-2px);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
 }
 
 /* ===== HEADER ===== */
@@ -109,6 +130,7 @@ header {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     border-bottom: 1px solid #f0f0f0;
 }
+
 
 .header-container {
     max-width: 1400px;
@@ -428,6 +450,7 @@ footer {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(218, 165, 32, 0.4);
 }
+
 
 .footer-bottom {
     text-align: center;
