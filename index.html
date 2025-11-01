@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EDULINK Group - Professional bookkeeping and payroll management services in Australia. Tailored solutions for businesses of all sizes.">
+    <title>EDULINK Group | Professional Bookkeeping & Payroll Services in Australia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+            
+        /* ===== BUTTONS ===== */
+        .btn, .btn-primary {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, #231b05, #211a07);
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(184, 134, 11, 0.3);
+        }
+
+        .btn:hover, .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(184, 134, 11, 0.4);
+            background: linear-gradient(135deg, #8B6914, #B8860B);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #B8860B;
+            color: #B8860B;
+        }
+
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, #B8860B, #B8860B);
+            color: white;
+        }
+
+        /* Logo Showcase Section */
+        .logo-showcase-section {
+            background: linear-gradient(180deg, #857d7d 0%, #857d7d 100%);
+            padding: 80px 0 120px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-showcase-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            transform: skewY(-2deg);
+            transform-origin: bottom left;
+        }
+
+        .logo-showcase-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-showcase-section h2 {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: bold;
+            color: #ff8c00;
+            margin-bottom: 60px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 0 20px;
+        }
+
+        .logo-scroll-wrapper {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+
+        .logo-track {
+            display: flex;
+            gap: 80px;
+            animation: scroll 25s linear infinite;
+            width: fit-content;
+        }
+
+        .logo-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .logo-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 200px;
+            height: 100px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 140, 0, 0.1);
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .logo-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 140, 0, 0.3);
+            box-shadow: 0 10px 30px rgba(255, 140, 0, 0.2);
+        }
+
+        .logo-text {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        .logo-item img {
+            max-width: 140px;
+            max-height: 70px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            opacity: 0.9;
+            transition: all 0.3s ease;
+        }
+
+        .logo-item:hover img {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        /* Trust Section */
+        .trust-section {
+            background: #f8f9fa;
+            padding: 100px 2rem;
+        }
+
+        .trust-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .trust-badge {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(184, 134, 11, 0.2);
+        }
+
+        .trust-badge-bg {
+            background: linear-gradient(135deg, #B8860B, #DAA520);
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            padding: 6rem 3rem;
+        }
+
+        .trust-badge-bg h3 {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .trust-badge-bg p {
+            font-size: 1.4rem;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .trust-info h2 {
+            color: #8B6914;
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .trust-info > p {
+            color: #666;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .trust-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+        }
+
+        .feature-icon {
+            background: linear-gradient(135deg, #B8860B, #DAA520);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.2rem;
+        }
+
+        .feature-item h4 {
+            color: #8B6914;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+
+        .feature-item p {
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 2rem;
+            background: white;
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(184, 134, 11, 0.15);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #B8860B, #DAA520);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            color: white;
+        }
+
+        .service-content {
+            padding: 2rem;
+        }
+
+        .service-content h3 {
+            color: #8B6914;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .service-content p {
+            color: #777;
+            line-height: 1.7;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: linear-gradient(135deg, #B8860B, #DAA520);
+            color: white;
+            padding: 100px 2rem;
+        }
+
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 100px 2rem;
+            background: white;
+        }
+
+        .pricing-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .pricing-card {
+            background: white;
+            border: 2px solid #e8eef5;
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(184, 134, 11, 0.15);
+            border-color: #B8860B;
+        }
+
+        .pricing-card h3 {
+            color: #8B6914;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 3rem;
+            color: #B8860B;
+            font-weight: 800;
+            margin: 1rem 0;
+            line-height: 1;
+        }
+
+        .price span {
+            font-size: 1.5rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 0.7rem 0;
+            color: #666;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: start;
+            gap: 0.7rem;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            color: #B8860B;
+            font-weight: 700;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .pricing-btn {
+            background: linear-gradient(135deg, #B8860B, #DAA520);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .pricing-btn:hover {
+            background: linear-gradient(135deg, #8B6914, #B8860B);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(184, 134, 11, 0.3);
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 100px 2rem;
+            background: #f8f9fa;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 1.5rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: box-shadow 0.3s;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 5px 20px rgba(184, 134, 11, 0.1);
+        }
+
+        .faq-question {
+            padding: 1.8rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #8B6914;
+            transition: background 0.3s;
+            font-size: 1.05rem;
+        }
+
+        .faq-question:hover {
+            background: #FFF9E6;
+        }
+
+        .faq-answer {
+            padding: 0 1.8rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+            color: #777;
+            line-height: 1.8;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 1.8rem 1.8rem;
+            max-height: 300px;
+        }
+
+        .faq-toggle {
+            transition: transform 0.3s;
+            font-size: 1.2rem;
+            color: #B8860B;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 2rem;
+            background: white;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: start;
+            gap: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #B8860B, #DAA520);
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-item h4 {
+            color: #8B6914;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .contact-item p {
+            color: #777;
+            line-height: 1.6;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-form h3 {
+            color: #8B6914;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 1rem;
+            width: 100%;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #B8860B, #DAA520);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #8B6914, #B8860B);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(184, 134, 11, 0.3);
+        }
+
+        
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .logo-showcase-section h2 {
+                font-size: 2rem;
+            }
+
+            .logo-item {
+                min-width: 160px;
+                height: 80px;
+                padding: 20px 35px;
+            }
+
+            .logo-text {
+                font-size: 1.2rem;
+            }
+
+            .logo-track {
+                gap: 50px;
+            }
+
+            .trust-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+<body>
+   <!-- ===== TOP BAR ===== -->
+<div class="top-bar">
+    <div class="top-bar-container">
+        <div class="top-bar-left">
+            <div class="top-bar-item">
+                <i class="fas fa-phone"></i>
+                <span>0413 363 698</span>
+            </div>
+            <div class="top-bar-item">
+                <i class="fas fa-envelope"></i>
+                <span>edulink.bookservices@gmail.com</span>
+            </div>
+            <div class="top-bar-item">
+                <i class="fas fa-clock"></i>
+                <span>Mon - Fri: 9:00 AM - 5:00 PM</span>
+            </div>
+        </div>
+        <div class="top-bar-right">
+            <span>Follow Us:</span>
+            <div class="social-top">
+    <a href="https://www.facebook.com/share/178M8gTi9Q/" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://x.com/Edulink_Group" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com/edulink.group?utm_source=qr&igsh=MWNsYXpwdXh6djE4aA==" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+    <a href="#" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+</div>
+        </div>
+    </div>
+</div>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo.jpeg" alt="EDULINK Group Logo">
+                <span>EDULINK Group</span>
+            </div>
+            <nav class="navbar" id="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html" >About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>EduLink Group</h1>
+            <p>From bookkeeping to payroll, we handle the details so you can focus on growing your business with confidence</p>
+            <button class="hero-btn">Get Started</button>
+        </div>
+    </section>
+
+   
+    <!-- Trust Section -->
+    <section class="trust-section">
+        <div class="trust-content fade-in">
+            <div>
+                <div class="trust-badge">
+                    <div class="trust-badge-bg">
+                        <h3>8+</h3>
+                        <p>Years of Excellence</p>
+                    </div>
+                </div>
+            </div>
+            <div class="trust-info">
+                <h2>We Offer Incredible Bookkeeping and Payroll Management!</h2>
+                <p>Our comprehensive services cover both bookkeeping and payroll management, providing you with the tools and support you need to drive success. With a team of dedicated professionals, we deliver exceptional results that exceed expectations.</p>
+                <div class="trust-features">
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-certificate"></i></div>
+                        <div>
+                            <h4>Certified Team</h4>
+                            <p>Trusted experts dedicated to your success. Meet our certified team for unparalleled expertise and support.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                        <div>
+                            <h4>Trusted Company</h4>
+                            <p>Reliability you can count on. We're your trusted partner, committed to securing your success and prosperity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2 class="section-title">Streamlined Services Tailored to Your Business Needs</h2>
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <div class="service-image">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="service-content">
+                    <h3>Personalized Payroll Management</h3>
+                    <p>We understand that every business is unique. That's why we offer tailor-made payroll solutions designed to fit your specific needs.</p>
+                </div>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-image">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <div class="service-content">
+                    <h3>The Best Bookkeeping</h3>
+                    <p>In the realm of Bookkeeping management, precision is paramount, we raise the bar by delivering unparalleled bookkeeping services designed to elevate your business operations.</p>
+                </div>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-image">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <div class="service-content">
+                    <h3>Swift and Sufficient</h3>
+                    <p>Our team is dedicated to providing you with solutions that are not only fast, but also easy to navigate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="services" style="background: #f8f9fa; padding: 80px 2rem;">
+        <h2 class="section-title">Why Choose EDULINK Group</h2>
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <div class="service-image" style="height: 150px; font-size: 2.5rem;">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="service-content">
+                    <h3>Business Scalability</h3>
+                    <p>Outsourcing critical functions allows you and your team to concentrate on what you do best—growing your business, developing products, and serving customers.</p>
+                </div>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-image" style="height: 150px; font-size: 2.5rem;">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="service-content">
+                    <h3>Business Liabilities</h3>
+                    <p>Mitigate risks and protect your business. Our expertise in handling liabilities ensures your payroll security and sustained growth.</p>
+                </div>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-image" style="height: 150px; font-size: 2.5rem;">
+                    <i class="fas fa-book"></i>
+                </div>
+                <div class="service-content">
+                    <h3>Bookkeeping for Success</h3>
+                    <p>With precise bookkeeping, you gain a clear view of your business's health. This empowers you to make informed decisions, identify growth opportunities, and manage cash flow effectively.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <!-- How It Works Section -->
+    <section class="services" style="background: #f8f9fa; padding: 80px 2rem;">
+        <h2 class="section-title">How It Works</h2>
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <div class="service-image" style="background: linear-gradient(135deg, #33280d, #B8860B); height: 150px; font-size: 3rem; display: flex; align-items: center; justify-content: center; color: white;">
+                    <span style="font-weight: bold;">1</span>
+                </div>
+                <div class="service-content">
+                    <h3>Connect with Our Agent</h3>
+                    <p>Begin your journey by reaching out to our experienced agents. They're here to guide you through every step, answering questions and tailoring solutions to your unique needs.</p>
+                </div>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-image" style="background: linear-gradient(135deg, #33280d, #B8860B); height: 150px; font-size: 3rem; display: flex; align-items: center; justify-content: center; color: white;">
+                    <span style="font-weight: bold;">2</span>
+                </div>
+                <div class="service-content">
+                    <h3>Select Your Preferred Service</h3>
+                    <p>With expert advice at your disposal, choose a service that aligns perfectly with your business goals. Our diverse range ensures you have options that cater to your specific requirements.</p>
+                </div>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-image" style="background: linear-gradient(135deg, #33280d, #B8860B); height: 150px; font-size: 3rem; display: flex; align-items: center; justify-content: center; color: white;">
+                    <span style="font-weight: bold;">3</span>
+                </div>
+                <div class="service-content">
+                    <h3>Enjoy Efficiency</h3>
+                    <p>Once you've made your selection, our streamlined process ensures quick and hassle-free coverage. Enjoy peace of mind knowing your accounts are protected with a service designed just for you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote CTA Section -->
+    <section class="quote-cta" style="background: linear-gradient(135deg, #33280d, #B8860B); padding: 80px 2rem; text-align: center; color: white;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; font-weight: 700;">Ready to Secure Your Future?</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 2.5rem; opacity: 0.95;">Provide us with some details, and let's tailor a quote that fits you perfectly.</p>
+            <button class="hero-btn" style="background: white; color: #2c3e87; padding: 1rem 3rem; font-size: 1.1rem; border: none; border-radius: 5px; cursor: pointer; font-weight: 600; transition: all 0.3s;" onclick="document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })">Get Your Free Quote</button>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="services" style="background: #f8f9fa; padding: 80px 2rem;">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+            <div class="service-card fade-in" style="background: white;">
+                <div class="service-content" style="padding: 3rem;">
+                    <div style="color: #f59e0b; font-size: 2rem; margin-bottom: 1rem;">★★★★★</div>
+                    <p style="font-style: italic; color: #666; margin-bottom: 1.5rem;">"EDULINK Group has been an invaluable partner for our institution. Their comprehensive solutions and expert advice have propelled our growth and stability in the education sector."</p>
+                    <div style="border-top: 2px solid #2c3e87; padding-top: 1rem;">
+                        <p style="font-weight: bold; color: #2c3e87;">John Smith</p>
+                        <p style="color: #666; font-size: 0.9rem;">Education Director</p>
+                    </div>
+                </div>
+            </div>
+            <div class="service-card fade-in" style="background: white;">
+                <div class="service-content" style="padding: 3rem;">
+                    <div style="color: #f59e0b; font-size: 2rem; margin-bottom: 1rem;">★★★★★</div>
+                    <p style="font-style: italic; color: #666; margin-bottom: 1.5rem;">"Partnering with EDULINK Group has transformed our business. Their team's dedication to our success and deep industry knowledge is truly commendable. A game-changer for us!"</p>
+                    <div style="border-top: 2px solid #2c3e87; padding-top: 1rem;">
+                        <p style="font-weight: bold; color: #2c3e87;">Sarah Johnson</p>
+                        <p style="color: #666; font-size: 0.9rem;">Business Owner</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item fade-in">
+                <h3>8</h3>
+                <p>Years in Business</p>
+            </div>
+            <div class="stat-item fade-in">
+                <h3>500+</h3>
+                <p>Happy Clients</p>
+            </div>
+            <div class="stat-item fade-in">
+                <h3>5000+</h3>
+                <p>Payroll Processed</p>
+            </div>
+            <div class="stat-item fade-in">
+                <h3>100%</h3>
+                <p>Client Satisfaction</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <h2 class="section-title">Transparent Pricing for Your Financial Needs</h2>
+        <div class="pricing-grid">
+            <div class="pricing-card fade-in">
+                <h3>Bookkeeping Starter</h3>
+                <p style="color: #666; margin-bottom: 0.5rem;">Turnover: $0 - $100,000</p>
+                <div class="price">$98<span style="font-size: 1.5rem;">/mo</span></div>
+                <p style="color: #666; font-size: 0.9rem;">Monthly Cost (inc GST)</p>
+                <ul class="pricing-features">
+                    <li>Initial Free Consultation</li>
+                    <li>Quarterly Account Reviews</li>
+                    <li>QBO Subscription Included</li>
+                    <li>Data Entry & Reconciliation</li>
+                    <li>Payroll (up to 2 staff)</li>
+                    <li>BAS Preparation & Lodgement</li>
+                    <li>Monthly Financial Reports</li>
+                </ul>
+                <button class="pricing-btn">Choose Plan</button>
+            </div>
+            <div class="pricing-card fade-in">
+                <h3>Bookkeeping Standard</h3>
+                <p style="color: #666; margin-bottom: 0.5rem;">Turnover: $100,001 - $500,000</p>
+                <div class="price">$186<span style="font-size: 1.5rem;">/mo</span></div>
+                <p style="color: #666; font-size: 0.9rem;">Monthly Cost (inc GST)</p>
+                <ul class="pricing-features">
+                    <li>Everything in Starter</li>
+                    <li>Enhanced Support</li>
+                    <li>Cashflow Management</li>
+                    <li>Accountant-Ready Workpapers</li>
+                    <li>ATO Communication</li>
+                    <li>Up to 10 Support Queries/Month</li>
+                </ul>
+                <button class="pricing-btn">Choose Plan</button>
+            </div>
+            <div class="pricing-card fade-in">
+                <h3>Support Package</h3>
+                <p style="color: #666; margin-bottom: 0.5rem;">For Self-Managed Books</p>
+                <div class="price">$160<span style="font-size: 1.5rem;">/mo</span></div>
+                <p style="color: #666; font-size: 0.9rem;">Monthly Cost (inc GST)</p>
+                <ul class="pricing-features">
+                    <li>3 Hours Support/Training</li>
+                    <li>Software Setup Assistance</li>
+                    <li>Bookkeeping Troubleshooting</li>
+                    <li>Registered BAS Agent Support</li>
+                    <li>Expert Guidance</li>
+                    <li>Email Support</li>
+                </ul>
+                <button class="pricing-btn">Choose Plan</button>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+            <h3 style="color: #a58933; margin-bottom: 1rem;">Payroll Services</h3>
+            <p style="font-size: 1.8rem; color: #b39332; font-weight: bold; margin-bottom: 1rem;">$748 per annum, per employee</p>
+            <p style="color: #666;">Annual Cost (inc GST). Includes employee setup, STP processing, entitlement monitoring, TFN declarations, PAYG & superannuation, year-end reconciliation, and payment summaries.</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    <span>What bookkeeping services do you offer?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We provide comprehensive bookkeeping services including data entry, bank reconciliation, accounts payable/receivable management, BAS preparation and lodgement, monthly financial reports, and more.</p>
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    <span>How does your payroll service work?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Our payroll service includes employee setup, weekly/fortnightly/monthly pay runs, Single Touch Payroll (STP) lodgement, leave tracking, superannuation management, and year-end reconciliations at $748 (inc GST) per employee annually.</p>
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    <span>Do you work with tax agents and accountants?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! We collaborate closely with registered tax agents and accountants across Australia, providing back-office support and ensuring all reporting meets professional standards.</p>
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    <span>What makes EDULINK different from competitors?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We offer transparent pricing with no hidden costs, dedicated expertise working with registered professionals, and a focus on time and cost savings so you can focus on growing your business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Get in Touch</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; color: #666;">Questions? Need expert advice? We're here to help. Feel free to reach out to our dedicated team. Your success is our top priority.</p>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <h4>Phone</h4>
+                        <p>0413 363 698</p>
+                    </div>
+                </div>
+                <div class="contact-item fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h4>Email</h4>
+                        <p>edulink.bookservices@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-item fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h4>Address</h4>
+                        <p>Suite 2.2, 72 Queen Street<br>Campbelltown, NSW 2560<br>Australia</p>
+                    </div>
+                </div>
+                <div class="contact-item fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div>
+                        <h4>Business Hours</h4>
+                        <p>Monday - Friday: 9am - 5pm<br>Weekend: By Appointment</p>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form fade-in">
+                <h3 style="color: #2c3e87; margin-bottom: 1.5rem;">Ready to Get Started?</h3>
+                <p style="color: #666; margin-bottom: 2rem;">Provide us with some details, and let's tailor a solution that fits you perfectly.</p>
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name *" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email *" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Your Phone *" required>
+                </div>
+                <div class="form-group">
+                    <select style="padding: 1rem; border: 2px solid #e0e0e0; border-radius: 5px; font-size: 1rem; width: 100%;">
+                        <option>Select Service</option>
+                        <option>Bookkeeping Services</option>
+                        <option>Payroll Management</option>
+                        <option>Both Services</option>
+                        <option>Support Package</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea rows="5" placeholder="Tell us about your business and needs *" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Enquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-calculator"></i> EDULINK Group</h3>
+                <p>EDULINK Group leads the way in providing specialized payroll management and bookkeeping services. With an in-depth understanding of distinctive needs, we offer tailored solutions to ensure seamless operations.</p>
+                <div class="social-links">
+                      <a href="https://www.facebook.com/share/178M8gTi9Q/" target="_blank" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                      <a href="https://x.com/Edulink_Group" target="_blank" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+                      <a href="https://www.instagram.com/edulink.group?utm_source=qr&igsh=MWNsYXpwdXh6djE4aA==" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                      <a href="#" target="_blank" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                   <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Our Services</h3>
+                <ul class="footer-links">
+                    <li><a href="services.html">Payroll Services</a></li>
+                    <li><a href="services.html">Bookkeeping Solutions</a></li>
+                    <li><a href="services.html">BAS Preparation</a></li>
+                    <li><a href="services.html">Financial Reports</a></li>
+                    <li><a href="services.html">Business Advisory</a></li>
+                </ul>
+            </div>
+           <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-phone"></i> 0413 363 698</li>
+                    <li style="display: flex; align-items: center; gap: 10px;"><i class="fas fa-envelope"></i> <span>edulink.bookservices@gmail.com</span></li>
+                    <li><i class="fas fa-map-marker-alt"></i> Suite 2.2, 72 Queen Street<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Campbelltown, NSW 2560</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+        <p>&copy; 2025 EDULINK Group Pty Ltd. All rights reserved. | Privacy Policy | Terms of Service</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll animation
+        const observerOptions = {threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbar = document.getElementById('navbar');
+        
+        if (menuToggle) {
+            menuToggle.addEventListener('click', function() {
+                navbar.classList.toggle('active');
+            });
+        }
+
+        // Form submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+
+        // Animated counter for stats
+        function animateCounter(element, target, duration) {
+            let current = 0;
+            const increment = target / (duration / 16);
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target + (element.textContent.includes('+') ? '+' : '');
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+            }, 16);
+        }
+
+        // Trigger counter animation when stats section is visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    document.querySelectorAll('.stat-item h3').forEach(stat => {
+                        const target = parseInt(stat.textContent);
+                        animateCounter(stat, target, 2000);
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.querySelector('.stats');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // Pricing button clicks
+        document.querySelectorAll('.pricing-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const plan = this.closest('.pricing-card').querySelector('h3').textContent;
+                alert(`You selected the ${plan} plan! Redirecting to checkout...`);
+            });
+        });
+
+        // Hero button
+        document.querySelector('.hero-btn')?.addEventListener('click', function() {
+            document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

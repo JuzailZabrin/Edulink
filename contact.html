@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - EDULINK Group</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+      
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== CONTENT CONTAINER ===== */
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* ===== CONTACT WRAPPER ===== */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        /* Contact Info */
+        .contact-info h2 {
+            color: #8B6914;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: start;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .info-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(184, 134, 11, 0.15);
+        }
+
+        .info-icon {
+            font-size: 2rem;
+            margin-right: 1.5rem;
+            color: #B8860B;
+            flex-shrink: 0;
+        }
+
+        .info-content h3 {
+            color: #8B6914;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .info-content p {
+            color: #777;
+            line-height: 1.6;
+            word-break: break-word;
+        }
+
+        .info-content a {
+            color: #B8860B;
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .info-content a:hover {
+            text-decoration: underline;
+        }
+
+        /* Business Hours */
+        .business-hours {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .business-hours h3 {
+            color: #8B6914;
+            margin-bottom: 1rem;
+        }
+
+        .hours-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            gap: 1rem;
+        }
+
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+
+        .day {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .time {
+            color: #777;
+            text-align: right;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .contact-form h2 {
+            color: #8B6914;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .success-message {
+            display: none;
+            background: #4caf50;
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            text-align: center;
+            animation: slideDown 0.3s ease;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Form Elements */
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: 1rem;
+            border: 2px solid #e8eef5;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            transition: border-color 0.3s;
+            width: 100%;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #B8860B;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #B8860B, #DAA520);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #8B6914, #B8860B);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(184, 134, 11, 0.3);
+        }
+
+        /* Map Section */
+        .map-section {
+            margin: 4rem 0;
+            background: #f8f9fa;
+            padding: 3rem;
+            border-radius: 10px;
+        }
+
+        .map-section h2 {
+            text-align: center;
+            color: #8B6914;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== TOP BAR ===== -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="top-bar-left">
+                <div class="top-bar-item">
+                    <i class="fas fa-phone"></i>
+                    <span>0413 363 698</span>
+                </div>
+                <div class="top-bar-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>edulink.bookservices@gmail.com</span>
+                </div>
+                <div class="top-bar-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Mon - Fri: 9:00 AM - 5:00 PM</span>
+                </div>
+            </div>
+            <div class="top-bar-right">
+                <span>Follow Us:</span>
+               <div class="social-top">
+    <a href="https://www.facebook.com/share/178M8gTi9Q/" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://x.com/Edulink_Group" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com/edulink.group?utm_source=qr&igsh=MWNsYXpwdXh6djE4aA==" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+    <a href="#" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo.jpeg" alt="EDULINK Group Logo">
+                <span>EDULINK Group</span>
+            </div>
+            <nav class="navbar" id="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html" class="active">Contact Us</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Need Expert Advice?</h1>
+            <p>We're here to help. Feel free to reach out to our dedicated team. Your success is our top priority.</p>
+        </div>
+    </section>
+
+    <div class="content-container">
+        <div class="contact-wrapper">
+            <div class="contact-info fade-in">
+                <h2>Get In Touch</h2>
+                
+                <div class="info-item">
+                    <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="info-content">
+                        <h3>Our Location</h3>
+                        <p>Suite 2.2, 72 Queen Street<br>Campbelltown NSW 2560<br>Australia</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="info-content">
+                        <h3>Email Us</h3>
+                        <p><a href="mailto:edulink.bookservices@gmail.com">edulink.bookservices@gmail.com</a></p>
+                        <p style="margin-top: 0.5rem; font-size: 0.9rem;">We typically respond within 24 hours</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon"><i class="fas fa-phone"></i></div>
+                    <div class="info-content">
+                        <h3>Call Us</h3>
+                        <p><a href="tel:0413363698">0413 363 698</a></p>
+                        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Monday - Friday: 9:00 AM - 5:00 PM</p>
+                    </div>
+                </div>
+
+                <div class="business-hours">
+                    <h3>Business Hours</h3>
+                    <ul class="hours-list">
+                        <li><span class="day">Monday</span> <span class="time">9:00 AM - 5:00 PM</span></li>
+                        <li><span class="day">Tuesday</span> <span class="time">9:00 AM - 5:00 PM</span></li>
+                        <li><span class="day">Wednesday</span> <span class="time">9:00 AM - 5:00 PM</span></li>
+                        <li><span class="day">Thursday</span> <span class="time">9:00 AM - 5:00 PM</span></li>
+                        <li><span class="day">Friday</span> <span class="time">9:00 AM - 5:00 PM</span></li>
+                        <li><span class="day">Saturday</span> <span class="time">Closed</span></li>
+                        <li><span class="day">Sunday</span> <span class="time">Closed</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="contact-form fade-in">
+                <h2>Send Us a Message</h2>
+                <div class="success-message" id="successMessage">
+                    Thank you! Your message has been sent successfully. We'll get back to you soon.
+                </div>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="John Smith">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="0412 345 678">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="businessType">Business Type *</label>
+                        <select id="businessType" name="businessType" required>
+                            <option value="">Select your business type</option>
+                            <option value="sole-trader">Sole Trader</option>
+                            <option value="company">Company</option>
+                            <option value="partnership">Partnership</option>
+                            <option value="trust">Trust</option>
+                            <option value="tax-agent">Tax Agent/Accountant</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" name="subject" required placeholder="How can we help you?">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required placeholder="Tell us more about your needs..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+        <section class="map-section fade-in">
+            <h2>Find Us</h2>
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.179464192197!2d150.81347347491764!3d-34.0668161746401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b129a50e469bfb7%3A0x5017d681632b8a0!2s72%20Queen%20St%2C%20Campbelltown%20NSW%202560%2C%20Australia!5e0!3m2!1sen!2slk!4v1729580280330!5m2!1sen!2slk"
+                    width="100%"
+                    height="400"
+                    style="border:0; border-radius:10px;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-calculator"></i> EDULINK Group</h3>
+                <p>EDULINK Group leads the way in providing specialized payroll management and bookkeeping services. With an in-depth understanding of distinctive needs, we offer tailored solutions to ensure seamless operations.</p>
+                 <div class="social-links">
+                      <a href="https://www.facebook.com/share/178M8gTi9Q/" target="_blank" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                      <a href="https://x.com/Edulink_Group" target="_blank" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+                      <a href="https://www.instagram.com/edulink.group?utm_source=qr&igsh=MWNsYXpwdXh6djE4aA==" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                      <a href="#" target="_blank" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Our Services</h3>
+                <ul class="footer-links">
+                    <li><a href="services.html">Payroll Services</a></li>
+                    <li><a href="services.html">Bookkeeping Solutions</a></li>
+                    <li><a href="services.html">BAS Preparation</a></li>
+                    <li><a href="services.html">Financial Reports</a></li>
+                    <li><a href="services.html">Business Advisory</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-phone"></i> 0413 363 698</li>
+                    <li style="display: flex; align-items: center; gap: 10px;"><i class="fas fa-envelope"></i> <span>edulink.bookservices@gmail.com</span></li>
+                    <li><i class="fas fa-map-marker-alt"></i> Suite 2.2, 72 Queen Street<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Campbelltown, NSW 2560</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 EDULINK Group Pty Ltd. All rights reserved. | Privacy Policy | Terms of Service</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('navbar').classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navbar = document.getElementById('navbar');
+            const menuToggle = document.getElementById('menu-toggle');
+            
+            if (!navbar.contains(event.target) && !menuToggle.contains(event.target)) {
+                navbar.classList.remove('active');
+            }
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    document.getElementById('navbar').classList.remove('active');
+                }
+            });
+        });
+
+        // Close mobile menu when clicking on nav links
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('navbar').classList.remove('active');
+            });
+        });
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const successMessage = document.getElementById('successMessage');
+            successMessage.classList.add('show');
+            this.reset();
+            setTimeout(function() {
+                successMessage.classList.remove('show');
+            }, 5000);
+            document.querySelector('.contact-form').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Scroll animation observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Handle window resize
+        let resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                if (window.innerWidth > 768) {
+                    document.getElementById('navbar').classList.remove('active');
+                }
+            }, 250);
+        });
+    </script>
+</body>
+</html>

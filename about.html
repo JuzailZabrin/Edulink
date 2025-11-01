@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - EDULINK Group</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+       
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+       
+
+        /* ===== HISTORY SECTION ===== */
+        .history {
+            background: #f8f9fa;
+            padding: 3rem;
+            border-radius: 10px;
+            margin-bottom: 4rem;
+        }
+
+        .history h2 {
+            color: #8B6914;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .history p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        .history ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 1.5rem;
+        }
+
+        .history ul li {
+            padding: 0.5rem 0 0.5rem 2rem;
+            position: relative;
+            font-size: 1.05rem;
+            color: #666;
+        }
+
+        .history ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #B8860B;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #8B6914;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        /* ===== THREE COLUMNS ===== */
+        .three-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .column-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .column-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(184, 134, 11, 0.15);
+        }
+
+        .column-card h3 {
+            color: #8B6914;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .column-card p {
+            color: #777;
+            line-height: 1.8;
+        }
+
+        /* ===== MISSION VISION ===== */
+        .mission-vision {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+
+        .mv-card {
+            background: linear-gradient(135deg, #9f9d99, #d5d1c5);
+            color: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(184, 134, 11, 0.2);
+        }
+
+        .mv-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            padding-bottom: 0.5rem;
+        }
+
+        .mv-card p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+       /* ===== WHY CHOOSE (HORIZONTAL SLIDER) ===== */
+.why-choose {
+  background: #f8f9fa;
+  padding: 3rem;
+  border-radius: 10px;
+  margin: 3rem 0;
+  position: relative;
+  text-align: center;
+}
+
+.why-choose h2 {
+  color: #8B6914;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.why-choose h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #B8860B, #DAA520);
+  border-radius: 2px;
+}
+
+/* Horizontal container */
+.benefits-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Horizontal scroll area */
+.benefits-slider {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 1rem;
+  scrollbar-width: none;
+}
+
+.benefits-slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* Benefit Card */
+.benefit-item {
+  flex: 0 0 300px;
+  background: white;
+  padding: 1.8rem;
+  border-radius: 10px;
+  border-left: 5px solid #B8860B;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  scroll-snap-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.benefit-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.benefit-item h4 {
+  color: #8B6914;
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.benefit-item p {
+  color: #777;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Scroll Buttons */
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, #B8860B, #DAA520);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.scroll-btn:hover {
+  background: #8B6914;
+}
+
+.scroll-btn.left {
+  left: -25px;
+}
+
+.scroll-btn.right {
+  right: -25px;
+}
+
+
+        /* ===== CTA ===== */
+        .cta {
+            background: linear-gradient(135deg, #a79e88, #c6bfab);
+            color: white;
+            padding: 3rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: #000;
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background: #333;
+            transform: translateY(-3px);
+        }
+
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+       
+    </style>
+</head>
+<body> 
+    <!-- ===== TOP BAR ===== -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="top-bar-left">
+                <div class="top-bar-item">
+                    <i class="fas fa-phone"></i>
+                    <span>0413 363 698</span>
+                </div>
+                <div class="top-bar-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>edulink.bookservices@gmail.com</span>
+                </div>
+                <div class="top-bar-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Mon - Fri: 9:00 AM - 5:00 PM</span>
+                </div>
+            </div>
+            <div class="top-bar-right">
+                <span>Follow Us:</span>
+                 <div class="social-top">
+    <a href="https://www.facebook.com/share/178M8gTi9Q/" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://x.com/Edulink_Group" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com/edulink.group?utm_source=qr&igsh=MWNsYXpwdXh6djE4aA==" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+    <a href="#" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo.jpeg" alt="EDULINK Group Logo">
+                <span>EDULINK Group</span>
+            </div>
+            <nav class="navbar" id="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Expert Bookkeeping & Payroll Services You Can Trust!</h1>
+            <p>"Reliable Bookkeeping & Payroll Solutions for Your Business."</p>
+            <button class="hero-btn">Get Started</button>
+        </div>
+    </section>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <div class="content-container">
+        <section class="history fade-in">
+            <h2>Our Story</h2>
+            <p>Founded in <strong>2017</strong>, our company has steadily grown by working alongside a network of trusted tax agents. Over the years, as demand for reliable back-office accounting support increased, we expanded our services to directly support sole traders, companies, and tax agents across Australia.</p>
+            
+            <p>We specialize exclusively in <strong>Accounting, Bookkeeping, and Payroll Services</strong>—allowing our clients to focus on running their businesses while we ensure their financial records remain accurate, compliant, and up to date.</p>
+            
+            <p>Our close collaboration with registered tax agents ensures that our reporting and documentation meet professional standards, particularly in areas such as:</p>
+            
+            <ul>
+                <li>Financial Statements & GST Reporting</li>
+                <li>Payroll Processing (including Gross Wages & Tax Withheld reporting)</li>
+                <li>Accounts Receivable & Accounts Payable Management</li>
+                <li>Bank Reconciliation</li>
+            </ul>
+            
+            <p style="margin-top: 1.5rem;">By combining precision, professionalism, and efficiency, we serve as the reliable partner that small businesses, tax professionals, and corporates can trust to manage their financial workflows.</p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title fade-in">What Sets Us Apart</h2>
+            <div class="three-columns">
+                <div class="column-card fade-in">
+                    <h3>Our Certified Team</h3>
+                    <p>Our strength lies in our team of certified professionals, each possessing a wealth of experience in Bookkeeping and Payroll Management. With a deep understanding of industry intricacies, we provide tailored solutions that ensure stability and growth.</p>
+                </div>
+                <div class="column-card fade-in">
+                    <h3>Trusted Company</h3>
+                    <p>At EDULINK Group, trust is the cornerstone of our operations. For years, we've built a reputation as a reliable partner for businesses, offering steadfast support and innovative solutions. Our track record speaks volumes about the trust our clients place in us.</p>
+                </div>
+                <div class="column-card fade-in">
+                    <h3>Expert Collaboration</h3>
+                    <p>We work closely with registered tax agents and accountants, ensuring accuracy and compliance in every report, reconciliation, and payroll process. Our collaborative approach guarantees professional-grade financial management.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="mission-vision">
+                <div class="mv-card fade-in">
+                    <h3>Our Mission</h3>
+                    <p>Our mission is to excel in providing unparalleled payroll management and bookkeeping services, ensuring progress and efficiency. We're dedicated to offering solutions that contribute to the seamless operation of your business, creating a solid foundation for the future.</p>
+                </div>
+                <div class="mv-card fade-in">
+                    <h3>Our Vision</h3>
+                    <p>We envision a future where every business, regardless of size or location, can rely on expert payroll and bookkeeping services. Through our specialized expertise, we aim to set a new standard in accounting services, making it more accessible, efficient, and conducive to growth.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY CHOOSE SECTION (Horizontal Slider) -->
+<section class="why-choose fade-in">
+  <h2>Why Choose EDULINK Group?</h2>
+
+  <div class="benefits-container">
+    <button class="scroll-btn left" onclick="scrollBenefits(-1)">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+
+    <div class="benefits-slider" id="benefitsSlider">
+      <div class="benefit-item">
+        <h4>Competitive Pricing</h4>
+        <p>We pride ourselves on fair and transparent pricing. Unlike many competitors, we don't charge for unnecessary extras—you only pay for the services you truly need.</p>
+      </div>
+
+      <div class="benefit-item">
+        <h4>Time & Cost Savings</h4>
+        <p>By outsourcing your accounting to us, you save substantial time and money, allowing you to focus on what matters most: running and growing your core business.</p>
+      </div>
+
+      <div class="benefit-item">
+        <h4>Dedicated Expertise</h4>
+        <p>Our team works closely with registered tax agents and accountants, ensuring accuracy and compliance in every report and reconciliation.</p>
+      </div>
+
+      <div class="benefit-item">
+        <h4>Problem Solving</h4>
+        <p>We eliminate high overheads, inefficiencies, and errors by delivering a streamlined, professional back-office service that reduces stress and ensures compliance.</p>
+      </div>
+    </div>
+
+    <button class="scroll-btn right" onclick="scrollBenefits(1)">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+</section>
+
+        <section class="cta fade-in">
+            <h2>Ready to Partner With Us?</h2>
+            <p>Let's work together to streamline your financial operations and drive your business forward.</p>
+            <a href="contact.html" class="btn">Get Started Today</a>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-calculator"></i> EDULINK Group</h3>
+                <p>EDULINK Group leads the way in providing specialized payroll management and bookkeeping services. With an in-depth understanding of distinctive needs, we offer tailored solutions to ensure seamless operations.</p>
+                 <div class="social-links">
+                      <a href="https://www.facebook.com/share/178M8gTi9Q/" target="_blank" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                      <a href="https://x.com/Edulink_Group" target="_blank" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+                      <a href="https://www.instagram.com/edulink.group?utm_source=qr&igsh=MWNsYXpwdXh6djE4aA==" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                      <a href="#" target="_blank" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Our Services</h3>
+                <ul class="footer-links">
+                    <li><a href="services.html">Payroll Services</a></li>
+                    <li><a href="services.html">Bookkeeping Solutions</a></li>
+                    <li><a href="services.html">BAS Preparation</a></li>
+                    <li><a href="services.html">Financial Reports</a></li>
+                    <li><a href="services.html">Business Advisory</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-phone"></i> 0413 363 698</li>
+                    <li style="display: flex; align-items: center; gap: 10px;"><i class="fas fa-envelope"></i> <span>edulink.bookservices@gmail.com</span></li>
+                    <li><i class="fas fa-map-marker-alt"></i> Suite 2.2, 72 Queen Street<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Campbelltown, NSW 2560</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 EDULINK Group Pty Ltd. All rights reserved. | Privacy Policy | Terms of Service</p>
+        </div>
+    </footer>
+
+    <!-- ===== JS ===== -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', () => {
+            document.getElementById('navbar').classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const navbar = document.getElementById('navbar');
+            const menuToggle = document.getElementById('menu-toggle');
+            
+            if (!navbar.contains(e.target) && !menuToggle.contains(e.target)) {
+                navbar.classList.remove('active');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.navbar a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navbar').classList.remove('active');
+            });
+        });
+
+        // Scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+
+                function scrollBenefits(direction) {
+  const slider = document.getElementById('benefitsSlider');
+  const scrollAmount = 320; // adjust scroll distance
+  slider.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+}
+    </script>
+    
+</body>
+</html>
